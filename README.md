@@ -24,29 +24,168 @@
 
 Software shouldn't feel like paperwork. 
 
-I’m an engineer based in Mysuru, completing my degree in **Artificial Intelligence & Machine Learning** at **Vidyavardhaka College of Engineering**. My work gravitates toward systems with high real-world friction: reverse-engineering opaque protocols, building autonomous headless data pipelines, and architecting client interfaces that feel tactile, instantaneous, and alive.
+I’m an AI & Machine Learning engineer based in Mysuru, studying at **Vidyavardhaka College of Engineering**. I dismantle sluggish, bloated systems and replace them with high-velocity software — whether that means reverse-engineering a college ERP or writing sub-second autonomous pipelines.
 
-I don’t write code to fill repositories. I build things that eliminate unnecessary human effort.
+When the monitors sleep: I'm either on a **Royal Enfield Scram 440 in Force Grey**, playing microtonal ragas on a bamboo **Bansuri at 432 Hz**, or directing visual stories at **24 frames per second**.
+
+Below is the declassified interactive console. Tap into the nodes below.
 
 ---
 
-### Signature Exploit // DaddyIon Architectural Deconstruction
+### 🕹️ Interactive Hardware & Easter Egg Console
 
-When our campus portal (*IonCUDOS*) made verifying attendance feel like filing taxes on a broken dial-up browser, I treated it as an adversarial engineering puzzle.
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/daddyion_luxury_schematic.svg" width="100%" alt="DaddyIon Architecture Schematic" />
-</div>
-
+<details>
+<summary><b>🔑 [INTERACTIVE 01] // TURN IGNITION: ROYAL ENFIELD SCRAM 440 (FORCE GREY)</b></summary>
 <br/>
 
-* **The Problem:** 14 manual clicks across fractured tables, fragile session timeouts, zero bunk forecasting, and an unusable mobile layout.
-* **The Interception:** Bypassed the browser entirely. Deconstructed the portal's session authentication lifecycle, intercepted raw JavaScript response payloads (`consolidated_marks.js`, `student_credit_registration.js`), and wrote a resilient headless scraper in Python using BeautifulSoup and targeted regex pipelines.
-* **The Client:** Wrapped the pipeline into **DaddyIon v2.3** — an autonomous Android client (Kotlin + custom WebView bridge) featuring offline caching, instant proxy radar, and predictive attendance forecasting for students across campus.
+```
+[●] SYSTEM: Royal Enfield Scram 440 Engine Control Unit
+[●] FINISH: Matte Force Grey (Industrial Graphite)
+[●] CHASSIS: Air/Oil-Cooled 440cc Single-Cylinder Long-Stroke Thumper
+[●] STATUS: Fuel injection primed. Neutral indicator green.
+
+>>> [PRESS STARTER BUTTON]
+>>> . . . CHUG . . . CHUG . . . THUMP-THUMP-THUMP-THUMP-THUMP
+>>> Deep 440cc exhaust resonance idling at 1,150 RPM.
+
+[ TELEMETRY LOG ]:
+"The compiler is fast, but it cannot follow you through the Western Ghats past 80 km/h."
+Western Ghats Route: Mysuru ➔ Madikeri ➔ Mangaluru ➔ Ghat Pass
+Current Throttle Therapy Status: 100% RECHARGED.
+```
+</details>
+
+<details>
+<summary><b>🪈 [INTERACTIVE 02] // CALIBRATE ACOUSTICS: 432Hz BANSURI RAGA SELECTOR</b></summary>
+<br/>
+
+```
+SELECT RAGA HARMONIC SPECTRUM (Classical Indian 7-Hole Bamboo Flute):
+
+[1] RAGA YAMAN (Kalyan Thaat • Evening Meditation)
+    Tuning:   Ni(.) - Re - Ga - Ma# - Dha - Ni - Sa'
+    Acoustic: Pure 432 Hz consonant harmonics.
+    Use Case: Clears mental fragmentation during 2:00 AM architectural refactoring.
+
+[2] RAGA BHIMPALASI (Kafi Thaat • Late Afternoon)
+    Tuning:   Sa - Ga(k) - Ma - Pa - Ni(k) - Sa'
+    Acoustic: Minor-third emotional weight with heavy Meend glide.
+    Use Case: Writing clean autonomous pipelines and headless Playwright scripts.
+
+[3] RAGA DARBARI KANADA (Asavari Thaat • Midnight Gravity)
+    Tuning:   Heavy microtonal oscillations (Andolan) on Komal Ga and Dha.
+    Use Case: Debugging multi-threaded concurrency race conditions.
+```
+</details>
+
+<details>
+<summary><b>🔓 [INTERACTIVE 03] // DADDYION REVERSE PROTOCOL: DECLASSIFIED CAMPUS LOGS</b></summary>
+<br/>
+
+```bash
+prajwal@scram440:~$ ./bypass_ioncudos_gateway.sh --target attendance --force
+
+[+] Target ERP: ioncudos.in/vvce_lms_student (Clunky. 14 manual clicks.)
+[+] Intercepting PHPSESSID and CSRF verification tokens... [SUCCESS]
+[+] Injecting headless BeautifulSoup table parser... [ATTACHED]
+[+] Intercepting dynamic JavaScript payloads:
+    └── parsed: consolidated_marks.js
+    └── parsed: student_attendance.js
+    └── parsed: student_credit_registration.js (89,985 bytes)
+
+[+] Attendance Radar Analytics:
+    ├── Subject: AI & Neural Networks   -> Current: 86.4% [Status: Safe to bunk 3 classes]
+    ├── Subject: Autonomous Robotics   -> Current: 78.1% [Status: ⚠️ CRITICAL - DO NOT BUNK]
+    └── Subject: Cloud Architecture    -> Current: 91.0% [Status: Safe to bunk 5 classes]
+
+[+] Packaging payload into Kotlin WebView Bridge...
+[✓] Status: DaddyIon v2.3 launched. Zero logins required. Campus liberated.
+```
+</details>
+
+<details>
+<summary><b>💋 [INTERACTIVE 04] // THE EXECUTIVE "KISS METER" & SENSITIVITY TEST</b></summary>
+<br/>
+
+```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  THE SENSITIVITY PROTOCOL // DIAGNOSTIC DECISION ENGINE                      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  DIAGNOSTIC QUERY: "What happens if you close this tab without pinging me?"  │
+│                                                                              │
+│  [A] "I will hire a developer who writes dry leetcode solutions."             │
+│      ➔ RESULT: Regret level 100%. Boring software guaranteed.                │
+│                                                                              │
+│  [B] "I am intimidated by the 440cc single-cylinder torque & reverse hacks." │
+│      ➔ RESULT: Understandable. We build fast and break friction.             │
+│                                                                              │
+│  [C] "I am genuinely impressed and want to connect right now."              │
+│      ➔ RESULT: Correct choice. Proceed to direct dispatch below.             │
+│                                                                              │
+│  IMPULSE LEVEL: "Impression so high you'll want to kiss the screen."         │
+│  RECOMMENDED ACTION: Email prajwalvarma14@gmail.com within 24h.              │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
+</details>
+
+<details>
+<summary><b>🎬 [INTERACTIVE 05] // 24 FPS DIRECTOR'S VIEWFINDER: SCENE 014</b></summary>
+<br/>
+
+```
+[ CAMERA SETUP ]
+Format:        Super 35 Anamorphic
+Aspect Ratio:  2.39:1 Cinemascope
+Frame Rate:    24.000 fps (Native cinematic cadence)
+Shutter:       180.0° (1/48s)
+Color Science: Kodak 5219 Tungsten / Low-key natural chiaroscuro
+
+[ DIRECTOR'S LOG ]:
+"Every line of software is a frame in a film. 
+If an interaction doesn't advance the narrative or eliminate friction, 
+cut it in the editing room. No filler."
+```
+</details>
+
+<details>
+<summary><b>☕ [INTERACTIVE 06] // RUNTIME FUEL & CAFFEINE METRIC</b></summary>
+<br/>
+
+```
+[ RESOURCE CONSUMPTION MATRIX ]
+├── Espresso Shots:        ████████████████░░░░  4 / 5
+├── Scram 440 Fuel Level:  ████████████████████  100% (Force Grey Tank Full)
+├── Flute Resonance Focus: ████████████████████  432 Hz
+├── Compiler Tolerance:    ██░░░░░░░░░░░░░░░░░░  10% (Zero patience for slow code)
+└── Empathy & U&I Impact:  ████████████████████  100% (Mentoring street children)
+```
+</details>
+
+<details>
+<summary><b>🕹️ [INTERACTIVE 07] // SECRET KONAMI CODE: [ ↑ ↑ ↓ ↓ ← → ← → B A ]</b></summary>
+<br/>
+
+```
+★ ★ ★ CHEAT CODE UNLOCKED: PRAJWAL_VARMA_GODMODE ★ ★ ★
+
+[✓] +100% Immunity to campus ERP session timeouts
+[✓] +10 dB Exhaust note on the Royal Enfield Scram 440 Force Grey
+[✓] Infinite breath control for Bansuri high-octave meends
+[✓] Direct VIP access line unlocked: prajwalvarma14@gmail.com
+```
+</details>
 
 ---
 
-### Curated Works & Engineering Exhibition
+### Mechanical & Acoustic Telemetry
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/luxury_telemetry.svg" width="100%" alt="Royal Enfield Scram 440 Force Grey & Bansuri Telemetry" />
+</div>
+
+---
+
+### Selected Artifacts (Overview)
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/luxury_exhibition.svg" width="100%" alt="Curated Engineering Gallery" />
@@ -54,42 +193,10 @@ When our campus portal (*IonCUDOS*) made verifying attendance feel like filing t
 
 <br/>
 
-#### `01` / DaddyIon — Autonomous Campus Infrastructure & LMS Override
-> *Stack: Android (Kotlin) • Python / Flask • BeautifulSoup • Custom WebView Bridge*
-* Reverse-engineered proprietary college ERP to deliver instantaneous, zero-login attendance and marks telemetry directly to student devices with zero manual portal clicks.
-
-#### `02` / NewsAI — Sub-Second Global Intelligence Pipeline
-> *Stack: Groq LPU (Llama 3) • Python Playwright • Supabase • React Native (Expo)*
-* Multi-threaded headless scrapers continuously ingest technical publications across the web. Raw unstructured articles are processed through ultra-low latency Groq hardware inference, normalized into structured vectors, and delivered to a mobile interface in under 400 milliseconds.
-
-#### `03` / AuraOS — Spatial Web Operating System
-> *Stack: Modern JavaScript (ES6+) • Web Audio API • Architectural CSS3*
-* An in-browser desktop environment designed from first principles. Features window multitasking, virtual memory simulation, customizable workspaces, and procedural sound synthesizers without external UI framework bloat.
-
-#### `04` / Bullion POS & Karigar Ledger — High-Precision Precious Metals Billing
-> *Stack: JavaScript • Supabase (PostgreSQL) • Financial Math Engines*
-* Enterprise-grade valuation software for bullion traders and jewelers. Computes real-time market spot rates, purity differentials across 18K/22K/24K karat tiers, artisan metal-loss accounts, and statutory tax schedules with zero floating-point drift.
-
----
-
-### Analog Telemetry // Outside The Workspace
-
-When the displays go dark, I look for discipline in analog mechanics, microtonal acoustics, and visual storytelling.
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/luxury_telemetry.svg" width="100%" alt="Mavrick 440 Force Grey & Bansuri Telemetry" />
-</div>
-
-<br/>
-
-* **The Machine — Mavrick 440 (Force Grey):**  
-  440cc TorqX single-cylinder delivering 36 Nm of low-end pull at 4,000 RPM. Finished in matte Force Grey with blacked-out industrial mechanics. Long highway throttles through the Western Ghats with that deep exhaust bass is the most effective mental defragmentation tool I know.
-* **The Instrument — Classical Bamboo Bansuri:**  
-  7-hole Indian transverse flute. Practicing microtonal classical ragas (*Bhimpalasi*, *Yaman*) at 432 Hz. It demands breath control, pitch precision, and deep acoustic focus.
-* **The Medium — 24fps Visual Storytelling:**  
-  Cinematography and independent short filmmaking. Obsessed with composition, lighting temperature, and narrative editing rhythm.
-* **The Commitment — Educational Equity at U&I:**  
-  Active volunteer and mentor teaching underprivileged students. Technical competence is meaningless without human empathy.
+* **DaddyIon v2.3:** Autonomous campus client reverse-engineering the college LMS (Kotlin + Python).
+* **NewsAI Engine:** Sub-second global intelligence crawler utilizing Groq LPU inference (Playwright + Supabase).
+* **AuraOS:** Spatial in-browser desktop operating system built from pure JavaScript and Web Audio.
+* **Bullion POS:** Real-time precious metals valuation engine and artisan wastage ledger.
 
 ---
 
@@ -113,9 +220,9 @@ INFRASTRUCTURE   │ Git  •  GitHub Actions  •  Postman  •  Linux  •  An
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │  PRAJWAL VARMA  •  AIML ENGINEER  •  MYSURU, KARNATAKA, INDIA               │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│  STATUS             Available for select engineering roles & partnerships   │
+│  MACHINE            Royal Enfield Scram 440 (Force Grey)                     │
 │  DIRECT CHANNEL     prajwalvarma14@gmail.com                                 │
-│  RESPONSE WINDOW    Within 24 business hours                                 │
+│  AVAILABILITY       High-impact engineering roles & autonomous ventures     │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -128,7 +235,7 @@ INFRASTRUCTURE   │ Git  •  GitHub Actions  •  Postman  •  Linux  •  An
 </p>
 
 <p align="center">
-  <sub>© 2026 Prajwal Varma. Precision engineered in Mysuru.</sub>
+  <sub>© 2026 Prajwal Varma. Royal Enfield Scram 440 Force Grey • 432 Hz Bansuri • Mysuru</sub>
 </p>
 
 </div>
