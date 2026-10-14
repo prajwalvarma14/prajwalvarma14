@@ -1,4 +1,4 @@
-# Hi there, I'm Prajwal Varma ðŸ‘‹
+# Hi there, I'm Prajwal Varma 
 
 Full-Stack Software Engineer & AI Systems Developer passionate about crafting high-performance web applications, autonomous AI pipelines, interactive data visualizers, and cross-platform tools.
 
