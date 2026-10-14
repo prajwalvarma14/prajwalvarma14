@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- RETRO ARCADE SCREEN // SCRAM 440 FORCE GREY (ANIMATED SVG) -->
-<a href="#start-heist">
+<a href="#-mini-game-the-749-attendance-heist">
   <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/scram_arcade_game.svg" width="100%" alt="Scram 440 Arcade Game" />
 </a>
 
@@ -11,8 +11,8 @@
 <h1>PRAJWAL VARMA</h1>
 <p>
   <b>AIML @ VVCE Mysuru</b> &nbsp;•&nbsp; 
-  <b>RE Scram 440 Force Grey</b> &nbsp;•&nbsp; 
-  <b>Bansuri (Flute)</b> &nbsp;•&nbsp; 
+  <b>Royal Enfield Scram 440 (Force Grey)</b> &nbsp;•&nbsp; 
+  <b>Bansuri Flute (432 Hz)</b> &nbsp;•&nbsp; 
   <b>Creator of DaddyIon</b>
 </p>
 
@@ -24,101 +24,98 @@
   &nbsp;
   <a href="https://www.instagram.com/prajwalvarma14/"><img src="https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
   &nbsp;
-  <a href="#start-heist"><img src="https://img.shields.io/badge/PLAY_GAME-START_HERE-00F2FE?style=for-the-badge&logo=gamepad&logoColor=black" alt="Play Game" /></a>
+  <a href="#-mini-game-the-749-attendance-heist"><img src="https://img.shields.io/badge/▶_START_GAME-CLICK_HERE-00F2FE?style=for-the-badge&logo=gamepad&logoColor=black" alt="Play Game" /></a>
 </p>
 
 </div>
 
 ---
 
-<div id="start-heist"></div>
-
-### 🎮 MINI-GAME: "THE 74.9% ATTENDANCE HEIST"
-> *Click your choice below to play directly in this README!*
+### 🎮 MINI-GAME 01: THE 74.9% ATTENDANCE HEIST
+> *A playable choose-your-own-adventure game. Click your choice below to play!*
 
 ```
 ╔═══════════════════════════════════════════════════════════════════════════════╗
 ║ MISSION BRIEFING:                                                             ║
 ║ Location: VVCE Campus, Mysuru                                                 ║
-║ Time: Friday, 3:45 PM                                                         ║
-║ Crisis: Your attendance is locked at 74.9% (Detention threshold: 75.0%)      ║
-║ Professor: Watching the classroom door like a hawk                            ║
-║ Your Ride: Royal Enfield Scram 440 (Force Grey) parked at the campus gate     ║
+║ Clock: Friday, 3:45 PM                                                        ║
+║ The Problem: Your attendance is stuck at 74.9% (Detention threshold: 75.0%)  ║
+║ The Obstacle: The professor is guarding the classroom door                    ║
+║ The Weapon: Royal Enfield Scram 440 (Force Grey) parked outside the gate      ║
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 ```
 
-#### What do you do? Choose your path:
+#### What is your move? (Click an option to play):
 
-* 💻 **[OPTION 1: Open laptop, bypass the portal with DaddyIon ➔](#route-hack)**
-* 🏍️ **[OPTION 2: Sprint to the Scram 440 & twist the throttle ➔](#route-ride)**
-* 🪈 **[OPTION 3: Whip out your Bamboo Flute & play a live Raga ➔](#route-flute)**
+* 💻 **[OPTION 1: Open laptop, bypass the portal with DaddyIon ➔](#-path-1-the-daddyion-infiltration)**
+* 🏍️ **[OPTION 2: Sprint to the Scram 440 & twist the throttle ➔](#-path-2-the-440cc-force-grey-getaway)**
+* 🪈 **[OPTION 3: Pull out your Bamboo Flute & play a live Raga ➔](#-path-3-the-432-hz-bansuri-hypnosis)**
 
 ---
-
-<div id="route-hack"></div>
 
 ### 💻 PATH 1: THE DADDYION INFILTRATION
 
 ```
-[ EXECUTING DADDYION SCRAPER v2.3 ]
->>> Intercepting IonCUDOS session tokens... [CONNECTED]
->>> Extracting dynamic JavaScript attendance tables...
->>> Injecting proxy calculation payload...
+[ INITIATING DADDYION EXPLOIT v2.3 ]
+>>> Connecting to ioncudos.in/vvce_lms_student... [OK]
+>>> Intercepting authentication cookies & session tokens... [OK]
+>>> Parsing dynamic JavaScript tables:
+    ├── consolidated_marks.js
+    └── student_attendance.js
+>>> Running attendance forecasting algorithm...
 
           _      _      _
        __(.)< __(.)> __(.)=
-       \___)  \___)  \___)  <- (Bypassing 14 manual clicks)
+       \___)  \___)  \___)  <- (Bypassed 14 manual clicks)
 
-[✓] ATTENDANCE OVERRIDE COMPLETE:
-    Previous: 74.9%
-    Updated:  86.2%
-    Detention: AVOIDED (+5000 XP)
+[✓] ATTENDANCE OVERRIDDEN:
+    Old Attendance: 74.9%
+    New Attendance: 86.4%
+    Allowed Bunks:  3 Remaining
+    Result: Detention avoided! (+5,000 XP)
 ```
 
-**What is your next move?**
-* 🏍️ **[Celebrate by escaping to the Western Ghats on Scram 440 ➔](#route-ride)**
-* 🪈 **[Drop a celebratory Bansuri victory solo in the lab ➔](#route-flute)**
-* 🔄 **[Restart the Heist ➔](#start-heist)**
+**What do you want to do next?**
+* 🏍️ **[Sprint to the parking lot and escape on the Scram 440 Force Grey ➔](#-path-2-the-440cc-force-grey-getaway)**
+* 🪈 **[Play a celebratory 432 Hz Bansuri solo in the lab ➔](#-path-3-the-432-hz-bansuri-hypnosis)**
+* 🔄 **[Restart the Heist from the Beginning ➔](#-mini-game-01-the-749-attendance-heist)**
 
 ---
-
-<div id="route-ride"></div>
 
 ### 🏍️ PATH 2: THE 440cc FORCE GREY GETAWAY
 
 ```
 [ STARTING ROYAL ENFIELD SCRAM 440 (FORCE GREY) ]
 
+>>> Turn key -> Starter button pressed...
 >>> CHUG . . . CHUG . . . THUMP-THUMP-THUMP-THUMP!
->>> 440cc single-cylinder engine fires up.
->>> 36 Nm torque kicks in. Clutch dropped.
+>>> 440cc single-cylinder engine roars to life.
+>>> 36 Nm of low-end torque hits the rear tire. Clutch dropped.
 
        __o        __o        __o
-     _`\<,      _`\<,      _`\<,    <- (Leaving bugs in the dust)
+     _`\<,      _`\<,      _`\<,    <- (Outrunning bugs at 80 km/h)
     (*)/ (*)   (*)/ (*)   (*)/ (*)
 
 [✓] ESCAPE SUCCESSFUL:
-    Route: Mysuru ➔ Madikeri Ghats
-    Speed: 80 km/h
-    Compiler Memory: 0% (Mental cache cleared)
-    Soundtrack: Pure exhaust thrum (+8000 XP)
+    Route: Mysuru ➔ Western Ghats Highway
+    Speed: 80 km/h cruising speed
+    Exhaust Note: Deep bass single-cylinder thrum
+    Mental Cache: 100% Cleared (+8,000 XP)
 ```
 
-**What is your next move?**
-* 🪈 **[Pull over at a hill sunset and play the Bansuri ➔](#route-flute)**
-* 💻 **[Head back to hack more stuff ➔](#route-hack)**
-* 🔄 **[Restart the Heist ➔](#start-heist)**
+**What do you want to do next?**
+* 🪈 **[Pull over at a scenic hilltop and play the Bansuri ➔](#-path-3-the-432-hz-bansuri-hypnosis)**
+* 💻 **[Head back and hack more college portals ➔](#-path-1-the-daddyion-infiltration)**
+* 🔄 **[Restart the Heist from the Beginning ➔](#-mini-game-01-the-749-attendance-heist)**
 
 ---
-
-<div id="route-flute"></div>
 
 ### 🪈 PATH 3: THE 432 Hz BANSURI HYPNOSIS
 
 ```
 [ DEPLOYING ACOUSTIC DIPLOMACY ]
 >>> Pulling out 7-Hole Indian Bamboo Flute (Bansuri)
->>> Calibrating to 432 Hz concert frequency...
+>>> Calibrating concert pitch to 432 Hz...
 >>> Playing RAGA YAMAN (Kalyan Thaat)...
 
    ♪  ♫   ♩  ♬   ♭   ♮   ♯   ♪   ♫
@@ -126,21 +123,64 @@
 
 [✓] PROFESSOR HYPNOTIZED:
     The professor is moved to tears by the microtonal acoustic beauty.
-    The entire classroom starts floating.
+    The entire classroom transcends reality.
     Result: Everyone is awarded 100% attendance! (+10,000 XP)
+    Status: CAMPUS LEGEND UNLOCKED.
 ```
 
-**What is your next move?**
-* 🏍️ **[Ride into the sunset on the Scram 440 Force Grey ➔](#route-ride)**
-* 💻 **[Go write some Python code ➔](#route-hack)**
-* 🔄 **[Restart the Heist ➔](#start-heist)**
+**What do you want to do next?**
+* 🏍️ **[Take a celebration ride on the Scram 440 Force Grey ➔](#-path-2-the-440cc-force-grey-getaway)**
+* 💻 **[Launch DaddyIon to check the marks ➔](#-path-1-the-daddyion-infiltration)**
+* 🔄 **[Restart the Heist from the Beginning ➔](#-mini-game-01-the-749-attendance-heist)**
 
 ---
 
-### 🕹️ INTERACTIVE SOUNDBOARD (Click to read audio transcripts)
+### 🧩 MINI-GAME 02: THE CAMPUS BUG CRACKER
+> *Find the hidden exploit in the ERP code snippet to win the round!*
+
+```python
+# WHICH LINE GRANTS PERMANENT 100% ATTENDANCE?
+line_1 = requests.get("https://ioncudos.in/student_portal")
+line_2 = session.cookies.set("auth_bypass", "enabled")
+line_3 = if student == "prajwalvarma14": attendance = 100.0
+```
 
 <details>
-<summary><b>🔊 Sound 01: Royal Enfield Scram 440 Force Grey Ignition</b></summary>
+<summary><b>▶ TEST LINE 1 // Click to verify</b></summary>
+<br/>
+
+```
+❌ INCORRECT: Line 1 just loads the slow 14-click login page. Try again!
+```
+</details>
+
+<details>
+<summary><b>▶ TEST LINE 2 // Click to verify</b></summary>
+<br/>
+
+```
+⚠️ PARTIAL: Sets the session token, but attendance is still calculated on the server. Try again!
+```
+</details>
+
+<details>
+<summary><b>▶ TEST LINE 3 // Click to verify</b></summary>
+<br/>
+
+```
+🎉 BINGO! EXPLOIT VERIFIED!
+[✓] You cracked the code!
+[✓] UNLOCKED SECRET TROPHY: "DADDYION MASTER HACKER"
+[✓] REWARD: Infinite attendance + immunity from 8:30 AM lectures!
+```
+</details>
+
+---
+
+### 🕹️ THE INTERACTIVE SOUNDBOARD (Click to play)
+
+<details>
+<summary><b>🔊 Track 01: Royal Enfield Scram 440 (Force Grey) Engine Idle</b></summary>
 <br/>
 
 ```
@@ -151,36 +191,36 @@
 </details>
 
 <details>
-<summary><b>🔊 Sound 02: 432 Hz Indian Bamboo Bansuri Solo</b></summary>
+<summary><b>🔊 Track 02: Classical Bamboo Bansuri Solo (432 Hz)</b></summary>
 <br/>
 
 ```
 [●] Warm breath through bamboo ->
 >>> ~ ~ ~ Ni(.) - Re - Ga - Ma# - Dha - Ni - Sa' ~ ~ ~
-(Acoustic glissando Meend sliding with microtonal grace at 432 Hz)
+(Acoustic glissando Meend sliding with microtonal grace at 432 Hz in Raga Yaman)
 ```
 </details>
 
 <details>
-<summary><b>🔊 Sound 03: DaddyIon Bypassing College ERP</b></summary>
+<summary><b>🔊 Track 03: DaddyIon Bypassing IonCUDOS Gateway</b></summary>
 <br/>
 
 ```
 [●] requests.post("https://ioncudos.in/...") -> HTTP 200 OK ->
->>> [ALERT]: 14 manual clicks destroyed in 120ms.
+>>> [ALERT]: 14 manual clicks destroyed in 120ms. Student attendance unlocked.
 ```
 </details>
 
 <details>
-<summary><b>★ Cheat Code: Konami Code [ ↑ ↑ ↓ ↓ ← → ← → B A ]</b></summary>
+<summary><b>★ SECRET CHEAT CODE: Konami Code [ ↑ ↑ ↓ ↓ ← → ← → B A ]</b></summary>
 <br/>
 
 ```
 ★ ★ ★ UNLOCKED: PRAJWAL_VARMA_GODMODE ★ ★ ★
 + Unlimited compiler patience
-+ Scram 440 Force Grey speed unlocked
-+ 100% attendance guaranteed
-+ Direct ping: prajwalvarma14@gmail.com
++ Scram 440 Force Grey max torque unlocked
++ 100% attendance across all semesters
++ Direct VIP line: prajwalvarma14@gmail.com
 ```
 </details>
 
@@ -188,9 +228,17 @@
 
 <div align="center">
 
+```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  PRAJWAL VARMA  •  AIML @ VVCE MYSURU  •  RE SCRAM 440 (FORCE GREY)         │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  STATUS             Built to play, not to read.                              │
+│  DIRECT CHANNEL     prajwalvarma14@gmail.com                                 │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
+
 <p align="center">
-  <b>Designed to play, not to read.</b><br/>
-  <sub>© 2026 Prajwal Varma • RE Scram 440 Force Grey • Mysuru</sub>
+  <sub>© 2026 Prajwal Varma • Designed to interact and play.</sub>
 </p>
 
 </div>
