@@ -1,22 +1,22 @@
 <div align="center">
 
-<!-- RETRO ARCADE SCREEN // SCRAM 440 FORCE GREY (ANIMATED SVG) -->
-<a href="#-game-01-the-749-attendance-heist">
-  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/arcade_console_v3.svg" width="100%" alt="Scram 440 Arcade Game" />
+<!-- SUBWAY SURFERS 3-LANE RUNNER // SCRAM 440 FORCE GREY (ANIMATED SVG) -->
+<a href="#-game-01-subway-scram-3-lane-campus-runner">
+  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/subway_scram_runner.svg" width="100%" alt="Subway Scram 440 Runner" />
 </a>
 
 <br/><br/>
 
-<!-- QUICK STATS LEDGER -->
+<!-- MINIMAL IDENTITY LEDGER -->
 <h1>PRAJWAL VARMA</h1>
 <p>
   <b>AIML @ VVCE Mysuru</b> &nbsp;•&nbsp; 
   <b>Royal Enfield Scram 440 (Force Grey)</b> &nbsp;•&nbsp; 
-  <b>Bansuri Flute (432 Hz)</b> &nbsp;•&nbsp; 
+  <b>Classical Bansuri (432 Hz)</b> &nbsp;•&nbsp; 
   <b>Creator of DaddyIon</b>
 </p>
 
-<!-- ACTION BUTTONS -->
+<!-- ACTION HUBS -->
 <p align="center">
   <a href="https://www.linkedin.com/in/prajwalvarma14/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   &nbsp;
@@ -24,310 +24,291 @@
   &nbsp;
   <a href="https://www.instagram.com/prajwalvarma14/"><img src="https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
   &nbsp;
-  <a href="#-game-01-the-749-attendance-heist"><img src="https://img.shields.io/badge/▶_PLAY_GAMES-START_HERE-00F2FE?style=for-the-badge&logo=gamepad&logoColor=black" alt="Play Game" /></a>
+  <a href="#-game-01-subway-scram-3-lane-campus-runner"><img src="https://img.shields.io/badge/▶_PLAY_GAMES-START-00F2FE?style=for-the-badge&logo=gamepad&logoColor=black" alt="Play Games" /></a>
 </p>
 
 </div>
 
 ---
 
-### 🕹️ ARCADE SELECTOR: PICK YOUR GAME
+### 🕹️ THE ARCADE DIRECTORY // A GAME IN EVERY SECTION
 
-| Game | Type | Action |
-| :--- | :--- | :--- |
-| **01. The 74.9% Attendance Heist** | Choose Your Own Adventure RPG | **[▶ PLAY GAME 01 ➔](#-game-01-the-749-attendance-heist)** |
-| **02. The 440cc Highway Speed Trial** | Reflex Motorcycle Challenge | **[▶ PLAY GAME 02 ➔](#-game-02-the-440cc-highway-speed-trial)** |
-| **03. The Campus Bug Cracker** | Hacker Code Puzzle | **[▶ PLAY GAME 03 ➔](#-game-03-the-campus-bug-cracker)** |
-| **04. The 432 Hz Bansuri Raga Trivia** | Musical Ear Test | **[▶ PLAY GAME 04 ➔](#-game-04-the-432-hz-bansuri-raga-trivia)** |
+| Level | Sector | Game Description | Launch |
+| :---: | :--- | :--- | :---: |
+| **01** | **Highway Sector** | **Subway Scram: 3-Lane Campus Runner** | **[▶ PLAY GAME 01 ➔](#-game-01-subway-scram-3-lane-campus-runner)** |
+| **02** | **Compiler Arena** | **Boss Battle: Beat the Compiler** | **[▶ PLAY GAME 02 ➔](#-game-02-boss-battle-defeat-the-compiler)** |
+| **03** | **Campus Gateway** | **The DaddyIon Infiltration Terminal** | **[▶ PLAY GAME 03 ➔](#-game-03-the-daddyion-erp-lockpick)** |
+| **04** | **Acoustic Studio**| **Bansuri Hero: 432 Hz Rhythm Match** | **[▶ PLAY GAME 04 ➔](#-game-04-bansuri-hero-432-hz-rhythm-match)** |
+| **05** | **Secret Vault** | **The Scram 440 Lucky Slot Machine** | **[▶ PLAY GAME 05 ➔](#-game-05-the-secret-scram-440-slot-machine)** |
 
 ---
 
-### 🎮 GAME 01: THE 74.9% ATTENDANCE HEIST
-> *A playable choose-your-own-adventure game. Click your choice below to play!*
+### 🏃‍♂️ GAME 01: SUBWAY SCRAM (3-LANE CAMPUS RUNNER)
+> *Subway Surfers endless runner rules! You are riding the Scram 440 Force Grey down the tracks. Dodge obstacles, collect coins, and don't get caught by the attendance train!*
 
 ```
 ╔═══════════════════════════════════════════════════════════════════════════════╗
-║ MISSION BRIEFING:                                                             ║
-║ Location: VVCE Campus, Mysuru                                                 ║
-║ Clock: Friday, 3:45 PM                                                        ║
-║ The Problem: Your attendance is stuck at 74.9% (Detention threshold: 75.0%)  ║
-║ The Obstacle: The professor is guarding the classroom door                    ║
-║ The Weapon: Royal Enfield Scram 440 (Force Grey) parked outside the gate      ║
+║ [ LANE 1: LEFT ]           ║ [ LANE 2: CENTER ] (YOU)    ║ [ LANE 3: RIGHT ]          ║
+║ ⚠️ 74.9% TRAIN RUSHING IN  ║ 🏍️ SCRAM 440 CRUISING       ║ ★ ★ ★ +440 COINS FLOATING  ║
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 ```
 
-#### What is your move? (Click an option to play):
+#### Choose your move quickly!
 
-* 💻 **[OPTION 1: Open laptop, bypass the portal with DaddyIon ➔](#-path-1-the-daddyion-infiltration)**
-* 🏍️ **[OPTION 2: Sprint to the Scram 440 & twist the throttle ➔](#-path-2-the-440cc-force-grey-getaway)**
-* 🪈 **[OPTION 3: Pull out your Bamboo Flute & play a live Raga ➔](#-path-3-the-432-hz-bansuri-hypnosis)**
-* ☕ **[OPTION 4: Strategic retreat to the campus canteen for filter coffee ➔](#-path-4-the-canteen-gambit)**
-
----
-
-### 💻 PATH 1: THE DADDYION INFILTRATION
-
-```
-[ INITIATING DADDYION EXPLOIT v2.3 ]
->>> Connecting to ioncudos.in/vvce_lms_student... [OK]
->>> Intercepting authentication cookies & session tokens... [OK]
->>> Parsing dynamic JavaScript tables:
-    ├── consolidated_marks.js
-    └── student_attendance.js
->>> Running attendance forecasting algorithm...
-
-          _      _      _
-       __(.)< __(.)> __(.)=
-       \___)  \___)  \___)  <- (Bypassed 14 manual clicks)
-
-[✓] ATTENDANCE OVERRIDDEN:
-    Old Attendance: 74.9%
-    New Attendance: 86.4%
-    Allowed Bunks:  3 Remaining
-    Result: Detention avoided! (+5,000 XP)
-```
-
-**What do you want to do next?**
-* 🏍️ **[Sprint to the parking lot and escape on the Scram 440 Force Grey ➔](#-path-2-the-440cc-force-grey-getaway)**
-* 🪈 **[Play a celebratory 432 Hz Bansuri solo in the lab ➔](#-path-3-the-432-hz-bansuri-hypnosis)**
-* 🔄 **[Restart the Heist ➔](#-game-01-the-749-attendance-heist)**
+* ◀️ **[SWERVE LEFT // Drift underneath the barrier ➔](#-subway-lane-1-drift)**
+* 🛹 **[DOUBLE-TAP // Deploy Hoverboard to fly over the track ➔](#-subway-hoverboard-jump)**
+* ▶️ **[SWERVE RIGHT // Snatch +440 Gold Coins ➔](#-subway-lane-3-coins)**
 
 ---
 
-### 🏍️ PATH 2: THE 440cc FORCE GREY GETAWAY
+### ◀️ SUBWAY: LANE 1 DRIFT
 
 ```
-[ STARTING ROYAL ENFIELD SCRAM 440 (FORCE GREY) ]
+[ MANEUVER: FLAT-TRACK SLIDE UNDER BARRIER ]
+>>> You kick the Scram 440 Force Grey sideways.
+>>> 440cc thumper exhaust sparks against the track rails!
+>>> You slide right underneath the 74.9% attendance barrier!
 
->>> Turn key -> Starter button pressed...
->>> CHUG . . . CHUG . . . THUMP-THUMP-THUMP-THUMP!
->>> 440cc single-cylinder engine roars to life.
->>> 36 Nm of low-end torque hits the rear tire. Clutch dropped.
+       __o
+     _`\<,      <- (Sliding at 80 km/h)
+    (*)/ (*)
 
-       __o        __o        __o
-     _`\<,      _`\<,      _`\<,    <- (Outrunning bugs at 80 km/h)
-    (*)/ (*)   (*)/ (*)   (*)/ (*)
-
-[✓] ESCAPE SUCCESSFUL:
-    Route: Mysuru ➔ Western Ghats Highway
-    Speed: 80 km/h cruising speed
-    Exhaust Note: Deep bass single-cylinder thrum
-    Mental Cache: 100% Cleared (+8,000 XP)
+[✓] EVADED! The attendance inspector misses you completely!
+[✓] SCORE: +4,400 PTS • MULTIPLIER: 44X
 ```
 
-**What do you want to do next?**
-* 🪈 **[Pull over at a scenic hilltop and play the Bansuri ➔](#-path-3-the-432-hz-bansuri-hypnosis)**
-* 💻 **[Head back and hack more college portals ➔](#-path-1-the-daddyion-infiltration)**
-* 🔄 **[Restart the Heist ➔](#-game-01-the-749-attendance-heist)**
+**Next obstacle ahead! What do you do?**
+* ▶️ **[Switch back to Center Lane to grab the Magnet Powerup ➔](#-subway-hoverboard-jump)**
+* 💰 **[Switch to Right Lane to vacuum coins ➔](#-subway-lane-3-coins)**
+* 🔄 **[Respawn at Starting Gate ➔](#-game-01-subway-scram-3-lane-campus-runner)**
 
 ---
 
-### 🪈 PATH 3: THE 432 Hz BANSURI HYPNOSIS
+### 🛹 SUBWAY: HOVERBOARD JUMP
 
 ```
-[ DEPLOYING ACOUSTIC DIPLOMACY ]
->>> Pulling out 7-Hole Indian Bamboo Flute (Bansuri)
->>> Calibrating concert pitch to 432 Hz...
->>> Playing RAGA YAMAN (Kalyan Thaat)...
+[ POWER-UP ACTIVATED: SUPER HOVERBOARD ]
+>>> Your Royal Enfield Scram 440 sprouts neon anti-grav thrusters!
+>>> WHOOOOOOSH! You launch 30 feet above the railway wires!
 
-   ♪  ♫   ♩  ♬   ♭   ♮   ♯   ♪   ♫
-  (~~~) (~~~) (~~~) (~~~) (~~~)
+    ~~~~~~~~~~  (FLYING OVER ALL OBSTACLES)  ~~~~~~~~~~
+           __o
+         _`\<,
+        (*)/ (*)
 
-[✓] PROFESSOR HYPNOTIZED:
-    The professor is moved to tears by the microtonal acoustic beauty.
-    The entire classroom transcends reality.
-    Result: Everyone is awarded 100% attendance! (+10,000 XP)
-    Status: CAMPUS LEGEND UNLOCKED.
+[✓] ALL DETENTIONS AND BUGS CLEARED BELOW YOU!
+[✓] UNLOCKED: "SKYLINE SURFER" ACHIEVEMENT (+8,000 PTS)
 ```
 
-**What do you want to do next?**
-* 🏍️ **[Take a celebration ride on the Scram 440 Force Grey ➔](#-path-2-the-440cc-force-grey-getaway)**
-* 💻 **[Launch DaddyIon to check the marks ➔](#-path-1-the-daddyion-infiltration)**
-* 🔄 **[Restart the Heist ➔](#-game-01-the-749-attendance-heist)**
+**Where do you land?**
+* 💰 **[Dive down into Right Lane to vacuum gold coins ➔](#-subway-lane-3-coins)**
+* ◀️ **[Slide back into Lane 1 for a high-speed sprint ➔](#-subway-lane-1-drift)**
+* 🔄 **[Respawn at Starting Gate ➔](#-game-01-subway-scram-3-lane-campus-runner)**
 
 ---
 
-### ☕ PATH 4: THE CANTEEN GAMBIT
+### 💰 SUBWAY: LANE 3 COINS
 
 ```
-[ TACTICAL FILTER COFFEE ORDERED ]
->>> Steaming South Indian filter coffee in a steel tumbler.
->>> The professor walks into the canteen looking for absentees.
->>> You offer the professor a hot cup of coffee with polite smile.
+[ COLLECTING TRAINWAY GOLD COINS ]
+>>> DING! DING! DING! DING! DING!
+>>> You collect 440 gold tokens! Coin multiplier: 44X!
 
-[✓] DIPLOMATIC VICTORY:
-    The professor drinks the coffee.
-    Professor: "Prajwal, you're a good student. Go mark your own proxy."
-    Result: Free proxy granted! (+6,000 XP)
+         ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★
+        ( 440 COINS BANKED )
+
+[✓] REWARD: Full tank of petrol for the Royal Enfield Scram 440 Force Grey!
+[✓] TOTAL SCORE: 44,820 PTS
+[✓] STATUS: Top of the global leaderboard!
 ```
 
-* 🏍️ **[Head to the Scram 440 and ride home ➔](#-path-2-the-440cc-force-grey-getaway)**
-* 🔄 **[Restart the Heist ➔](#-game-01-the-749-attendance-heist)**
+**Keep running?**
+* 🛹 **[Launch Hoverboard ➔](#-subway-hoverboard-jump)**
+* ◀️ **[Drift into Lane 1 ➔](#-subway-lane-1-drift)**
+* 🔄 **[Respawn at Starting Gate ➔](#-game-01-subway-scram-3-lane-campus-runner)**
 
 ---
 
-### 🏍️ GAME 02: THE 440cc HIGHWAY SPEED TRIAL
-> *Reflex test: You are riding the Royal Enfield Scram 440 (Force Grey) at 90 km/h on Mysuru Ring Road. A sharp hairpin turn with loose gravel suddenly appears!*
+### ⚔️ GAME 02: BOSS BATTLE (DEFEAT THE COMPILER)
+> *A wild boss appears:* **FATAL COMPILER EXCEPTION: SEGFAULT_404**  
+> *Boss HP:* `[████████████████████] 100/100`
 
-```
-     \  |  /
-   --- 440 ---   [ SPEED: 90 KM/H • GEAR: 5TH • LEAN ANGLE: 0° ]
-     /  |  \
-```
-
-#### Choose your maneuver:
+#### Choose your attack:
 
 <details>
-<summary><b>▶ CHOICE A: Downshift to 2nd gear and apply 36 Nm torque out of the apex</b></summary>
+<summary><b>▶ ATTACK 1: Cast Python Headless Scraper (Deals 40 DMG)</b></summary>
 <br/>
 
 ```
-🏆 PERFECT LINE!
-[+] The 440cc long-stroke single digs into the tarmac.
-[+] Rear tire grips with authorative single-cylinder grunt.
-[+] You exit the corner at 75 km/h with a clean exhaust roar!
-RESULT: +5,000 XP • CORNERING MASTER BADGE EARNED.
+💥 CRITICAL HIT!
+>>> You execute a BeautifulSoup session interceptor.
+>>> The compiler's authentication shield is shattered!
+>>> Boss HP: [██████████░░░░░░░░░░] 60/100 remaining!
 ```
 </details>
 
 <details>
-<summary><b>▶ CHOICE B: Slam both brakes as hard as you can</b></summary>
+<summary><b>▶ ATTACK 2: Rev Royal Enfield Scram 440 Exhaust Note (Deals 35 DMG)</b></summary>
 <br/>
 
 ```
-⚠️ ABS SAVES THE DAY:
-[+] Dual-channel ABS kicks in with rapid pedal pulses.
-[+] You stop 2 inches before the guardrail, heart pounding.
-[+] Survives, but lap time was ruined.
-RESULT: +1,000 XP • "Thank God for ABS."
+💥 SONIC BLAST!
+>>> DUG-DUG-DUG-DUG-DUG!
+>>> 440cc single-cylinder long-stroke exhaust rumble ruptures the error stack!
+>>> Boss HP: [█████░░░░░░░░░░░░░░░] 25/100 remaining!
 ```
 </details>
 
 <details>
-<summary><b>▶ CHOICE C: Stand up on the scrambler footpegs and flat-track slide through the gravel</b></summary>
+<summary><b>▶ ATTACK 3: 432 Hz Bansuri Acoustic Meend Wave (Deals 50 DMG)</b></summary>
 <br/>
 
 ```
-🔥 LEGENDARY DRIFT!
-[+] Force Grey chassis slides sideways in slow motion.
-[+] Gravel sprays into the sunset like a cinema shot.
-[+] Complete stunt mastery!
-RESULT: +10,000 XP • SCRAMBLER GOD BADGE UNLOCKED!
+🏆 FATAL KNOCKOUT!
+>>> You play a microtonal Raga Yaman glissando on the 7-hole bamboo flute.
+>>> The compiler enters complete nirvana and self-compiles with ZERO ERRORS!
+>>> Boss HP: [░░░░░░░░░░░░░░░░░░░░] 0/100 DEFEATED!
+>>> REWARD: Unlocked "Zero-Warning Architecture" Trophy!
 ```
 </details>
 
 ---
 
-### 🧩 GAME 03: THE CAMPUS BUG CRACKER
-> *Inspect the 3 lines of code below. Which line grants permanent 100% attendance?*
+### 🔓 GAME 03: THE DADDYION ERP LOCKPICK
+> *Our college portal (IonCUDOS) requires 14 manual clicks to view attendance. Pick the right exploit port to bypass it:*
 
-```python
-line_1 = requests.get("https://ioncudos.in/student_portal")
-line_2 = session.cookies.set("auth_bypass", "enabled")
-line_3 = if student == "prajwalvarma14": attendance = 100.0
+```
+[ CAMPUS FIREWALL TARGET: ioncudos.in/vvce_lms_student ]
+Choose which vulnerability to exploit:
 ```
 
 <details>
-<summary><b>▶ TEST LINE 1 // Click to verify</b></summary>
+<summary><b>▶ EXPLOIT PORT 8080: Brute-Force Password Cracker</b></summary>
 <br/>
 
 ```
-❌ INCORRECT: Line 1 just loads the slow 14-click login page. Try again!
+❌ ACCESS DENIED!
+The campus firewall detected 5 rapid requests and banned your IP for 10 minutes.
+Try a stealthier method!
 ```
 </details>
 
 <details>
-<summary><b>▶ TEST LINE 2 // Click to verify</b></summary>
+<summary><b>▶ EXPLOIT PORT 443: Session Cookie Hijack + BeautifulSoup Table Parser</b></summary>
 <br/>
 
 ```
-⚠️ PARTIAL: Sets the session token, but attendance is still calculated on the server. Try again!
+🎉 ACCESS GRANTED! (The Real DaddyIon Method)
+[+] Intercepted PHPSESSID verified.
+[+] Parsed consolidated_marks.js and student_attendance.js in 120ms.
+[+] Attendance calculated: 86.4% [Safe to bunk 3 classes].
+[✓] SYSTEM LIBERATED: All 14 clicks eliminated!
 ```
 </details>
 
 <details>
-<summary><b>▶ TEST LINE 3 // Click to verify</b></summary>
+<summary><b>▶ EXPLOIT PORT 3000: SQL Injection Payload ("OR 1=1")</b></summary>
 <br/>
 
 ```
-🎉 BINGO! EXPLOIT VERIFIED!
-[✓] You cracked the code!
-[✓] UNLOCKED SECRET TROPHY: "DADDYION MASTER HACKER"
-[✓] REWARD: Infinite attendance + immunity from 8:30 AM lectures!
-```
-</details>
-
----
-
-### 🪈 GAME 04: THE 432 Hz BANSURI RAGA TRIVIA
-> *Prajwal plays the following acoustic scale on his 7-hole Indian Bamboo Flute:*  
-> **`Sa - Ga(komal) - Ma - Pa - Ni(komal) - Sa'`**  
-> *Which classical Indian Raga is this?*
-
-<details>
-<summary><b>▶ OPTION A: Raga Yaman (Kalyan Thaat)</b></summary>
-<br/>
-
-```
-❌ INCORRECT: Raga Yaman uses Shuddha Ga, Teevra Ma, and Shuddha Ni. Try again!
-```
-</details>
-
-<details>
-<summary><b>▶ OPTION B: Raga Bhimpalasi (Kafi Thaat)</b></summary>
-<br/>
-
-```
-🎉 ABSOLUTELY CORRECT!
-[✓] Raga Bhimpalasi features Komal Gandhar (Ga) and Komal Nishad (Ni).
-[✓] Prajwal's go-to late afternoon raga for deep software flow states.
-[✓] REWARD: +5,000 Acoustic Karma Points!
-```
-</details>
-
-<details>
-<summary><b>▶ OPTION C: Raga Bhairavi (Bhairavi Thaat)</b></summary>
-<br/>
-
-```
-❌ INCORRECT: Raga Bhairavi uses all 4 flat notes (Re, Ga, Dha, Ni). Try again!
+⚠️ SYSTEM HALTED:
+The database returned a syntax error. Stick to Python reverse-engineering!
 ```
 </details>
 
 ---
 
-### 🕹️ THE INTERACTIVE SOUNDBOARD (Click to play)
+### 🪈 GAME 04: BANSURI HERO (432 Hz RHYTHM MATCH)
+> *Classical Indian Flute Rhythm Test: Follow the note pattern below!*  
+> **Notes on the Bamboo Flute:** `[ 🔴 SA ]  [ 🟡 GA ]  [ 🟢 PA ]  [ 🔵 NI ]`
+
+#### Click to play the correct note sequence:
 
 <details>
-<summary><b>🔊 Sound 01: Royal Enfield Scram 440 (Force Grey) Engine Idle</b></summary>
+<summary><b>▶ SEQUENCE A: [ SA ➔ RE ➔ GA ➔ MA ]</b></summary>
 <br/>
 
 ```
-[●] Turn ignition key -> Fuel pump whines -> Starter click ->
->>> DUG . . . DUG . . . DUG-DUG-DUG-DUG-DUG-DUG!
-(Deep, rhythmic, bass-heavy 440cc single-cylinder long-stroke thrum at 1,150 RPM idle)
+⚠️ GOOD TRY: Standard Bilawal Thaat scale, but not the secret combo!
 ```
 </details>
 
 <details>
-<summary><b>🔊 Sound 02: 432 Hz Indian Bamboo Bansuri Solo</b></summary>
+<summary><b>▶ SEQUENCE B: [ SA ➔ GA(komal) ➔ PA ➔ NI(komal) ]</b></summary>
 <br/>
 
 ```
-[●] Warm breath through bamboo ->
->>> ~ ~ ~ Ni(.) - Re - Ga - Ma# - Dha - Ni - Sa' ~ ~ ~
-(Acoustic glissando Meend sliding with microtonal grace at 432 Hz in Raga Yaman)
+🏆 PERFECT HARMONY! 
+[+] You just played the core melodic phrase of RAGA BHIMPALASI!
+[+] Acoustic frequency locked at 432 Hz.
+[+] COMBO MULTIPLIER: 44X!
 ```
 </details>
 
 <details>
-<summary><b>★ SECRET CHEAT CODE: Konami Code [ ↑ ↑ ↓ ↓ ← → ← → B A ]</b></summary>
+<summary><b>▶ SEQUENCE C: [ SA ➔ NI ➔ DHA ➔ PA ]</b></summary>
+<br/>
+
+```
+❌ DESCENT ONLY: That is Avarohana, but we need the ascending Aarohana!
+```
+</details>
+
+---
+
+### 🎰 GAME 05: THE SECRET SCRAM 440 SLOT MACHINE
+> *Click to pull the lever and spin for a mystery prize:*
+
+<details>
+<summary><b>🎰 [PULL THE LEVER] // SPIN TO WIN</b></summary>
+<br/>
+
+```
+╔═══════════════════════════════════════════════════╗
+║   [ 🏍️ SCRAM 440 ]  [ 🏍️ SCRAM 440 ]  [ 🏍️ SCRAM 440 ]║
+╚═══════════════════════════════════════════════════╝
+
+JACKPOT! TRIPLE SCRAMBLER UNLOCKED!
+★ Prize: VIP Road Trip Key to the Western Ghats
+★ Direct VIP Line: prajwalvarma14@gmail.com
+★ Bonus: Lifetime pass to skip broken college portals
+```
+</details>
+
+---
+
+### 🕹️ INTERACTIVE AUDIO SOUNDBOARD
+
+<details>
+<summary><b>🔊 Sound 01: Royal Enfield Scram 440 (Force Grey) Cold Start Idle</b></summary>
+<br/>
+
+```
+[●] Turn key -> Fuel injection primes -> Starter thumps:
+>>> CHUG . . . CHUG . . . DUG-DUG-DUG-DUG-DUG-DUG!
+(Deep, low-frequency 440cc single-cylinder exhaust pulse at 1,150 RPM idle)
+```
+</details>
+
+<details>
+<summary><b>🔊 Sound 02: 432 Hz Bamboo Bansuri Glissando (Meend)</b></summary>
+<br/>
+
+```
+[●] Warm breath through the embouchure hole:
+>>> ~ ~ ~ Sa . . . Ga(k) . . . Ma . . . Pa . . . Ni(k) . . . Sa' ~ ~ ~
+(Acoustic tranquility sliding seamlessly between microtones)
+```
+</details>
+
+<details>
+<summary><b>★ Cheat Code: Konami Code [ ↑ ↑ ↓ ↓ ← → ← → B A ]</b></summary>
 <br/>
 
 ```
 ★ ★ ★ UNLOCKED: PRAJWAL_VARMA_GODMODE ★ ★ ★
 + Unlimited compiler patience
-+ Scram 440 Force Grey max torque unlocked
++ Scram 440 Force Grey maximum throttle unlocked
 + 100% attendance across all semesters
 + Direct VIP line: prajwalvarma14@gmail.com
 ```
@@ -347,7 +328,7 @@ line_3 = if student == "prajwalvarma14": attendance = 100.0
 ```
 
 <p align="center">
-  <sub>© 2026 Prajwal Varma • Designed to interact and play.</sub>
+  <sub>© 2026 Prajwal Varma • Subway Scram 440 • Pure interactive gaming.</sub>
 </p>
 
 </div>
