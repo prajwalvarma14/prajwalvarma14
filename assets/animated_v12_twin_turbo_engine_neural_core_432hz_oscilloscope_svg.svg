@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgPanel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#04060e"/>
+      <stop offset="50%" stop-color="#090d1c"/>
+      <stop offset="100%" stop-color="#04060e"/>
+    </linearGradient>
+
+    <filter id="glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .mono { font-family: 'Courier New', monospace; font-weight: 900; letter-spacing: 1.2px; }
+      @keyframes packetFlow {
+        from { stroke-dashoffset: 160; }
+        to { stroke-dashoffset: 0; }
+      }
+      .synapse-line {
+        stroke-dasharray: 12 16;
+        animation: packetFlow 0.9s linear infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- MASTER BACKGROUND FRAME -->
+  <rect width="1200" height="320" rx="16" fill="url(#bgPanel)" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- =======================================================================
+       BAY 01 (LEFT): V12 TWIN-TURBO IMPELLER & 12-CYLINDER FIRING TELEMETRY
+       ======================================================================= -->
+  <g transform="translate(20, 18)">
+    <rect width="368" height="284" rx="12" fill="#050813" stroke="#00f2fe" stroke-width="1.5" stroke-opacity="0.6"/>
+    <text x="184" y="28" fill="#00f2fe" font-size="13" class="mono" text-anchor="middle">01 // V12 TWIN-TURBO DYNO CORE</text>
+
+    <!-- Left Turbocharger Impeller (Spinning at 120,000 RPM) -->
+    <g transform="translate(105, 112)">
+      <circle cx="0" cy="0" r="46" fill="#090e1c" stroke="#00f2fe" stroke-width="2.5" filter="url(#glow)"/>
+      <g stroke="#00f2fe" stroke-width="2.5">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.45s" repeatCount="indefinite"/>
+        <line x1="-38" y1="0" x2="38" y2="0"/>
+        <line x1="0" y1="-38" x2="0" y2="38"/>
+        <line x1="-27" y1="-27" x2="27" y2="27"/>
+        <line x1="-27" y1="27" x2="27" y2="-27"/>
+      </g>
+      <circle cx="0" cy="0" r="10" fill="#ff0055"/>
+      <text x="0" y="64" fill="#94a3b8" font-size="10" class="mono" text-anchor="middle">TURBO A: 2.8 BAR</text>
+    </g>
+
+    <!-- Right Turbocharger Impeller (Counter-Rotating) -->
+    <g transform="translate(263, 112)">
+      <circle cx="0" cy="0" r="46" fill="#090e1c" stroke="#ff0055" stroke-width="2.5" filter="url(#glow)"/>
+      <g stroke="#ff0055" stroke-width="2.5">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="0.45s" repeatCount="indefinite"/>
+        <line x1="-38" y1="0" x2="38" y2="0"/>
+        <line x1="0" y1="-38" x2="0" y2="38"/>
+        <line x1="-27" y1="-27" x2="27" y2="27"/>
+        <line x1="-27" y1="27" x2="27" y2="-27"/>
+      </g>
+      <circle cx="0" cy="0" r="10" fill="#00f2fe"/>
+      <text x="0" y="64" fill="#94a3b8" font-size="10" class="mono" text-anchor="middle">TURBO B: 2.8 BAR</text>
+    </g>
+
+    <!-- 12 Firing V12 Cylinders (Bottom Bank) -->
+    <g transform="translate(32, 200)">
+      <text x="152" y="0" fill="#ffe259" font-size="10" class="mono" text-anchor="middle">FIRING ORDER: 1-12-4-9-2-11-6-7-3-10-5-8</text>
+      <g transform="translate(0, 12)">
+        <rect x="0" y="0" width="18" height="42" rx="3" fill="#00f2fe"><animate attributeName="height" values="14;44;14" dur="0.22s" repeatCount="indefinite"/></rect>
+        <rect x="26" y="0" width="18" height="42" rx="3" fill="#ff0055"><animate attributeName="height" values="44;14;44" dur="0.25s" repeatCount="indefinite"/></rect>
+        <rect x="52" y="0" width="18" height="42" rx="3" fill="#00f2fe"><animate attributeName="height" values="20;44;20" dur="0.19s" repeatCount="indefinite"/></rect>
+        <rect x="78" y="0" width="18" height="42" rx="3" fill="#ffe259"><animate attributeName="height" values="42;12;42" dur="0.23s" repeatCount="indefinite"/></rect>
+        <rect x="104" y="0" width="18" height="42" rx="3" fill="#00f2fe"><animate attributeName="height" values="12;44;12" dur="0.21s" repeatCount="indefinite"/></rect>
+        <rect x="130" y="0" width="18" height="42" rx="3" fill="#ff0055"><animate attributeName="height" values="40;16;40" dur="0.26s" repeatCount="indefinite"/></rect>
+        <rect x="156" y="0" width="18" height="42" rx="3" fill="#00f2fe"><animate attributeName="height" values="16;44;16" dur="0.2s" repeatCount="indefinite"/></rect>
+        <rect x="182" y="0" width="18" height="42" rx="3" fill="#ffe259"><animate attributeName="height" values="44;14;44" dur="0.24s" repeatCount="indefinite"/></rect>
+        <rect x="208" y="0" width="18" height="42" rx="3" fill="#00f2fe"><animate attributeName="height" values="18;42;18" dur="0.22s" repeatCount="indefinite"/></rect>
+        <rect x="234" y="0" width="18" height="42" rx="3" fill="#ff0055"><animate attributeName="height" values="44;12;44" dur="0.18s" repeatCount="indefinite"/></rect>
+        <rect x="260" y="0" width="18" height="42" rx="3" fill="#00f2fe"><animate attributeName="height" values="14;44;14" dur="0.23s" repeatCount="indefinite"/></rect>
+        <rect x="286" y="0" width="18" height="42" rx="3" fill="#10b981"><animate attributeName="height" values="44;16;44" dur="0.21s" repeatCount="indefinite"/></rect>
+      </g>
+    </g>
+  </g>
+
+  <!-- =======================================================================
+       BAY 02 (CENTER): DADDYION & AIML NEURAL SYNAPSE PACKET ROUTER
+       ======================================================================= -->
+  <g transform="translate(416, 18)">
+    <rect width="368" height="284" rx="12" fill="#050813" stroke="#ff0055" stroke-width="1.5" stroke-opacity="0.6"/>
+    <text x="184" y="28" fill="#ff0055" font-size="13" class="mono" text-anchor="middle">02 // NEURAL &amp; DADDYION ROUTER</text>
+
+    <!-- Animated Synapse Connections -->
+    <g stroke-width="2.5" class="synapse-line">
+      <line x1="65" y1="80" x2="184" y2="115" stroke="#00f2fe"/>
+      <line x1="65" y1="145" x2="184" y2="115" stroke="#00f2fe"/>
+      <line x1="65" y1="145" x2="184" y2="180" stroke="#ffe259"/>
+      <line x1="65" y1="210" x2="184" y2="180" stroke="#ff0055"/>
+
+      <line x1="184" y1="115" x2="303" y2="85" stroke="#10b981"/>
+      <line x1="184" y1="115" x2="303" y2="150" stroke="#00f2fe"/>
+      <line x1="184" y1="180" x2="303" y2="150" stroke="#ffe259"/>
+      <line x1="184" y1="180" x2="303" y2="215" stroke="#ff0055"/>
+    </g>
+
+    <!-- Input Layer Nodes -->
+    <g fill="#090e1c" stroke="#00f2fe" stroke-width="2.5" filter="url(#glow)">
+      <circle cx="65" cy="80" r="16"/>
+      <circle cx="65" cy="145" r="16"/>
+      <circle cx="65" cy="210" r="16"/>
+    </g>
+    <text x="65" y="84" fill="#fff" font-size="9" class="mono" text-anchor="middle">ERP</text>
+    <text x="65" y="149" fill="#fff" font-size="9" class="mono" text-anchor="middle">GIT</text>
+    <text x="65" y="214" fill="#fff" font-size="9" class="mono" text-anchor="middle">AIML</text>
+
+    <!-- Hidden Core Nodes -->
+    <g fill="#1c062b" stroke="#ffe259" stroke-width="3" filter="url(#glow)">
+      <circle cx="184" cy="115" r="22">
+        <animate attributeName="r" values="20;24;20" dur="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="184" cy="180" r="22">
+        <animate attributeName="r" values="24;20;24" dur="1.2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <text x="184" y="119" fill="#ffe259" font-size="10" class="mono" text-anchor="middle">BS4</text>
+    <text x="184" y="184" fill="#ffe259" font-size="10" class="mono" text-anchor="middle">DNN</text>
+
+    <!-- Output Production Nodes -->
+    <g fill="#090e1c" stroke="#10b981" stroke-width="2.5" filter="url(#glow)">
+      <circle cx="303" cy="85" r="16"/>
+      <circle cx="303" cy="150" r="16"/>
+      <circle cx="303" cy="215" r="16"/>
+    </g>
+    <text x="303" y="89" fill="#10b981" font-size="9" class="mono" text-anchor="middle">0.12s</text>
+    <text x="303" y="154" fill="#00f2fe" font-size="9" class="mono" text-anchor="middle">GRAPH</text>
+    <text x="303" y="219" fill="#ff0055" font-size="9" class="mono" text-anchor="middle">BOOK</text>
+
+    <text x="184" y="262" fill="#10b981" font-size="11" class="mono" text-anchor="middle">THROUGHPUT: 14 CLICKS ➔ 0 CLICKS</text>
+  </g>
+
+  <!-- =======================================================================
+       BAY 03 (RIGHT): 432 Hz BANSURI HARMONIC LISSAJOUS & OSCILLOSCOPE
+       ======================================================================= -->
+  <g transform="translate(812, 18)">
+    <rect width="368" height="284" rx="12" fill="#050813" stroke="#ffe259" stroke-width="1.5" stroke-opacity="0.6"/>
+    <text x="184" y="28" fill="#ffe259" font-size="13" class="mono" text-anchor="middle">03 // 432 Hz RAGA OSCILLOSCOPE</text>
+
+    <!-- Animated Multi-Phase Sine Waves (Sa • Ga • Pa • Ni) -->
+    <path d="M 24,130 Q 104,50 184,130 T 344,130" fill="none" stroke="#00f2fe" stroke-width="3" filter="url(#glow)">
+      <animate attributeName="d"
+        values="M 24,130 Q 104,50 184,130 T 344,130;
+                M 24,130 Q 104,210 184,130 T 344,130;
+                M 24,130 Q 104,50 184,130 T 344,130"
+        dur="1.8s" repeatCount="indefinite"/>
+    </path>
+
+    <path d="M 24,130 Q 104,210 184,130 T 344,130" fill="none" stroke="#ff0055" stroke-width="2.5" filter="url(#glow)">
+      <animate attributeName="d"
+        values="M 24,130 Q 104,210 184,130 T 344,130;
+                M 24,130 Q 104,50 184,130 T 344,130;
+                M 24,130 Q 104,210 184,130 T 344,130"
+        dur="1.8s" repeatCount="indefinite"/>
+    </path>
+
+    <path d="M 24,130 Q 104,90 184,130 T 344,130" fill="none" stroke="#ffe259" stroke-width="2">
+      <animate attributeName="d"
+        values="M 24,130 Q 104,80 184,130 T 344,130;
+                M 24,130 Q 104,180 184,130 T 344,130;
+                M 24,130 Q 104,80 184,130 T 344,130"
+        dur="1.1s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Swara Frequency Readout Pills -->
+    <g transform="translate(26, 212)" class="mono" font-size="10">
+      <rect x="0" y="0" width="72" height="26" rx="5" fill="#090e1c" stroke="#00f2fe"/>
+      <text x="36" y="17" fill="#00f2fe" text-anchor="middle">Sa:256Hz</text>
+
+      <rect x="80" y="0" width="72" height="26" rx="5" fill="#090e1c" stroke="#ffe259"/>
+      <text x="116" y="17" fill="#ffe259" text-anchor="middle">Ga:304Hz</text>
+
+      <rect x="160" y="0" width="72" height="26" rx="5" fill="#090e1c" stroke="#10b981"/>
+      <text x="196" y="17" fill="#10b981" text-anchor="middle">Pa:384Hz</text>
+
+      <rect x="240" y="0" width="72" height="26" rx="5" fill="#090e1c" stroke="#ff0055"/>
+      <text x="276" y="17" fill="#ff0055" text-anchor="middle">Ni:456Hz</text>
+    </g>
+
+    <text x="184" y="262" fill="#ffe259" font-size="11" class="mono" text-anchor="middle">RESONANCE: RAGA YAMAN &amp; BHIMPALASI</text>
+  </g>
+</svg>
