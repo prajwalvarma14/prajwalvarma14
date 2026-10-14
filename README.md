@@ -31,24 +31,6 @@
 
 ---
 
-```
-@@                   ⚡ CYBER-V12 VALKYRIE // LIVE TELEMETRY COCKPIT [418 KM/H] ⚡                   @@
-+  RPM: [████████████████████▒▒] 11,100   │   GEAR: [ 8 ]   │   DRS: [ ACTIVE ]   │   NOS: [ 100% ]
-@@ ───────────────────────────────────────┴─────────────────┴─────────────────────┴───────────────── @@
-                                         ╱         │         ╲
-                                      ╱            │            ╲
-                                   ╱     LANE 1    │    LANE 2     ╲     LANE 3
-                                ╱                  │                  ╲
-                             ╱              _______│_______              ╲
-                          ╱              __/  _   _│_   _  \__              ╲
-                       ╱               /  ___/ \ / │ \ / \___  \               ╲
-                    ╱                 |========[ PV14•V12 ]========|                 ╲
-                 ╱                    |  (██)  \_________/  (██)  |                    ╲
-              ╱                       |▓▓▓▓|   (🔥)   (🔥)   |▓▓▓▓|                       ╲
-           ╱                          `""""`                 `""""`                          ╲
-@@ ═════════════════════════════════════════════════════════════════════════════════════════════════ @@
-```
-
 ## 🧠 01 // THE DUAL-HEMISPHERE ARCHITECTURE: SILICON × BAMBOO
 
 > *"Most engineers optimize only for clock speed and burn out, or optimize only for peace and ship nothing. I run a dual-core architecture: 11,200 RPM Twin-Turbo Silicon for ruthless execution, synchronized with 432 Hz Classical Bamboo Acoustics for zero-noise cognitive clarity."*
