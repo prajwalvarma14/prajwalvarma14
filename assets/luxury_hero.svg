@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" width="100%" height="100%">
+  <defs>
+    <!-- Luxury Obsidian & Champagne Gradients -->
+    <linearGradient id="obsidianGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040406" />
+      <stop offset="40%" stop-color="#08090d" />
+      <stop offset="100%" stop-color="#0e1017" />
+    </linearGradient>
+
+    <linearGradient id="champagneGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f6d365" />
+      <stop offset="50%" stop-color="#fda085" />
+      <stop offset="100%" stop-color="#f6d365" />
+    </linearGradient>
+
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+
+    <linearGradient id="hairlineSweep" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="transparent" />
+      <stop offset="50%" stop-color="#e5c07b" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="transparent" />
+    </linearGradient>
+
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Helvetica Neue', sans-serif; }
+      .font-mono { font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', Menlo, monospace; }
+      .font-serif { font-family: 'Playfair Display', 'Didot', 'Cinzel', Georgia, serif; }
+
+      @keyframes sweepAnimation {
+        0% { transform: translateX(-920px); }
+        100% { transform: translateX(920px); }
+      }
+      @keyframes softBreathe {
+        0%, 100% { opacity: 0.9; }
+        50% { opacity: 0.4; }
+      }
+      .sweep { animation: sweepAnimation 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+      .pulse-gold { animation: softBreathe 3s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Deep Obsidian Plaque Base -->
+  <rect x="2" y="2" width="916" height="296" rx="14" fill="url(#obsidianGrad)" stroke="#1a1c24" stroke-width="1.2" />
+
+  <!-- Ultra-fine Engineering Drafting Grid -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="0.5">
+    <line x1="0" y1="50" x2="920" y2="50" />
+    <line x1="0" y1="100" x2="920" y2="100" />
+    <line x1="0" y1="150" x2="920" y2="150" />
+    <line x1="0" y1="200" x2="920" y2="200" />
+    <line x1="0" y1="250" x2="920" y2="250" />
+    <line x1="100" y1="0" x2="100" y2="300" />
+    <line x1="300" y1="0" x2="300" y2="300" />
+    <line x1="500" y1="0" x2="500" y2="300" />
+    <line x1="700" y1="0" x2="700" y2="300" />
+  </g>
+
+  <!-- Top Status Ledger Bar -->
+  <g transform="translate(36, 32)">
+    <circle cx="4" cy="4" r="3.5" fill="#e5c07b" class="pulse-gold" />
+    <text x="18" y="7" fill="#8e929f" font-size="10" class="font-mono" letter-spacing="2" font-weight="600">
+      ARCHIVE // PRAJWAL VARMA • DOSSIER № 014
+    </text>
+    <text x="640" y="7" fill="#585c6a" font-size="9.5" class="font-mono" letter-spacing="1.5">
+      MYSURU, KA [12.30° N, 76.65° E]
+    </text>
+  </g>
+
+  <!-- Hairline Gold Divider with Animation -->
+  <line x1="36" y1="46" x2="884" y2="46" stroke="#1f222e" stroke-width="0.8" />
+  <g>
+    <rect x="0" y="45.5" width="300" height="1.2" fill="url(#hairlineSweep)" class="sweep" />
+  </g>
+
+  <!-- Left Column: Executive Identity -->
+  <g transform="translate(36, 80)">
+    <!-- Discipline Tag -->
+    <text x="0" y="16" fill="#e5c07b" font-size="10.5" class="font-mono" font-weight="700" letter-spacing="2.5">
+      AUTONOMOUS ARCHITECTURE &amp; APPLIED AI
+    </text>
+
+    <!-- Name: Ultra-clean Luxury Display -->
+    <text x="0" y="60" fill="url(#goldText)" font-size="40" class="font-sans" font-weight="800" letter-spacing="-1">
+      Prajwal Varma
+    </text>
+
+    <!-- Credential -->
+    <text x="0" y="86" fill="#8e929f" font-size="12.5" class="font-mono" font-weight="400" letter-spacing="0.5">
+      B.E. in Artificial Intelligence &amp; Machine Learning <tspan fill="#3a3e4e">|</tspan> VVCE Mysuru
+    </text>
+
+    <!-- The Honest Philosophy (Understated Swagger) -->
+    <g transform="translate(0, 114)">
+      <rect x="0" y="0" width="460" height="42" rx="6" fill="#090a0f" stroke="#1a1c26" stroke-width="0.8" />
+      <text x="16" y="26" fill="#cbd5e1" font-size="12" class="font-sans" font-style="italic">
+        "I dismantle bloated systems and replace them with high-velocity software."
+      </text>
+    </g>
+  </g>
+
+  <!-- Center Thin Vertical Divider -->
+  <line x1="530" y1="65" x2="530" y2="265" stroke="#1a1c26" stroke-width="0.8" />
+
+  <!-- Right Column: Curated Monograph Highlights (Quiet Luxury) -->
+  <g transform="translate(560, 75)">
+    <!-- Spec Item 01: Scram 411 -->
+    <g transform="translate(0, 0)">
+      <text x="0" y="14" fill="#585c6a" font-size="9" class="font-mono" letter-spacing="1.5">01 / MACHINE</text>
+      <text x="0" y="32" fill="#f1f5f9" font-size="13" class="font-sans" font-weight="600" letter-spacing="0.2">Royal Enfield Scram 411</text>
+      <text x="0" y="47" fill="#8e929f" font-size="10.5" class="font-mono">411cc Air-cooled single • Highway throttle therapy</text>
+    </g>
+
+    <!-- Spec Item 02: Bansuri -->
+    <g transform="translate(0, 68)">
+      <text x="0" y="14" fill="#585c6a" font-size="9" class="font-mono" letter-spacing="1.5">02 / ACOUSTICS</text>
+      <text x="0" y="32" fill="#f1f5f9" font-size="13" class="font-sans" font-weight="600" letter-spacing="0.2">Indian Bamboo Bansuri</text>
+      <text x="0" y="47" fill="#8e929f" font-size="10.5" class="font-mono">Classical ragas at 432 Hz • Microtonal meditation</text>
+    </g>
+
+    <!-- Spec Item 03: The Hack & Film -->
+    <g transform="translate(0, 136)">
+      <text x="0" y="14" fill="#585c6a" font-size="9" class="font-mono" letter-spacing="1.5">03 / CODE &amp; CELLULOID</text>
+      <text x="0" y="32" fill="#f1f5f9" font-size="13" class="font-sans" font-weight="600" letter-spacing="0.2">DaddyIon &amp; 24fps Cinema</text>
+      <text x="0" y="47" fill="#8e929f" font-size="10.5" class="font-mono">Reverse-engineered LMS • Visual narrative direction</text>
+    </g>
+  </g>
+
+  <!-- Bottom Coordinates & Serial -->
+  <g transform="translate(36, 275)">
+    <text x="0" y="0" fill="#3a3e4e" font-size="9.5" class="font-mono" letter-spacing="1">
+      SPEC_ID: PV-AIML-2026 // BUILD: 014 // ALL RIGHTS RESERVED
+    </text>
+  </g>
+</svg>
