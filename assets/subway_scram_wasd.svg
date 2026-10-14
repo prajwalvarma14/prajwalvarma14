@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 380" width="100%" height="100%">
+  <defs>
+    <!-- Sky & Horizon -->
+    <linearGradient id="skyGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#040408" />
+      <stop offset="60%" stop-color="#140c26" />
+      <stop offset="100%" stop-color="#2a083b" />
+    </linearGradient>
+
+    <!-- Track & Ground -->
+    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a0728" />
+      <stop offset="100%" stop-color="#06070c" />
+    </linearGradient>
+
+    <!-- Gold Coin -->
+    <linearGradient id="goldCoin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe259" />
+      <stop offset="100%" stop-color="#ffa751" />
+    </linearGradient>
+
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      .font-arcade { font-family: 'Press Start 2P', 'Impact', monospace; font-weight: 800; }
+      .font-mono { font-family: 'JetBrains Mono', 'Courier New', monospace; font-weight: 700; }
+
+      @keyframes engineVibration {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+      @keyframes trainRushing {
+        0% { transform: translate(460px, 105px) scale(0.12); opacity: 0; }
+        25% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translate(220px, 340px) scale(1.35); opacity: 0; }
+      }
+      @keyframes coinsFloating {
+        0% { transform: translate(460px, 105px) scale(0.15); opacity: 0; }
+        25% { opacity: 1; }
+        85% { opacity: 1; }
+        100% { transform: translate(700px, 330px) scale(1.3); opacity: 0; }
+      }
+      @keyframes blinker {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.2; }
+      }
+
+      .bike-motor { animation: engineVibration 0.22s ease-in-out infinite; }
+      .train-hazard { animation: trainRushing 2.6s cubic-bezier(0.5, 0, 0.9, 1) infinite; }
+      .coins-pack { animation: coinsFloating 2.6s cubic-bezier(0.5, 0, 0.9, 1) infinite 1.3s; }
+      .blink { animation: blinker 1s steps(1) infinite; }
+    </style>
+  </defs>
+
+  <!-- Arcade Outer Bezel Frame -->
+  <rect x="2" y="2" width="916" height="376" rx="14" fill="#030408" stroke="#1f2334" stroke-width="2" />
+
+  <!-- Top Horizon Sky (y=10 to y=105) -->
+  <rect x="10" y="10" width="900" height="98" fill="url(#skyGrad2)" rx="8" />
+
+  <!-- Distant Cyberpunk Sunset / Neon Sun -->
+  <circle cx="460" cy="95" r="46" fill="#ff007f" opacity="0.75" filter="url(#neonGlow)" />
+  <!-- City Skyline Silhouette -->
+  <rect x="350" y="65" width="24" height="40" fill="#0d0818" />
+  <rect x="382" y="50" width="30" height="55" fill="#110a20" />
+  <rect x="508" y="55" width="32" height="50" fill="#110a20" />
+  <rect x="548" y="70" width="26" height="35" fill="#0d0818" />
+
+  <!-- 3-LANE SUBWAY HIGHWAY TRACK (from y=105 to y=330) -->
+  <g transform="translate(10, 105)">
+    <rect x="0" y="0" width="900" height="225" fill="url(#groundGrad)" />
+
+    <!-- Lane 1 (Left Track) Outer Boundary -->
+    <line x1="450" y1="0" x2="30" y2="225" stroke="#ff007f" stroke-width="3" opacity="0.9" />
+    <!-- Divider 1 (Left to Center) -->
+    <line x1="450" y1="0" x2="310" y2="225" stroke="#00f2fe" stroke-width="2" stroke-dasharray="16 10" opacity="0.7" />
+    <!-- Divider 2 (Center to Right) -->
+    <line x1="450" y1="0" x2="590" y2="225" stroke="#00f2fe" stroke-width="2" stroke-dasharray="16 10" opacity="0.7" />
+    <!-- Lane 3 (Right Track) Outer Boundary -->
+    <line x1="450" y1="0" x2="870" y2="225" stroke="#ff007f" stroke-width="3" opacity="0.9" />
+
+    <!-- Track Grid Sleepers -->
+    <g opacity="0.35" stroke="#00f2fe" stroke-width="1.2">
+      <line x1="390" y1="20" x2="510" y2="20" />
+      <line x1="320" y1="50" x2="580" y2="50" />
+      <line x1="250" y1="90" x2="650" y2="90" />
+      <line x1="160" y1="140" x2="740" y2="140" />
+      <line x1="60" y1="200" x2="840" y2="200" />
+    </g>
+
+    <!-- Clean, Non-overlapping Lane Badges (At y=180 on tracks) -->
+    <g transform="translate(170, 185)">
+      <rect x="-65" y="-12" width="130" height="22" rx="4" fill="#1b0816" stroke="#ff758c" stroke-width="1" />
+      <text x="0" y="3" text-anchor="middle" fill="#ff758c" font-size="10" class="font-mono">◀ [A] LANE 1</text>
+    </g>
+    <g transform="translate(450, 185)">
+      <rect x="-65" y="-12" width="130" height="22" rx="4" fill="#081822" stroke="#00f2fe" stroke-width="1" />
+      <text x="0" y="3" text-anchor="middle" fill="#00f2fe" font-size="10" class="font-mono">▲ [W] CENTER</text>
+    </g>
+    <g transform="translate(730, 185)">
+      <rect x="-65" y="-12" width="130" height="22" rx="4" fill="#1c1808" stroke="#ffe259" stroke-width="1" />
+      <text x="0" y="3" text-anchor="middle" fill="#ffe259" font-size="10" class="font-mono">[D] LANE 3 ▶</text>
+    </g>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- LANE 1 OBSTACLE: SUBWAY SURFERS ATTENDANCE TRAIN RUSHING IN  -->
+  <!-- ============================================================ -->
+  <g class="train-hazard">
+    <rect x="-70" y="-65" width="140" height="80" rx="8" fill="#1b0816" stroke="#ff007f" stroke-width="3" filter="url(#neonGlow)" />
+    <!-- Glowing Red Dual Train Lights -->
+    <circle cx="-42" cy="-40" r="10" fill="#ff0055" filter="url(#neonGlow)" />
+    <circle cx="42" cy="-40" r="10" fill="#ff0055" filter="url(#neonGlow)" />
+    <!-- Train Warning Signboard -->
+    <rect x="-60" y="-14" width="120" height="22" rx="4" fill="#07070e" stroke="#ff007f" stroke-width="1" />
+    <text x="0" y="1" text-anchor="middle" fill="#ff758c" font-size="11.5" class="font-mono">⚠️ 74.9% ATTENDANCE</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- LANE 3 ITEM: SUBWAY SURFERS GOLD COINS & MULTIPLIER          -->
+  <!-- ============================================================ -->
+  <g class="coins-pack">
+    <circle cx="0" cy="-35" r="16" fill="url(#goldCoin)" stroke="#fff" stroke-width="1.8" filter="url(#neonGlow)" />
+    <text x="0" y="-30" text-anchor="middle" fill="#523600" font-size="14" class="font-arcade">★</text>
+
+    <circle cx="0" cy="5" r="19" fill="url(#goldCoin)" stroke="#fff" stroke-width="2" filter="url(#neonGlow)" />
+    <text x="0" y="11" text-anchor="middle" fill="#523600" font-size="16" class="font-arcade">★</text>
+
+    <rect x="-40" y="32" width="80" height="20" rx="4" fill="#181404" stroke="#ffe259" stroke-width="1.2" />
+    <text x="0" y="46" text-anchor="middle" fill="#ffe259" font-size="9.5" class="font-mono">+440 COINS</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- LANE 2: REAR PERSPECTIVE OF ROYAL ENFIELD SCRAM 440          -->
+  <!-- Solidly grounded at x=460, y=225                             -->
+  <!-- ============================================================ -->
+  <g transform="translate(460, 225)">
+    <g class="bike-motor">
+      <!-- Ground Shadow -->
+      <ellipse cx="0" cy="88" rx="55" ry="12" fill="#000" opacity="0.75" />
+
+      <!-- Massive Knobby Rear Tire -->
+      <rect x="-26" y="28" width="52" height="60" rx="12" fill="#0a0c12" stroke="#575b63" stroke-width="4.5" />
+      <!-- Tread Grooves -->
+      <line x1="-22" y1="40" x2="22" y2="40" stroke="#1c202a" stroke-width="3" />
+      <line x1="-22" y1="52" x2="22" y2="52" stroke="#1c202a" stroke-width="3" />
+      <line x1="-22" y1="64" x2="22" y2="64" stroke="#1c202a" stroke-width="3" />
+      <line x1="-22" y1="76" x2="22" y2="76" stroke="#1c202a" stroke-width="3" />
+
+      <!-- Dual Exhaust Pipes with Glowing Embers -->
+      <rect x="-48" y="42" width="16" height="34" rx="4" fill="#222634" stroke="#8e929f" stroke-width="1.8" />
+      <circle cx="-40" cy="74" r="4.5" fill="#ff758c" filter="url(#neonGlow)" />
+
+      <rect x="32" y="42" width="16" height="34" rx="4" fill="#222634" stroke="#8e929f" stroke-width="1.8" />
+      <circle cx="40" cy="74" r="4.5" fill="#ff758c" filter="url(#neonGlow)" />
+
+      <!-- Dual Golden Suspension Springs -->
+      <line x1="-30" y1="24" x2="-30" y2="54" stroke="#e5c07b" stroke-width="3.5" />
+      <line x1="30" y1="24" x2="30" y2="54" stroke="#e5c07b" stroke-width="3.5" />
+
+      <!-- Rear Scrambler Mudguard (MATTE FORCE GREY) -->
+      <path d="M -28 18 L 28 18 L 22 42 L -22 42 Z" fill="#575b63" stroke="#8e929f" stroke-width="1.5" />
+
+      <!-- License Plate Badge -->
+      <rect x="-32" y="46" width="64" height="18" rx="3" fill="#ffffff" stroke="#111" stroke-width="1" />
+      <text x="0" y="59" text-anchor="middle" fill="#000" font-size="9" class="font-mono">KA-09 SCRAM-440</text>
+
+      <!-- Horizontal Red LED Taillight Strip -->
+      <rect x="-24" y="12" width="48" height="7" rx="3.5" fill="#ff0055" filter="url(#neonGlow)" />
+
+      <!-- Scrambler Wide Seat (Rear View) -->
+      <path d="M -34 -2 Q 0 -8 34 -2 L 30 14 Q 0 8 -30 14 Z" fill="#14161f" stroke="#252a3a" stroke-width="1.2" />
+
+      <!-- Wide Scrambler Handlebars -->
+      <line x1="-65" y1="-14" x2="65" y2="-14" stroke="#8e929f" stroke-width="3.5" stroke-linecap="round" />
+      <!-- Round Bar-End Mirrors with Gold Trims -->
+      <circle cx="-70" cy="-20" r="7" fill="#121520" stroke="#e5c07b" stroke-width="1.8" />
+      <circle cx="70" cy="-20" r="7" fill="#121520" stroke="#e5c07b" stroke-width="1.8" />
+
+      <!-- Rider: Prajwal (Tactical Riding Jacket from Behind) -->
+      <path d="M -40 -18 L -24 -56 L 24 -56 L 40 -18 Z" fill="#1c202d" stroke="#575b63" stroke-width="1.8" />
+      <text x="0" y="-30" text-anchor="middle" fill="#e5c07b" font-size="9" class="font-mono">PRAJWAL</text>
+
+      <!-- Classical Bamboo Bansuri Slung Diagonally Across Back -->
+      <line x1="-36" y1="-2" x2="36" y2="-72" stroke="#e5c07b" stroke-width="5" stroke-linecap="round" filter="url(#neonGlow)" />
+      <!-- Flute Finger Holes -->
+      <circle cx="-14" cy="-24" r="1.8" fill="#523600" />
+      <circle cx="-5" cy="-33" r="1.8" fill="#523600" />
+      <circle cx="4" cy="-42" r="1.8" fill="#523600" />
+      <circle cx="13" cy="-51" r="1.8" fill="#523600" />
+
+      <!-- Helmet (Rear View with Neon Cyan Visor Glow) -->
+      <circle cx="0" cy="-68" r="19" fill="#0c0e15" stroke="#ff007f" stroke-width="2" />
+      <rect x="-14" cy="-64" y="-66" width="28" height="6" rx="3" fill="#00f2fe" filter="url(#neonGlow)" />
+    </g>
+  </g>
+
+  <!-- TOP SUBWAY SURFERS HUD BAR -->
+  <g transform="translate(24, 18)">
+    <rect x="0" y="0" width="872" height="38" rx="8" fill="#070810" stroke="#1f2334" stroke-width="1.5" />
+
+    <!-- Score -->
+    <text x="24" y="25" fill="#ffe259" font-size="13" class="font-arcade">SCORE: 044,820</text>
+
+    <!-- Coins -->
+    <g transform="translate(270, 19)">
+      <circle cx="0" cy="0" r="10" fill="url(#goldCoin)" />
+      <text x="0" y="4" text-anchor="middle" fill="#442a00" font-size="9" class="font-arcade">★</text>
+      <text x="18" y="5" fill="#ffe259" font-size="12" class="font-arcade">x 440</text>
+    </g>
+
+    <!-- Multiplier -->
+    <g transform="translate(425, 9)">
+      <rect x="0" y="0" width="80" height="20" rx="5" fill="#ff007f" />
+      <text x="40" y="14" text-anchor="middle" fill="#fff" font-size="10" class="font-arcade">44X</text>
+    </g>
+
+    <!-- Mission Objective -->
+    <text x="540" y="24" fill="#00f2fe" font-size="11" class="font-mono">MISSION: ESCAPE 74.9% ATTENDANCE</text>
+
+    <!-- WASD Online Indicator -->
+    <g transform="translate(810, 19)">
+      <circle cx="0" cy="0" r="8" fill="#9ece6a" class="blink" />
+      <text x="14" y="4" fill="#9ece6a" font-size="9" class="font-arcade">WASD</text>
+    </g>
+  </g>
+
+  <!-- WASD BOTTOM CONTROLS BAR (No Overlap, Cleanly Positioned at y=355) -->
+  <g transform="translate(460, 355)">
+    <rect x="-240" y="-15" width="480" height="26" rx="6" fill="#0a0c16" stroke="#00f2fe" stroke-width="1" />
+    <text x="0" y="3" text-anchor="middle" fill="#00f2fe" font-size="11" class="font-mono">
+      CONTROLS: [W] ACCEL/JUMP • [A] LEFT • [S] BRAKE • [D] RIGHT
+    </text>
+  </g>
+</svg>
