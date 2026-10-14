@@ -1,25 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 320" width="100%" height="100%">
   <defs>
     <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#050508" />
-      <stop offset="50%" stop-color="#120c1f" />
-      <stop offset="100%" stop-color="#2a1138" />
+      <stop offset="0%" stop-color="#040407" />
+      <stop offset="60%" stop-color="#140b24" />
+      <stop offset="100%" stop-color="#2c113b" />
     </linearGradient>
 
     <linearGradient id="sunGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#ff758c" />
-      <stop offset="50%" stop-color="#ff7eb3" />
-      <stop offset="100%" stop-color="#fda085" />
+      <stop offset="60%" stop-color="#ff7eb3" />
+      <stop offset="100%" stop-color="#fbc2eb" />
     </linearGradient>
 
     <linearGradient id="neonRoad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#2a1138" />
+      <stop offset="0%" stop-color="#1f092b" />
       <stop offset="100%" stop-color="#06060c" />
     </linearGradient>
 
-    <linearGradient id="laserCyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f2fe" />
-      <stop offset="100%" stop-color="#4facfe" />
+    <linearGradient id="laserBeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#4facfe" stop-opacity="0.0" />
     </linearGradient>
 
     <filter id="neonGlow">
@@ -32,36 +32,38 @@
 
     <style>
       .font-arcade { font-family: 'Press Start 2P', 'Courier New', monospace; }
-      .font-mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+      .font-mono { font-family: 'JetBrains Mono', 'Fira Code', Menlo, monospace; }
       
-      @keyframes roadScroll {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(40px); }
-      }
-      @keyframes bikeBounce {
+      @keyframes bikeEngineThump {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-3px); }
+        50% { transform: translateY(-3.5px); }
       }
-      @keyframes obstacleMove {
-        0% { transform: translateX(500px) scale(0.6); opacity: 0; }
+      @keyframes obsLeftAnim {
+        0% { transform: translate(0, 0) scale(0.2); opacity: 0; }
         20% { opacity: 1; }
-        100% { transform: translateX(-500px) scale(1.1); opacity: 0; }
+        80% { opacity: 1; }
+        100% { transform: translate(-320px, 95px) scale(1.3); opacity: 0; }
+      }
+      @keyframes obsRightAnim {
+        0% { transform: translate(0, 0) scale(0.2); opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translate(280px, 95px) scale(1.3); opacity: 0; }
       }
       @keyframes blinkText {
         0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
+        50% { opacity: 0.15; }
       }
-      @keyframes sunRays {
-        0%, 100% { opacity: 0.8; }
-        50% { opacity: 0.5; }
+      @keyframes sunPulse {
+        0%, 100% { transform: scale(1); opacity: 0.95; }
+        50% { transform: scale(0.98); opacity: 0.8; }
       }
 
-      .road-lines { animation: roadScroll 0.4s linear infinite; }
-      .bike { animation: bikeBounce 0.25s ease-in-out infinite; }
-      .obstacle-1 { animation: obstacleMove 3.2s linear infinite; }
-      .obstacle-2 { animation: obstacleMove 3.2s linear infinite 1.6s; }
-      .blink { animation: blinkText 0.9s steps(1) infinite; }
-      .sun { animation: sunRays 4s ease-in-out infinite; }
+      .bike-engine { animation: bikeEngineThump 0.22s ease-in-out infinite; }
+      .obs-left { animation: obsLeftAnim 2.8s linear infinite; }
+      .obs-right { animation: obsRightAnim 2.8s linear infinite 1.4s; }
+      .blink-slow { animation: blinkText 1s ease-in-out infinite; }
+      .pulsing-sun { transform-origin: 460px 105px; animation: sunPulse 4s ease-in-out infinite; }
     </style>
   </defs>
 
@@ -69,118 +71,127 @@
   <rect x="2" y="2" width="916" height="316" rx="14" fill="#030306" stroke="#222533" stroke-width="2" />
 
   <!-- Retro Cyberpunk Horizon Sky -->
-  <rect x="10" y="10" width="900" height="170" fill="url(#skyGrad)" rx="8" />
+  <rect x="10" y="10" width="900" height="165" fill="url(#skyGrad)" rx="8" />
 
-  <!-- Retro Synthwave Sun -->
-  <g transform="translate(460, 110)" class="sun">
-    <circle cx="0" cy="0" r="54" fill="url(#sunGrad)" filter="url(#neonGlow)" />
+  <!-- Retro Synthwave Sun (Centered behind vanishing point) -->
+  <g class="pulsing-sun">
+    <circle cx="460" cy="105" r="56" fill="url(#sunGrad)" filter="url(#neonGlow)" />
     <!-- Horizontal scan cuts in sun -->
-    <rect x="-56" y="2" width="112" height="4" fill="#120c1f" />
-    <rect x="-56" y="14" width="112" height="6" fill="#120c1f" />
-    <rect x="-56" y="28" width="112" height="8" fill="#120c1f" />
-    <rect x="-56" y="42" width="112" height="12" fill="#120c1f" />
+    <rect x="400" y="106" width="120" height="4" fill="#140b24" />
+    <rect x="400" y="118" width="120" height="6" fill="#140b24" />
+    <rect x="400" y="132" width="120" height="8" fill="#140b24" />
+    <rect x="400" y="146" width="120" height="12" fill="#140b24" />
   </g>
 
-  <!-- Distant Wireframe Mountains -->
-  <polygon points="10,180 120,130 240,180 340,140 460,180 580,135 680,180 820,125 910,180" fill="none" stroke="#ff758c" stroke-width="1.2" opacity="0.4" />
+  <!-- Distant Neon Wireframe Mountains -->
+  <polygon points="10,175 140,115 260,175 360,130 460,175 560,125 660,175 800,110 910,175" fill="none" stroke="#ff758c" stroke-width="1.2" opacity="0.4" />
 
-  <!-- Retro Grid Highway (Perspective Ground) -->
-  <g transform="translate(10, 180)">
-    <rect x="0" y="0" width="900" height="130" fill="url(#neonRoad)" />
+  <!-- Retro Grid Highway Ground -->
+  <g transform="translate(10, 175)">
+    <rect x="0" y="0" width="900" height="135" fill="url(#neonRoad)" />
 
-    <!-- Perspective Grid Lines -->
-    <line x1="450" y1="0" x2="0" y2="130" stroke="#00f2fe" stroke-width="1.5" opacity="0.6" />
-    <line x1="450" y1="0" x2="160" y2="130" stroke="#00f2fe" stroke-width="1.2" opacity="0.5" />
-    <line x1="450" y1="0" x2="320" y2="130" stroke="#00f2fe" stroke-width="1" opacity="0.4" />
-    <line x1="450" y1="0" x2="450" y2="130" stroke="#ff007f" stroke-width="2" opacity="0.8" />
-    <line x1="450" y1="0" x2="580" y2="130" stroke="#00f2fe" stroke-width="1" opacity="0.4" />
-    <line x1="450" y1="0" x2="740" y2="130" stroke="#00f2fe" stroke-width="1.2" opacity="0.5" />
-    <line x1="450" y1="0" x2="900" y2="130" stroke="#00f2fe" stroke-width="1.5" opacity="0.6" />
+    <!-- Road Boundary Rails -->
+    <line x1="450" y1="0" x2="20" y2="135" stroke="#ff007f" stroke-width="2.5" opacity="0.8" />
+    <line x1="450" y1="0" x2="880" y2="135" stroke="#ff007f" stroke-width="2.5" opacity="0.8" />
+
+    <!-- Perspective Lane Lines -->
+    <line x1="450" y1="0" x2="160" y2="135" stroke="#00f2fe" stroke-width="1.4" opacity="0.5" />
+    <line x1="450" y1="0" x2="310" y2="135" stroke="#00f2fe" stroke-width="1.2" opacity="0.4" />
+    <line x1="450" y1="0" x2="450" y2="135" stroke="#e5c07b" stroke-width="2" stroke-dasharray="14 10" opacity="0.9" />
+    <line x1="450" y1="0" x2="590" y2="135" stroke="#00f2fe" stroke-width="1.2" opacity="0.4" />
+    <line x1="450" y1="0" x2="740" y2="135" stroke="#00f2fe" stroke-width="1.4" opacity="0.5" />
 
     <!-- Animated Horizontal Crosslines -->
     <line x1="0" y1="20" x2="900" y2="20" stroke="#00f2fe" stroke-width="0.8" opacity="0.3" />
     <line x1="0" y1="45" x2="900" y2="45" stroke="#00f2fe" stroke-width="1" opacity="0.4" />
     <line x1="0" y1="75" x2="900" y2="75" stroke="#00f2fe" stroke-width="1.2" opacity="0.6" />
-    <line x1="0" y1="110" x2="900" y2="110" stroke="#00f2fe" stroke-width="1.6" opacity="0.8" />
+    <line x1="0" y1="115" x2="900" y2="115" stroke="#00f2fe" stroke-width="1.6" opacity="0.8" />
   </g>
 
-  <!-- Obstacle 1: 74% ATTENDANCE (Incoming Bug) -->
-  <g class="obstacle-1" transform="translate(450, 220)">
-    <rect x="-80" y="-14" width="160" height="28" rx="6" fill="#1b0a14" stroke="#ff007f" stroke-width="1.5" filter="url(#neonGlow)" />
-    <text x="0" y="5" text-anchor="middle" fill="#ff758c" font-size="11" class="font-mono" font-weight="700">⚠️ 74.9% ATTENDANCE</text>
+  <!-- Obstacle 1: 74% ATTENDANCE (Coming down the left lane) -->
+  <g transform="translate(450, 180)">
+    <g class="obs-left">
+      <rect x="-70" y="-14" width="140" height="28" rx="6" fill="#1b0a14" stroke="#ff007f" stroke-width="2" filter="url(#neonGlow)" />
+      <text x="0" y="5" text-anchor="middle" fill="#ff758c" font-size="11" class="font-mono" font-weight="700">⚠️ 74.9% ATTENDANCE</text>
+    </g>
   </g>
 
-  <!-- Obstacle 2: SEGFAULT (Incoming Bug) -->
-  <g class="obstacle-2" transform="translate(450, 220)">
-    <rect x="-70" y="-14" width="140" height="28" rx="6" fill="#081726" stroke="#00f2fe" stroke-width="1.5" filter="url(#neonGlow)" />
-    <text x="0" y="5" text-anchor="middle" fill="#00f2fe" font-size="11" class="font-mono" font-weight="700">👾 SEGFAULT_404</text>
+  <!-- Obstacle 2: SEGFAULT_404 (Coming down the right lane) -->
+  <g transform="translate(450, 180)">
+    <g class="obs-right">
+      <rect x="-65" y="-14" width="130" height="28" rx="6" fill="#081726" stroke="#00f2fe" stroke-width="2" filter="url(#neonGlow)" />
+      <text x="0" y="5" text-anchor="middle" fill="#00f2fe" font-size="11" class="font-mono" font-weight="700">👾 SEGFAULT_404</text>
+    </g>
   </g>
 
-  <!-- PLAYER VEHICLE: ROYAL ENFIELD SCRAM 440 (FORCE GREY) -->
-  <g transform="translate(260, 245)" class="bike">
-    <!-- Wheels -->
-    <circle cx="20" cy="25" r="16" fill="#08080c" stroke="#575b63" stroke-width="4" />
-    <circle cx="20" cy="25" r="8" fill="#181b22" stroke="#e5c07b" stroke-width="1.5" />
+  <!-- ============================================================ -->
+  <!-- PLAYER VEHICLE: ROYAL ENFIELD SCRAM 440 (FORCE GREY)        -->
+  <!-- Centered on road at x=390, y=200                             -->
+  <!-- ============================================================ -->
+  <g transform="translate(390, 200)">
+    <g class="bike-engine">
+      <!-- Wheels -->
+      <circle cx="22" cy="30" r="18" fill="#08080c" stroke="#575b63" stroke-width="4.5" />
+      <circle cx="22" cy="30" r="9" fill="#181b22" stroke="#e5c07b" stroke-width="1.5" />
 
-    <circle cx="85" cy="25" r="16" fill="#08080c" stroke="#575b63" stroke-width="4" />
-    <circle cx="85" cy="25" r="8" fill="#181b22" stroke="#e5c07b" stroke-width="1.5" />
+      <circle cx="98" cy="30" r="18" fill="#08080c" stroke="#575b63" stroke-width="4.5" />
+      <circle cx="98" cy="30" r="9" fill="#181b22" stroke="#e5c07b" stroke-width="1.5" />
 
-    <!-- Exhaust Pipe with Heat Glow -->
-    <path d="M 40 22 L 72 26 L 98 22" fill="none" stroke="#8e929f" stroke-width="3.5" stroke-linecap="round" />
-    <circle cx="102" cy="22" r="3" fill="#ff758c" filter="url(#neonGlow)" />
+      <!-- Exhaust Pipe (Chrome + Heat Glow) -->
+      <path d="M 44 26 L 82 30 L 112 26" fill="none" stroke="#8e929f" stroke-width="4" stroke-linecap="round" />
+      <circle cx="116" cy="26" r="3.5" fill="#ff758c" filter="url(#neonGlow)" />
 
-    <!-- Engine: 440cc TorqX Thumper -->
-    <rect x="36" y="8" width="26" height="20" rx="3" fill="#1f232d" stroke="#575b63" stroke-width="1.5" />
-    <!-- Cooling Fins -->
-    <line x1="38" y1="12" x2="60" y2="12" stroke="#8e929f" stroke-width="1" />
-    <line x1="38" y1="16" x2="60" y2="16" stroke="#8e929f" stroke-width="1" />
-    <line x1="38" y1="20" x2="60" y2="20" stroke="#8e929f" stroke-width="1" />
+      <!-- Engine Block: 440cc Single-Cylinder Thumper -->
+      <rect x="40" y="10" width="30" height="24" rx="4" fill="#1b1e28" stroke="#575b63" stroke-width="1.8" />
+      <line x1="42" y1="15" x2="68" y2="15" stroke="#8e929f" stroke-width="1.2" />
+      <line x1="42" y1="20" x2="68" y2="20" stroke="#8e929f" stroke-width="1.2" />
+      <line x1="42" y1="25" x2="68" y2="25" stroke="#8e929f" stroke-width="1.2" />
 
-    <!-- Scram 440 Fuel Tank (FORCE GREY) -->
-    <path d="M 32 6 Q 48 -6 68 4 L 56 12 L 32 10 Z" fill="#575b63" stroke="#8e929f" stroke-width="1.2" />
-    <!-- Gold / Yellow Scram Decal Stripe -->
-    <path d="M 42 3 Q 54 -1 64 6" fill="none" stroke="#e5c07b" stroke-width="1.5" />
+      <!-- Scram 440 Fuel Tank (MATTE FORCE GREY) -->
+      <path d="M 34 8 Q 54 -6 78 5 L 66 15 L 34 13 Z" fill="#575b63" stroke="#8e929f" stroke-width="1.5" />
+      <!-- Champagne Yellow Scram 440 Stripe -->
+      <path d="M 46 4 Q 60 -1 72 7" fill="none" stroke="#e5c07b" stroke-width="2" />
 
-    <!-- Seat & Tail -->
-    <path d="M 20 8 Q 28 6 36 8 L 34 12 L 20 12 Z" fill="#121318" />
+      <!-- Single Seat -->
+      <path d="M 20 10 Q 30 8 40 10 L 38 15 L 20 15 Z" fill="#121318" />
 
-    <!-- Handlebars & Headlamp -->
-    <line x1="64" y1="4" x2="72" y2="-6" stroke="#8e929f" stroke-width="2" />
-    <circle cx="82" cy="-2" r="5" fill="#f8fafc" filter="url(#neonGlow)" />
+      <!-- Handlebars & Round Headlamp -->
+      <line x1="72" y1="6" x2="82" y2="-6" stroke="#8e929f" stroke-width="2.5" />
+      <circle cx="94" cy="-2" r="6" fill="#f8fafc" filter="url(#neonGlow)" />
 
-    <!-- Headlight Beam onto Road -->
-    <polygon points="87,-2 280,-20 280,30" fill="url(#laserCyan)" opacity="0.2" />
+      <!-- Headlight Beam onto Road -->
+      <polygon points="98,-2 320,-25 320,35" fill="url(#laserBeam)" opacity="0.35" />
 
-    <!-- Rider: Prajwal (Minimalist Silhouette) -->
-    <!-- Helmet -->
-    <circle cx="48" cy="-14" r="9" fill="#181b22" stroke="#ff758c" stroke-width="1" />
-    <!-- Visor -->
-    <path d="M 52 -16 Q 57 -14 55 -10" stroke="#00f2fe" stroke-width="2" fill="none" />
-    <!-- Jacket / Lean -->
-    <path d="M 44 -5 L 36 8 L 52 8 L 60 -2 Z" fill="#242838" />
-    <!-- Arms reaching handlebar -->
-    <line x1="48" y1="-2" x2="70" y2="-5" stroke="#242838" stroke-width="3" stroke-linecap="round" />
+      <!-- Rider: Prajwal Silhouette -->
+      <circle cx="54" cy="-16" r="10" fill="#181b22" stroke="#ff758c" stroke-width="1.5" />
+      <path d="M 58 -18 Q 64 -16 62 -12" stroke="#00f2fe" stroke-width="2" fill="none" />
+      <!-- Torso -->
+      <path d="M 50 -6 L 40 10 L 60 10 L 68 -2 Z" fill="#242838" />
+      <!-- Arms to handlebar -->
+      <line x1="56" y1="-2" x2="82" y2="-5" stroke="#242838" stroke-width="3.5" stroke-linecap="round" />
 
-    <!-- Flute Case strapped to back -->
-    <line x1="34" y1="12" x2="60" y2="-18" stroke="#e5c07b" stroke-width="2.5" stroke-linecap="round" />
+      <!-- Flute Case Strapped to Rider's Back -->
+      <line x1="38" y1="16" x2="68" y2="-22" stroke="#e5c07b" stroke-width="3" stroke-linecap="round" />
 
-    <!-- Vehicle Tag -->
-    <text x="52" y="50" text-anchor="middle" fill="#e5c07b" font-size="9" class="font-mono" font-weight="700">RE SCRAM 440 // FORCE GREY</text>
+      <!-- Label under bike -->
+      <rect x="0" y="52" width="124" height="18" rx="4" fill="#090a10" stroke="#575b63" stroke-width="0.8" />
+      <text x="62" y="64" text-anchor="middle" fill="#e5c07b" font-size="8.5" class="font-mono" font-weight="700">SCRAM 440 • FORCE GREY</text>
+    </g>
   </g>
 
   <!-- TOP ARCADE HUD BAR -->
-  <g transform="translate(24, 30)">
-    <rect x="0" y="0" width="872" height="32" rx="6" fill="#08090f" stroke="#1f2334" stroke-width="1" />
-    <text x="16" y="20" fill="#00f2fe" font-size="11" class="font-mono" font-weight="700">1P: PRAJWAL</text>
-    <text x="140" y="20" fill="#ff758c" font-size="11" class="font-mono" font-weight="700">SCORE: 044000</text>
-    <text x="310" y="20" fill="#e5c07b" font-size="11" class="font-mono" font-weight="700">GEAR: 5 [80 KM/H]</text>
-    <text x="500" y="20" fill="#cbd5e1" font-size="11" class="font-mono">MAP: MYSURU ➔ WESTERN GHATS</text>
-    <text x="760" y="20" fill="#9ece6a" font-size="11" class="font-mono" font-weight="700">LIVES: ♥ ♥ ♥</text>
+  <g transform="translate(24, 26)">
+    <rect x="0" y="0" width="872" height="34" rx="6" fill="#08090f" stroke="#1f2334" stroke-width="1.2" />
+    <text x="20" y="22" fill="#00f2fe" font-size="11.5" class="font-mono" font-weight="700">1P: PRAJWAL</text>
+    <text x="150" y="22" fill="#ff758c" font-size="11.5" class="font-mono" font-weight="700">SCORE: 044000</text>
+    <text x="320" y="22" fill="#e5c07b" font-size="11.5" class="font-mono" font-weight="700">GEAR: 5 [80 KM/H]</text>
+    <text x="510" y="22" fill="#cbd5e1" font-size="11.5" class="font-mono">MAP: VVCE ➔ WESTERN GHATS</text>
+    <text x="765" y="22" fill="#9ece6a" font-size="11.5" class="font-mono" font-weight="700">LIVES: ♥ ♥ ♥</text>
   </g>
 
   <!-- BOTTOM ARCADE TICKER -->
-  <g transform="translate(460, 298)">
-    <text x="0" y="0" text-anchor="middle" fill="#00f2fe" font-size="11" class="font-mono blink" font-weight="700" letter-spacing="2">
+  <g transform="translate(460, 302)">
+    <text x="0" y="0" text-anchor="middle" fill="#00f2fe" font-size="11.5" class="font-mono blink-slow" font-weight="700" letter-spacing="2">
       ▼ SCROLL DOWN TO PLAY: "THE 74.9% ATTENDANCE HEIST" ▼
     </text>
   </g>
