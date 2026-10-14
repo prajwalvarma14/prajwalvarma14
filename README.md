@@ -1,5 +1,10 @@
 <div align="center">
 
+<!-- ANIMATED HERO BANNER: HIGHWAY G-FORCE HUD -->
+<img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/animated_cyber_v12_valkyrie_hypercar_highway_g_force_hud_banner.svg" width="100%" alt="Cyber Highway G-Force Banner" />
+
+<br/><br/>
+
 # Prajwal Varma
 
 <p align="center">
@@ -8,6 +13,7 @@
   <b>Classical Bansuri (432 Hz)</b>
 </p>
 
+<!-- SOCIAL CONNECTORS -->
 <p align="center">
   <a href="https://www.linkedin.com/in/prajwalvarma14/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   &nbsp;
@@ -28,6 +34,15 @@
 - 🏍️ **The Ride:** Outrunning bugs on a **Royal Enfield Scram 440 in Force Grey**.
 - 🪈 **Acoustic Focus:** Practicing the **Classical Indian Bamboo Flute (Bansuri)** in 432 Hz acoustic tuning.
 - 🎬 **Offline & Community:** Making and watching films, volunteering with **U&I**, and playing cricket.
+
+<br/>
+
+<!-- SECOND ANIMATED SVG: NEURAL CORE & 432HZ OSCILLOSCOPE -->
+<div align="center">
+  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/v12_neural_cockpit.svg" width="100%" alt="Neural Core & 432Hz Oscilloscope" />
+</div>
+
+<br/>
 
 ---
 
