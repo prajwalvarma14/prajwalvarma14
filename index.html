@@ -3,382 +3,1469 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Subway Scram 440 // Prajwal Varma Edition</title>
+  <title>Prajwal Varma // Interactive Arcade Station</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #05060b;
+      --card-bg: #0c0e18;
+      --border: #1e2438;
+      --cyan: #00f2fe;
+      --pink: #ff007f;
+      --gold: #ffe259;
+      --green: #4ade80;
+      --text: #f1f5f9;
+      --muted: #8492a6;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #05060b;
-      color: #fff;
-      font-family: 'Courier New', Courier, monospace;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      overflow: hidden;
+      justify-content: flex-start;
+      overflow-x: hidden;
+      touch-action: manipulation;
     }
-    #game-container {
-      position: relative;
+
+    /* TOP MASTER HEADER */
+    header {
       width: 100%;
-      max-width: 900px;
-      height: 520px;
-      border: 3px solid #1f2334;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 40px rgba(0, 242, 254, 0.2);
-      background: #000;
-    }
-    canvas {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-    .hud {
-      position: absolute;
-      top: 15px;
-      left: 20px;
-      right: 20px;
+      max-width: 960px;
+      padding: 18px 20px;
       display: flex;
       justify-content: space-between;
-      font-size: 14px;
-      font-weight: bold;
-      color: #00f2fe;
-      text-shadow: 0 0 10px #00f2fe;
-      pointer-events: none;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
     }
-    .hud span { color: #ffe259; }
-    #game-over {
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #fff, var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge-pilot {
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      margin-left: 16px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+
+    /* ARCADE TABS SELECTOR */
+    .arcade-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      width: 100%;
+      max-width: 960px;
+      padding: 14px 20px;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .tab-btn:hover {
+      border-color: var(--cyan);
+      color: #fff;
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(255, 0, 127, 0.15));
+      border-color: var(--cyan);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.25);
+    }
+
+    /* SCREEN CONTAINER */
+    .arcade-stage {
+      width: 100%;
+      max-width: 960px;
+      padding: 0 16px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .game-cabinet {
+      width: 100%;
+      height: 580px;
+      background: #000;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 242, 254, 0.15);
+    }
+    .game-panel {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+    }
+    .game-panel.active { display: flex; flex-direction: column; }
+
+    /* OVERLAYS & HUD */
+    .hud {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .hud-badge {
+      background: rgba(10, 14, 24, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(4, 5, 10, 0.9);
-      display: none;
+      background: rgba(4, 5, 12, 0.94);
+      backdrop-filter: blur(8px);
+      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      z-index: 10;
+      z-index: 20;
+      padding: 24px;
+      text-align: center;
     }
-    #game-over h1 { color: #ff007f; font-size: 32px; margin-bottom: 10px; text-shadow: 0 0 20px #ff007f; }
-    #game-over p { color: #cbd5e1; font-size: 16px; margin-bottom: 20px; }
-    .btn {
-      background: #00f2fe;
+    .overlay h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 34px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, var(--cyan), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .overlay p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 500px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .btn-action {
+      background: linear-gradient(135deg, var(--cyan), #4facfe);
       color: #000;
       border: none;
-      padding: 12px 28px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 6px;
+      padding: 14px 34px;
+      font-size: 14px;
+      font-weight: 900;
+      border-radius: 30px;
       cursor: pointer;
-      box-shadow: 0 0 20px #00f2fe;
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
       transition: all 0.2s;
+      font-family: 'JetBrains Mono', monospace;
     }
-    .btn:hover { transform: scale(1.05); background: #fff; }
-    .controls-bar {
-      margin-top: 15px;
+    .btn-action:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(0, 242, 254, 0.7);
+    }
+    .keys-hint {
+      margin-top: 18px;
+      font-size: 11px;
+      color: #64748b;
+      letter-spacing: 0.5px;
+    }
+
+    /* MOBILE CONTROLS */
+    .mobile-controls {
+      display: none;
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      justify-content: space-between;
+      z-index: 15;
+    }
+    .m-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      font-size: 18px;
       display: flex;
-      gap: 15px;
       align-items: center;
-      font-size: 13px;
-      color: #8e929f;
+      justify-content: center;
+      backdrop-filter: blur(6px);
+      user-select: none;
     }
-    .key-badge {
-      background: #1a1e2d;
-      border: 1px solid #00f2fe;
-      color: #00f2fe;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-weight: bold;
+    .m-btn:active { background: rgba(0, 242, 254, 0.35); }
+
+    /* FOOTER TELEMETRY */
+    .arcade-footer {
+      width: 100%;
+      max-width: 960px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      color: var(--muted);
+      font-size: 11px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .mobile-controls { display: flex; }
+      .game-cabinet { height: 480px; }
+      header { flex-direction: column; gap: 10px; }
     }
   </style>
 </head>
 <body>
 
-  <div id="game-container">
-    <div class="hud">
-      <div>SCORE: <span id="score-val">0</span> | COINS: <span id="coins-val">0</span></div>
-      <div>BIKE: <span>SCRAM 440 (FORCE GREY)</span></div>
-      <div>ATTENDANCE: <span id="att-val">86.4%</span></div>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <span>PRAJWAL VARMA</span>
+      <span class="badge-pilot">ARCADE SYSTEM // v4.4</span>
     </div>
+    <div class="nav-links">
+      <a href="https://github.com/prajwalvarma14" target="_blank">GITHUB PROFILE ↗</a>
+      <a href="https://www.linkedin.com/in/prajwalvarma14/" target="_blank">LINKEDIN ↗</a>
+      <a href="https://github.com/prajwalvarma14/prajwalvarma14" target="_blank">SOURCE CODE ↗</a>
+    </div>
+  </header>
 
-    <canvas id="gameCanvas" width="900" height="520"></canvas>
+  <!-- ARCADE TABS SELECTOR -->
+  <div class="arcade-tabs">
+    <button class="tab-btn active" onclick="switchGame('subway')">
+      <span>🏄</span> SUBWAY SCRAM 440 (WASD)
+    </button>
+    <button class="tab-btn" onclick="switchGame('racer')">
+      <span>🏍️</span> HIGHWAY OUTRUN
+    </button>
+    <button class="tab-btn" onclick="switchGame('boss')">
+      <span>⚔️</span> COMPILER BOSS RPG
+    </button>
+    <button class="tab-btn" onclick="switchGame('hack')">
+      <span>💻</span> DADDYION TERMINAL
+    </button>
+    <button class="tab-btn" onclick="switchGame('rhythm')">
+      <span>🎵</span> BANSURI 432Hz HERO
+    </button>
+  </div>
 
-    <div id="game-over">
-      <h1>⚠️ CAUGHT BY 74.9% ATTENDANCE TRAIN!</h1>
-      <p id="final-stats">Your Score: 0 • Coins: 0</p>
-      <button class="btn" onclick="resetGame()">PLAY AGAIN (PRESS SPACE / CLICK)</button>
+  <!-- ARCADE STAGE CABINET -->
+  <div class="arcade-stage">
+    <div class="game-cabinet">
+
+      <!-- ==================================================== -->
+      <!-- GAME 1: PROPER SUBWAY SURFERS 3-LANE RUNNER (WASD)   -->
+      <!-- ==================================================== -->
+      <div id="game-subway" class="game-panel active">
+        <div class="hud">
+          <div class="hud-badge">
+            <span style="color:var(--gold)">★ COINS: <b id="subway-coins">0</b></span>
+            <span style="color:#444">|</span>
+            <span style="color:var(--cyan)">SCORE: <b id="subway-score">0</b></span>
+          </div>
+          <div class="hud-badge">
+            <span style="color:#ff758c">BIKE: RE SCRAM 440 (FORCE GREY)</span>
+          </div>
+          <div class="hud-badge">
+            <span style="color:var(--green)">MULT: <b id="subway-mult">44X</b></span>
+          </div>
+        </div>
+
+        <canvas id="subwayCanvas" width="960" height="580"></canvas>
+
+        <div id="subway-start" class="overlay">
+          <h1>SUBWAY SCRAM 440</h1>
+          <p>Ride the Royal Enfield Scram 440 Force Grey down 3 subway tracks. Dodge oncoming trains, slide under overhead laser scanners, and jump over track blockades!</p>
+          <button class="btn-action" onclick="startSubway()">START RUN (W / SPACE / TAP)</button>
+          <div class="keys-hint">CONTROLS: [W] JUMP • [S] SLIDE • [A/D] SWITCH LANES • [SPACE] HOVERBOARD</div>
+        </div>
+
+        <div id="subway-gameover" class="overlay" style="display:none;">
+          <h1 style="background:linear-gradient(135deg, #ff0055, #ff758c); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">CAUGHT BY ATTENDANCE TRAIN!</h1>
+          <p id="subway-summary">Score: 0 • Coins: 0</p>
+          <button class="btn-action" onclick="startSubway()">RESTART RUN (W / SPACE)</button>
+        </div>
+
+        <div class="mobile-controls">
+          <div style="display:flex; gap:10px;">
+            <div class="m-btn" onclick="subwayMoveLeft()">◀</div>
+            <div class="m-btn" onclick="subwayMoveRight()">▶</div>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <div class="m-btn" onclick="subwayJump()">▲</div>
+            <div class="m-btn" onclick="subwaySlide()">▼</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================== -->
+      <!-- GAME 2: HIGHWAY OUTRUN (RETRO 3D TRAFFIC RACER)      -->
+      <!-- ==================================================== -->
+      <div id="game-racer" class="game-panel">
+        <div class="hud">
+          <div class="hud-badge">
+            <span style="color:var(--cyan)">SPEED: <b id="racer-speed">0</b> KM/H</span>
+            <span style="color:#444">|</span>
+            <span style="color:var(--gold)">DISTANCE: <b id="racer-dist">0</b> M</span>
+          </div>
+          <div class="hud-badge">
+            <span style="color:var(--pink)">TURBO: <b id="racer-nitro">READY</b></span>
+          </div>
+        </div>
+
+        <canvas id="racerCanvas" width="960" height="580"></canvas>
+
+        <div id="racer-start" class="overlay">
+          <h1>HIGHWAY OUTRUN 440</h1>
+          <p>Blast the Scram 440 across the cyberpunk coastal highway. Overtake autonomous traffic pods, hit neon nitro boost strips, and avoid collisions!</p>
+          <button class="btn-action" onclick="startRacer()">ACCELERATE (W / ENTER)</button>
+          <div class="keys-hint">CONTROLS: [W] ACCEL • [S] BRAKE • [A/D] STEER • [SPACE] NITRO BOOST</div>
+        </div>
+
+        <div id="racer-gameover" class="overlay" style="display:none;">
+          <h1 style="color:#ff0055">WRECKED ON HIGHWAY!</h1>
+          <p id="racer-summary">Distance: 0m • Top Speed: 0 km/h</p>
+          <button class="btn-action" onclick="startRacer()">RIDE AGAIN</button>
+        </div>
+
+        <div class="mobile-controls">
+          <div style="display:flex; gap:10px;">
+            <div class="m-btn" onclick="racerSteer(-1)">◀</div>
+            <div class="m-btn" onclick="racerSteer(1)">▶</div>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <div class="m-btn" onclick="racerTriggerNitro()">⚡</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================== -->
+      <!-- GAME 3: COMPILER BOSS BATTLE (TURN-BASED RPG)        -->
+      <!-- ==================================================== -->
+      <div id="game-boss" class="game-panel" style="background:#090c16; padding:24px; justify-content:space-between;">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e2438; padding-bottom:12px;">
+          <div>
+            <h3 style="color:#ff007f; font-size:16px;">BOSS: SEGMENTATION FAULT TITAN</h3>
+            <div style="width:260px; height:12px; background:#1b0816; border:1px solid #ff007f; border-radius:6px; margin-top:4px; overflow:hidden;">
+              <div id="boss-hp-bar" style="width:100%; height:100%; background:linear-gradient(90deg, #ff007f, #ff758c); transition:width 0.3s;"></div>
+            </div>
+            <span id="boss-hp-text" style="font-size:11px; color:#ff758c;">HP: 1000 / 1000</span>
+          </div>
+
+          <div style="text-align:right;">
+            <h3 style="color:#00f2fe; font-size:16px;">HERO: PRAJWAL VARMA (AIML)</h3>
+            <div style="width:260px; height:12px; background:#081822; border:1px solid #00f2fe; border-radius:6px; margin-top:4px; overflow:hidden;">
+              <div id="player-hp-bar" style="width:100%; height:100%; background:linear-gradient(90deg, #00f2fe, #4facfe); transition:width 0.3s;"></div>
+            </div>
+            <span id="player-hp-text" style="font-size:11px; color:#00f2fe;">HP: 600 / 600</span>
+          </div>
+        </div>
+
+        <!-- BATTLE VISUAL ARENA -->
+        <div style="flex:1; display:flex; align-items:center; justify-content:space-around; padding:20px 0;">
+          <div id="boss-sprite" style="font-size:68px; filter:drop-shadow(0 0 25px #ff007f); transition:all 0.2s;">👾</div>
+          <div style="font-size:24px; color:#445;">VS</div>
+          <div id="player-sprite" style="font-size:68px; filter:drop-shadow(0 0 25px #00f2fe); transition:all 0.2s;">🏍️</div>
+        </div>
+
+        <!-- BATTLE COMBAT LOG -->
+        <div id="boss-log" style="height:90px; background:#04050a; border:1px solid #1a1e30; border-radius:8px; padding:10px 14px; font-size:12px; color:#94a3b8; overflow-y:auto; line-height:1.5;">
+          [BATTLE INITIALIZED]: Segmentation Fault Titan blocks your graduation path! Select your battle command...
+        </div>
+
+        <!-- ACTION COMMAND BUTTONS -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px;">
+          <button class="btn-action" style="padding:10px;" onclick="bossAction('overclock')">⚡ 1. OVERCLOCK CPU (-140 DMG)</button>
+          <button class="btn-action" style="padding:10px; background:linear-gradient(135deg, #e5c07b, #ffa751);" onclick="bossAction('flute')">🎵 2. 432Hz BANSURI STUN</button>
+          <button class="btn-action" style="padding:10px; background:linear-gradient(135deg, #ff007f, #ff758c); color:#fff;" onclick="bossAction('daddyion')">🔓 3. DADDYION ZERO-DAY (-220 DMG)</button>
+          <button class="btn-action" style="padding:10px; background:linear-gradient(135deg, #4ade80, #22c55e);" onclick="bossAction('heal')">💊 4. MEMORY REFACTOR (+180 HP)</button>
+        </div>
+      </div>
+
+      <!-- ==================================================== -->
+      <!-- GAME 4: DADDYION SECURITY TERMINAL (HACK MINI-GAME) -->
+      <!-- ==================================================== -->
+      <div id="game-hack" class="game-panel" style="background:#020306; padding:20px; font-family:'JetBrains Mono', monospace;">
+        <div style="display:flex; justify-content:space-between; border-bottom:1px solid #00f2fe33; padding-bottom:8px; margin-bottom:12px;">
+          <span style="color:#00f2fe; font-size:12px; font-weight:800;">ROOT@DADDYION-PROXY:~# ACADEMIC INFILTRATION</span>
+          <span style="color:#ffe259; font-size:12px;">FIREWALL: BYPASSED [84%]</span>
+        </div>
+        <div id="term-screen" style="flex:1; background:#000; border:1px solid #1f2334; border-radius:6px; padding:12px; color:#4ade80; font-size:13px; line-height:1.6; overflow-y:auto; font-family:'Courier New', monospace;">
+          <div>[SYSTEM]: Initializing IonCUDOS Automated Scraping Matrix...</div>
+          <div>[TARGET]: https://vvce.ioncudos.com/student/attendance</div>
+          <div>[STATUS]: Token decrypted. Available commands: <b style="color:#fff;">help, scan, exploit, scrap, attendance, clear</b></div>
+        </div>
+        <div style="display:flex; gap:10px; margin-top:12px;">
+          <span style="color:#00f2fe; font-size:14px; line-height:36px;">&gt;</span>
+          <input id="term-input" type="text" placeholder="Type command here (e.g. 'exploit' or 'attendance')..." style="flex:1; background:#090d16; border:1px solid #1f2334; color:#fff; padding:8px 14px; border-radius:6px; font-family:'JetBrains Mono', monospace; font-size:13px; outline:none;" onkeydown="handleTerm(event)" />
+          <button class="btn-action" style="padding:8px 20px; font-size:12px;" onclick="runTermBtn()">EXECUTE</button>
+        </div>
+      </div>
+
+      <!-- ==================================================== -->
+      <!-- GAME 5: BANSURI 432 Hz ACOUSTIC RHYTHM HERO          -->
+      <!-- ==================================================== -->
+      <div id="game-rhythm" class="game-panel">
+        <div class="hud">
+          <div class="hud-badge">
+            <span style="color:var(--gold)">HARMONIC ACCURACY: <b id="rhythm-score">0</b>%</span>
+            <span style="color:#444">|</span>
+            <span style="color:var(--cyan)">PITCH: <b>432.0 Hz</b></span>
+          </div>
+          <div class="hud-badge">
+            <span style="color:var(--green)">RAGA: MOHANAM / PENTATONIC</span>
+          </div>
+        </div>
+
+        <canvas id="rhythmCanvas" width="960" height="580"></canvas>
+
+        <div id="rhythm-start" class="overlay">
+          <h1>432 Hz BANSURI HERO</h1>
+          <p>Tune into classical acoustics. Hit the musical notes (Sa, Re, Ga, Pa, Dha) as they cross the resonance boundary to produce pure 432 Hz meditative acoustic frequencies!</p>
+          <button class="btn-action" onclick="startRhythm()">START RECITAL</button>
+          <div class="keys-hint">KEYS: [D] Sa • [F] Re • [J] Ga • [K] Pa • TAP BUTTONS ON MOBILE</div>
+        </div>
+
+        <div class="mobile-controls" style="bottom:10px; justify-content:center; gap:14px;">
+          <div class="m-btn" style="border-radius:12px; width:70px; height:46px; font-size:14px; font-weight:800;" onclick="triggerNote(0)">Sa</div>
+          <div class="m-btn" style="border-radius:12px; width:70px; height:46px; font-size:14px; font-weight:800;" onclick="triggerNote(1)">Re</div>
+          <div class="m-btn" style="border-radius:12px; width:70px; height:46px; font-size:14px; font-weight:800;" onclick="triggerNote(2)">Ga</div>
+          <div class="m-btn" style="border-radius:12px; width:70px; height:46px; font-size:14px; font-weight:800;" onclick="triggerNote(3)">Pa</div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div class="controls-bar">
-    <span>CONTROLS:</span>
-    <span class="key-badge">W</span> NITRO SPEED
-    <span class="key-badge">A</span> LANE 1 (LEFT)
-    <span class="key-badge">S</span> BRAKE / SLIDE
-    <span class="key-badge">D</span> LANE 3 (RIGHT)
-    <span class="key-badge">SPACE</span> JUMP
+  <!-- FOOTER TELEMETRY -->
+  <div class="arcade-footer">
+    <span>ENGINE: PURE HTML5 CANVAS + WEB AUDIO API SYNTHESIZER (ZERO FRAMEWORKS)</span>
+    <span>PILOT: PRAJWAL VARMA • AIML VVCE MYSURU • RE SCRAM 440 FORCE GREY</span>
   </div>
 
+  <!-- ARCADE CORE ENGINE SCRIPT -->
   <script>
-    const canvas = document.getElementById('gameCanvas');
-    const ctx = canvas.getContext('2d');
+    // --- SHARED AUDIO SYNTHESIZER ---
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+    function getAudio() {
+      if (!audioCtx) audioCtx = new AudioContextClass();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      return audioCtx;
+    }
 
-    const lanes = [220, 450, 680];
-    let currentLane = 1; // 0=Left, 1=Center, 2=Right
-    let targetX = lanes[1];
-    let playerX = lanes[1];
-    let playerY = 400;
-    let playerZ = 0; // jump height
-    let isJumping = false;
-    let jumpVelocity = 0;
-    let isSliding = false;
-    let speed = 7;
-    let score = 0;
-    let coins = 0;
-    let gameOver = false;
+    function synthSound(type) {
+      const ctx = getAudio();
+      if (!ctx) return;
+      try {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        const t = ctx.currentTime;
 
-    // Obstacles & Coins
-    let obstacles = [];
-    let coinPickups = [];
+        if (type === 'coin') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(987.77, t);
+          osc.frequency.exponentialRampToValueAtTime(1318.51, t + 0.12);
+          gain.gain.setValueAtTime(0.2, t);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.15);
+          osc.start(t);
+          osc.stop(t + 0.15);
+        } else if (type === 'jump') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(220, t);
+          osc.frequency.exponentialRampToValueAtTime(587.33, t + 0.2);
+          gain.gain.setValueAtTime(0.25, t);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+          osc.start(t);
+          osc.stop(t + 0.2);
+        } else if (type === 'slide') {
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(160, t);
+          osc.frequency.linearRampToValueAtTime(70, t + 0.25);
+          gain.gain.setValueAtTime(0.2, t);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.25);
+          osc.start(t);
+          osc.stop(t + 0.25);
+        } else if (type === 'crash') {
+          osc.type = 'square';
+          osc.frequency.setValueAtTime(140, t);
+          osc.frequency.exponentialRampToValueAtTime(25, t + 0.4);
+          gain.gain.setValueAtTime(0.4, t);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.4);
+          osc.start(t);
+          osc.stop(t + 0.4);
+        } else if (type === 'turbo') {
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(280, t);
+          osc.frequency.exponentialRampToValueAtTime(880, t + 0.5);
+          gain.gain.setValueAtTime(0.3, t);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.5);
+          osc.start(t);
+          osc.stop(t + 0.5);
+        } else if (type === 'flute_sa') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(432.0, t); // Pure 432 Hz Sa
+          gain.gain.setValueAtTime(0.3, t);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.4);
+          osc.start(t);
+          osc.stop(t + 0.4);
+        } else if (type === 'flute_re') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(486.0, t); // Re
+          gain.gain.setValueAtTime(0.3, t);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.4);
+          osc.start(t);
+          osc.stop(t + 0.4);
+        } else if (type === 'flute_ga') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(540.0, t); // Ga
+          gain.gain.setValueAtTime(0.3, t);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.4);
+          osc.start(t);
+          osc.stop(t + 0.4);
+        } else if (type === 'flute_pa') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(648.0, t); // Pa
+          gain.gain.setValueAtTime(0.3, t);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.4);
+          osc.start(t);
+          osc.stop(t + 0.4);
+        }
+      } catch (e) {}
+    }
 
-    function spawnEntity() {
-      if (gameOver) return;
-      const laneIndex = Math.floor(Math.random() * 3);
-      if (Math.random() > 0.4) {
-        obstacles.push({
-          lane: laneIndex,
-          y: 120,
-          scale: 0.15,
-          type: Math.random() > 0.5 ? 'train' : 'barrier',
-          text: Math.random() > 0.5 ? '74.9% ATTENDANCE' : 'SEGFAULT_404'
+    // --- GAME SWITCHING LOGIC ---
+    let currentGame = 'subway';
+    function switchGame(gameId) {
+      currentGame = gameId;
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.game-panel').forEach(p => p.classList.remove('active'));
+      
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.innerText.toLowerCase().includes(gameId));
+      if (targetBtn) targetBtn.classList.add('active');
+      const panel = document.getElementById(`game-${gameId}`);
+      if (panel) panel.classList.add('active');
+
+      if (gameId === 'subway') resizeSubway();
+      if (gameId === 'racer') resizeRacer();
+      if (gameId === 'rhythm') resizeRhythm();
+    }
+
+    // ============================================================
+    // GAME 1: SUBWAY SCRAM 440 (PROPER 3-LANE SUBWAY SURFERS)
+    // ============================================================
+    const subCanvas = document.getElementById('subwayCanvas');
+    const sCtx = subCanvas.getContext('2d');
+    const sHorizonY = 160;
+    const sVanishX = 480;
+    const sLanes = [220, 480, 740];
+
+    let sLane = 1;
+    let sPlayerX = sLanes[1];
+    let sTargetX = sLanes[1];
+    let sPlayerY = 460;
+    let sPlayerZ = 0;
+    let sJumpVel = 0;
+    let sIsJumping = false;
+    let sIsSliding = false;
+    let sSlideTimer = 0;
+    let sHasHoverboard = false;
+    let sHoverboardTimer = 0;
+
+    let sScore = 0;
+    let sCoins = 0;
+    let sSpeed = 7.5;
+    let sIsPlaying = false;
+    let sEntities = [];
+    let sParticles = [];
+    let sTieOffset = 0;
+
+    function resizeSubway() {
+      subCanvas.width = 960;
+      subCanvas.height = 580;
+    }
+    resizeSubway();
+
+    function subwayMoveLeft() {
+      if (!sIsPlaying) return;
+      if (sLane > 0) {
+        sLane--;
+        sTargetX = sLanes[sLane];
+        synthSound('slide');
+      }
+    }
+    function subwayMoveRight() {
+      if (!sIsPlaying) return;
+      if (sLane < 2) {
+        sLane++;
+        sTargetX = sLanes[sLane];
+        synthSound('slide');
+      }
+    }
+    function subwayJump() {
+      if (!sIsPlaying) return;
+      if (!sIsJumping) {
+        sIsJumping = true;
+        sJumpVel = 14.5;
+        synthSound('jump');
+      }
+    }
+    function subwaySlide() {
+      if (!sIsPlaying) return;
+      sIsSliding = true;
+      sSlideTimer = 32;
+      synthSound('slide');
+    }
+    function subwayActivateHoverboard() {
+      if (!sIsPlaying) return;
+      sHasHoverboard = true;
+      sHoverboardTimer = 300;
+      synthSound('turbo');
+    }
+
+    function spawnSubwayWave() {
+      if (!sIsPlaying) return;
+      const lane = Math.floor(Math.random() * 3);
+      const roll = Math.random();
+
+      if (roll < 0.42) {
+        // 3D Subway Train
+        sEntities.push({
+          type: 'train',
+          lane: lane,
+          dist: 0,
+          label: '74.9% ATTENDANCE'
+        });
+      } else if (roll < 0.68) {
+        // High barrier (slide under) or Low barrier (jump over)
+        sEntities.push({
+          type: Math.random() > 0.5 ? 'high_barrier' : 'low_barrier',
+          lane: lane,
+          dist: 0
         });
       } else {
-        coinPickups.push({
-          lane: laneIndex,
-          y: 120,
-          scale: 0.15
-        });
+        // Coin streak
+        for (let i = 0; i < 3; i++) {
+          sEntities.push({
+            type: 'coin',
+            lane: lane,
+            dist: -0.12 * i,
+            collected: false
+          });
+        }
       }
     }
 
-    setInterval(spawnEntity, 1200);
+    let subSpawnInterval = null;
+    function startSubway() {
+      getAudio();
+      sIsPlaying = true;
+      sScore = 0;
+      sCoins = 0;
+      sSpeed = 7.5;
+      sLane = 1;
+      sPlayerX = sLanes[1];
+      sTargetX = sLanes[1];
+      sPlayerZ = 0;
+      sJumpVel = 0;
+      sIsJumping = false;
+      sIsSliding = false;
+      sHasHoverboard = false;
+      sEntities = [];
+      sParticles = [];
 
-    // Keyboard Controller (W, A, S, D + Arrows + Space)
-    window.addEventListener('keydown', (e) => {
-      const key = e.key.toLowerCase();
-      if (gameOver && (key === ' ' || key === 'enter' || key === 'w')) {
-        resetGame();
+      document.getElementById('subway-start').style.display = 'none';
+      document.getElementById('subway-gameover').style.display = 'none';
+
+      if (subSpawnInterval) clearInterval(subSpawnInterval);
+      subSpawnInterval = setInterval(spawnSubwayWave, 1050);
+    }
+
+    function subGameOver() {
+      if (sHasHoverboard) {
+        // Hoverboard absorbs crash!
+        sHasHoverboard = false;
+        synthSound('turbo');
+        // Clear nearby trains
+        sEntities = sEntities.filter(e => e.dist < 0.7);
         return;
       }
-      if (key === 'a' || key === 'arrowleft') {
-        if (currentLane > 0) currentLane--;
-      } else if (key === 'd' || key === 'arrowright') {
-        if (currentLane < 2) currentLane++;
-      } else if ((key === 'w' || key === 'arrowup' || key === ' ') && !isJumping) {
-        isJumping = true;
-        jumpVelocity = 14;
-      } else if (key === 's' || key === 'arrowdown') {
-        isSliding = true;
-        setTimeout(() => isSliding = false, 600);
-      }
-      targetX = lanes[currentLane];
-    });
+      sIsPlaying = false;
+      synthSound('crash');
+      if (subSpawnInterval) clearInterval(subSpawnInterval);
+      document.getElementById('subway-summary').innerText = `Final Score: ${sScore.toLocaleString()} • Total Coins: ${sCoins}`;
+      document.getElementById('subway-gameover').style.display = 'flex';
+    }
 
-    function update() {
-      if (gameOver) return;
+    function updateSubway() {
+      if (!sIsPlaying) return;
 
-      // Smooth lane transition
-      playerX += (targetX - playerX) * 0.22;
+      // Smooth lane switch
+      sPlayerX += (sTargetX - sPlayerX) * 0.22;
 
-      // Jumping
-      if (isJumping) {
-        playerZ += jumpVelocity;
-        jumpVelocity -= 0.8;
-        if (playerZ <= 0) {
-          playerZ = 0;
-          isJumping = false;
+      // Jump physics
+      if (sIsJumping) {
+        sPlayerZ += sJumpVel;
+        sJumpVel -= 0.88;
+        if (sPlayerZ <= 0) {
+          sPlayerZ = 0;
+          sIsJumping = false;
         }
       }
 
-      score += Math.floor(speed * 0.5);
-      document.getElementById('score-val').innerText = score;
-      document.getElementById('coins-val').innerText = coins;
+      // Slide timer
+      if (sIsSliding) {
+        sSlideTimer--;
+        if (sSlideTimer <= 0) sIsSliding = false;
+      }
 
-      // Update Obstacles
-      for (let i = obstacles.length - 1; i >= 0; i--) {
-        const obs = obstacles[i];
-        obs.y += speed;
-        obs.scale = 0.15 + (obs.y - 120) / 280;
+      // Hoverboard timer
+      if (sHasHoverboard) {
+        sHoverboardTimer--;
+        if (sHoverboardTimer <= 0) sHasHoverboard = false;
+      }
+
+      // Score counter
+      sScore += 18;
+      document.getElementById('subway-score').innerText = sScore.toLocaleString();
+      document.getElementById('subway-coins').innerText = sCoins;
+
+      // Ground ties motion
+      sTieOffset += sSpeed * 0.08;
+      if (sTieOffset > 1) sTieOffset = 0;
+
+      // Speed ramping
+      if (sSpeed < 14) sSpeed += 0.0012;
+
+      // Update Entities
+      for (let i = sEntities.length - 1; i >= 0; i--) {
+        const ent = sEntities[i];
+        ent.dist += sSpeed * 0.0019;
+
+        if (ent.dist >= 1.1) {
+          sEntities.splice(i, 1);
+          continue;
+        }
 
         // Collision Check
-        const obsX = 450 + (lanes[obs.lane] - 450) * (obs.scale / 1.0);
-        if (obs.y > 360 && obs.y < 440 && Math.abs(playerX - obsX) < 45) {
-          if (!isJumping) {
-            triggerGameOver();
+        if (ent.dist > 0.82 && ent.dist < 0.98 && ent.lane === sLane) {
+          if (ent.type === 'coin') {
+            if (!ent.collected) {
+              ent.collected = true;
+              sCoins += 1;
+              sScore += 250;
+              synthSound('coin');
+              for (let p = 0; p < 6; p++) {
+                sParticles.push({
+                  x: sPlayerX, y: sPlayerY - sPlayerZ - 20,
+                  vx: (Math.random() - 0.5) * 6, vy: (Math.random() - 0.5) * 6,
+                  color: '#ffe259', life: 18
+                });
+              }
+              sEntities.splice(i, 1);
+            }
+          } else if (ent.type === 'train') {
+            subGameOver();
+          } else if (ent.type === 'high_barrier') {
+            if (!sIsSliding) subGameOver();
+          } else if (ent.type === 'low_barrier') {
+            if (sPlayerZ < 40) subGameOver();
           }
         }
-
-        if (obs.y > 520) obstacles.splice(i, 1);
       }
 
-      // Update Coins
-      for (let i = coinPickups.length - 1; i >= 0; i--) {
-        const c = coinPickups[i];
-        c.y += speed;
-        c.scale = 0.15 + (c.y - 120) / 280;
-        const coinX = 450 + (lanes[c.lane] - 450) * (c.scale / 1.0);
+      // Particles
+      for (let i = sParticles.length - 1; i >= 0; i--) {
+        const p = sParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life--;
+        if (p.life <= 0) sParticles.splice(i, 1);
+      }
+    }
 
-        if (c.y > 360 && c.y < 440 && Math.abs(playerX - coinX) < 40) {
-          coins += 10;
-          score += 500;
-          coinPickups.splice(i, 1);
-        } else if (c.y > 520) {
-          coinPickups.splice(i, 1);
+    function drawSubway() {
+      sCtx.clearRect(0, 0, subCanvas.width, subCanvas.height);
+
+      // Sky
+      const sky = sCtx.createLinearGradient(0, 0, 0, sHorizonY);
+      sky.addColorStop(0, '#04050c');
+      sky.addColorStop(0.7, '#15092a');
+      sky.addColorStop(1, '#2c083b');
+      sCtx.fillStyle = sky;
+      sCtx.fillRect(0, 0, subCanvas.width, sHorizonY);
+
+      // Sunset Orb
+      sCtx.fillStyle = '#ff007f';
+      sCtx.beginPath();
+      sCtx.arc(sVanishX, sHorizonY - 10, 48, 0, Math.PI * 2);
+      sCtx.fill();
+
+      // Subway Ground
+      sCtx.fillStyle = '#070810';
+      sCtx.fillRect(0, sHorizonY, subCanvas.width, subCanvas.height - sHorizonY);
+
+      // Moving Ground Ties / Sleepers (Perspective illusion)
+      for (let d = 0.05; d < 1.0; d += 0.08) {
+        const dist = (d + sTieOffset * 0.08) % 0.95 + 0.05;
+        const y = sHorizonY + Math.pow(dist, 2.2) * (subCanvas.height - sHorizonY);
+        const w = 60 + dist * 820;
+        sCtx.strokeStyle = 'rgba(0, 242, 254, 0.2)';
+        sCtx.lineWidth = 1 + dist * 2;
+        sCtx.beginPath();
+        sCtx.moveTo(sVanishX - w / 2, y);
+        sCtx.lineTo(sVanishX + w / 2, y);
+        sCtx.stroke();
+      }
+
+      // Outer & Inner Subway Rails
+      sCtx.strokeStyle = '#ff007f';
+      sCtx.lineWidth = 3;
+      sCtx.beginPath();
+      sCtx.moveTo(sVanishX, sHorizonY); sCtx.lineTo(30, subCanvas.height);
+      sCtx.moveTo(sVanishX, sHorizonY); sCtx.lineTo(930, subCanvas.height);
+      sCtx.stroke();
+
+      sCtx.strokeStyle = '#00f2fe';
+      sCtx.lineWidth = 2;
+      sCtx.setLineDash([16, 12]);
+      sCtx.beginPath();
+      sCtx.moveTo(sVanishX, sHorizonY); sCtx.lineTo(330, subCanvas.height);
+      sCtx.moveTo(sVanishX, sHorizonY); sCtx.lineTo(630, subCanvas.height);
+      sCtx.stroke();
+      sCtx.setLineDash([]);
+
+      // Draw Entities (sorted from horizon to player)
+      sEntities.sort((a, b) => a.dist - b.dist);
+      for (const ent of sEntities) {
+        if (ent.dist < 0) continue;
+        const scale = Math.pow(ent.dist, 2.2);
+        const y = sHorizonY + scale * (sPlayerY - sHorizonY);
+        const x = sVanishX + (sLanes[ent.lane] - sVanishX) * ent.dist;
+
+        if (ent.type === 'coin') {
+          const r = 5 + scale * 18;
+          sCtx.fillStyle = '#ffe259';
+          sCtx.beginPath();
+          sCtx.arc(x, y - 25 * scale, r, 0, Math.PI * 2);
+          sCtx.fill();
+          sCtx.strokeStyle = '#fff';
+          sCtx.lineWidth = 2;
+          sCtx.stroke();
+        } else if (ent.type === 'train') {
+          const tw = 40 + scale * 160;
+          const th = 30 + scale * 120;
+          // Front of Subway Train
+          sCtx.fillStyle = '#180816';
+          sCtx.strokeStyle = '#ff007f';
+          sCtx.lineWidth = 2 + scale * 2;
+          sCtx.fillRect(x - tw / 2, y - th, tw, th);
+          sCtx.strokeRect(x - tw / 2, y - th, tw, th);
+          // Dual Red Headlights
+          sCtx.fillStyle = '#ff0055';
+          sCtx.beginPath();
+          sCtx.arc(x - tw * 0.3, y - th * 0.3, 4 + scale * 8, 0, Math.PI * 2);
+          sCtx.arc(x + tw * 0.3, y - th * 0.3, 4 + scale * 8, 0, Math.PI * 2);
+          sCtx.fill();
+          // Train Header
+          if (scale > 0.4) {
+            sCtx.fillStyle = '#ff758c';
+            sCtx.font = `${Math.floor(10 * scale)}px JetBrains Mono`;
+            sCtx.textAlign = 'center';
+            sCtx.fillText(ent.label, x, y - th + 18 * scale);
+          }
+        } else if (ent.type === 'high_barrier') {
+          // Overhead gantry (slide under)
+          const bw = 50 + scale * 140;
+          const bh = 14 + scale * 25;
+          sCtx.fillStyle = '#ffe259';
+          sCtx.fillRect(x - bw / 2, y - 90 * scale, bw, bh);
+          sCtx.fillStyle = '#000';
+          if (scale > 0.4) {
+            sCtx.font = `${Math.floor(9 * scale)}px JetBrains Mono`;
+            sCtx.textAlign = 'center';
+            sCtx.fillText('▼ SLIDE UNDER ▼', x, y - 90 * scale + 14 * scale);
+          }
+        } else if (ent.type === 'low_barrier') {
+          // Ground hurdle (jump over)
+          const bw = 40 + scale * 130;
+          const bh = 10 + scale * 30;
+          sCtx.fillStyle = '#ff0055';
+          sCtx.fillRect(x - bw / 2, y - bh, bw, bh);
+          sCtx.fillStyle = '#fff';
+          if (scale > 0.4) {
+            sCtx.font = `${Math.floor(9 * scale)}px JetBrains Mono`;
+            sCtx.textAlign = 'center';
+            sCtx.fillText('▲ JUMP ▲', x, y - bh / 2 + 4);
+          }
+        }
+      }
+
+      // Draw Player: Prajwal on Royal Enfield Scram 440 Force Grey
+      const py = sPlayerY - sPlayerZ;
+      const px = sPlayerX;
+
+      // Hoverboard Glow if active
+      if (sHasHoverboard) {
+        sCtx.fillStyle = 'rgba(0, 242, 254, 0.4)';
+        sCtx.beginPath();
+        sCtx.ellipse(px, py + 34, 46, 12, 0, 0, Math.PI * 2);
+        sCtx.fill();
+      }
+
+      // Ground Shadow
+      sCtx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+      sCtx.beginPath();
+      sCtx.ellipse(px, sPlayerY + 32, 42, 10, 0, 0, Math.PI * 2);
+      sCtx.fill();
+
+      // Scram 440 Knobby Rear Tire
+      sCtx.fillStyle = '#10121a';
+      sCtx.strokeStyle = '#575b63';
+      sCtx.lineWidth = 3.5;
+      sCtx.fillRect(px - 18, py - 4, 36, 44);
+      sCtx.strokeRect(px - 18, py - 4, 36, 44);
+
+      // Force Grey Mudguard & Frame
+      sCtx.fillStyle = '#575b63';
+      sCtx.fillRect(px - 22, py - 18, 44, 16);
+
+      // License Plate: KA-09 SCRAM 440
+      sCtx.fillStyle = '#fff';
+      sCtx.fillRect(px - 24, py + 4, 48, 14);
+      sCtx.fillStyle = '#000';
+      sCtx.font = '7.5px JetBrains Mono';
+      sCtx.textAlign = 'center';
+      sCtx.fillText('KA-09 SCRAM-440', px, py + 14);
+
+      // Red LED Taillight Strip
+      sCtx.fillStyle = '#ff0055';
+      sCtx.fillRect(px - 18, py - 24, 36, 6);
+
+      // Dual Exhausts
+      sCtx.fillStyle = '#222634';
+      sCtx.fillRect(px - 34, py, 10, 22);
+      sCtx.fillRect(px + 24, py, 10, 22);
+
+      // Wide Handlebars
+      sCtx.strokeStyle = '#8e929f';
+      sCtx.lineWidth = 3;
+      sCtx.beginPath();
+      sCtx.moveTo(px - 44, py - 38);
+      sCtx.lineTo(px + 44, py - 38);
+      sCtx.stroke();
+
+      // Prajwal Rider (Jacket + Helmet)
+      if (sIsSliding) {
+        // Tucked down low
+        sCtx.fillStyle = '#1c202d';
+        sCtx.fillRect(px - 24, py - 30, 48, 18);
+        sCtx.fillStyle = '#ff007f';
+        sCtx.beginPath();
+        sCtx.arc(px, py - 32, 14, 0, Math.PI * 2);
+        sCtx.fill();
+      } else {
+        // Upright rider with diagonal Bamboo Bansuri
+        sCtx.fillStyle = '#1c202d';
+        sCtx.fillRect(px - 24, py - 52, 48, 28);
+        // Slung Bamboo Flute
+        sCtx.strokeStyle = '#e5c07b';
+        sCtx.lineWidth = 4;
+        sCtx.beginPath();
+        sCtx.moveTo(px - 26, py - 18);
+        sCtx.lineTo(px + 26, py - 66);
+        sCtx.stroke();
+        // Helmet with cyan visor
+        sCtx.fillStyle = '#0c0e15';
+        sCtx.beginPath();
+        sCtx.arc(px, py - 66, 16, 0, Math.PI * 2);
+        sCtx.fill();
+        sCtx.fillStyle = '#00f2fe';
+        sCtx.fillRect(px - 12, py - 66, 24, 5);
+      }
+
+      // Particles
+      for (const p of sParticles) {
+        sCtx.fillStyle = p.color;
+        sCtx.fillRect(p.x, p.y, 4, 4);
+      }
+    }
+
+    // ============================================================
+    // GAME 2: HIGHWAY OUTRUN (RETRO 3D TRAFFIC RACER)
+    // ============================================================
+    const racerCanvas = document.getElementById('racerCanvas');
+    const rCtx = racerCanvas.getContext('2d');
+    let rSpeed = 0;
+    let rDist = 0;
+    let rPlayerX = 0; // -1 to 1
+    let rPlaying = false;
+    let rTraffic = [];
+    let rNitro = 100;
+
+    function resizeRacer() {
+      racerCanvas.width = 960;
+      racerCanvas.height = 580;
+    }
+
+    function startRacer() {
+      getAudio();
+      rPlaying = true;
+      rSpeed = 80;
+      rDist = 0;
+      rPlayerX = 0;
+      rTraffic = [];
+      rNitro = 100;
+      document.getElementById('racer-start').style.display = 'none';
+      document.getElementById('racer-gameover').style.display = 'none';
+    }
+
+    function racerSteer(dir) {
+      if (!rPlaying) return;
+      rPlayerX += dir * 0.18;
+      if (rPlayerX < -0.85) rPlayerX = -0.85;
+      if (rPlayerX > 0.85) rPlayerX = 0.85;
+      synthSound('slide');
+    }
+
+    function racerTriggerNitro() {
+      if (!rPlaying || rNitro < 30) return;
+      rSpeed += 45;
+      rNitro -= 30;
+      synthSound('turbo');
+    }
+
+    function updateRacer() {
+      if (!rPlaying) return;
+
+      rDist += Math.floor(rSpeed * 0.1);
+      document.getElementById('racer-dist').innerText = rDist.toLocaleString();
+      document.getElementById('racer-speed').innerText = Math.floor(rSpeed);
+
+      if (rSpeed > 80) rSpeed -= 0.15;
+      if (rNitro < 100) rNitro += 0.05;
+
+      // Spawn traffic
+      if (Math.random() < 0.035 && rTraffic.length < 5) {
+        rTraffic.push({
+          x: (Math.random() - 0.5) * 1.6,
+          dist: 1.0, // 1 = far, 0 = near
+          speed: 40 + Math.random() * 30,
+          color: Math.random() > 0.5 ? '#ff007f' : '#00f2fe'
+        });
+      }
+
+      for (let i = rTraffic.length - 1; i >= 0; i--) {
+        const car = rTraffic[i];
+        car.dist -= (rSpeed - car.speed) * 0.00018;
+
+        if (car.dist <= 0) {
+          rTraffic.splice(i, 1);
+          continue;
+        }
+
+        // Collision
+        if (car.dist < 0.15 && Math.abs(car.x - rPlayerX) < 0.22) {
+          rPlaying = false;
+          synthSound('crash');
+          document.getElementById('racer-summary').innerText = `Distance Covered: ${rDist}m • Top Speed: ${Math.floor(rSpeed)} km/h`;
+          document.getElementById('racer-gameover').style.display = 'flex';
         }
       }
     }
 
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    function drawRacer() {
+      rCtx.clearRect(0, 0, racerCanvas.width, racerCanvas.height);
 
-      // Sky & Neon Horizon
-      const skyGrad = ctx.createLinearGradient(0, 0, 0, 140);
-      skyGrad.addColorStop(0, '#05060c');
-      skyGrad.addColorStop(1, '#280c35');
-      ctx.fillStyle = skyGrad;
-      ctx.fillRect(0, 0, canvas.width, 140);
+      // Sky
+      rCtx.fillStyle = '#060814';
+      rCtx.fillRect(0, 0, racerCanvas.width, 220);
 
-      // Retro Sunset Sun
-      ctx.fillStyle = '#ff007f';
-      ctx.beginPath();
-      ctx.arc(450, 125, 45, 0, Math.PI * 2);
-      ctx.fill();
+      // Cyber Highway Ground
+      rCtx.fillStyle = '#111422';
+      rCtx.fillRect(0, 220, racerCanvas.width, racerCanvas.height - 220);
 
-      // Highway Ground
-      ctx.fillStyle = '#0a0c16';
-      ctx.fillRect(0, 140, canvas.width, 380);
-
-      // 3-Lane Tracks (Perspective lines vanishing at 450, 140)
-      ctx.strokeStyle = '#ff007f';
-      ctx.lineWidth = 3;
-      ctx.beginPath();
-      ctx.moveTo(450, 140); ctx.lineTo(30, 520);
-      ctx.moveTo(450, 140); ctx.lineTo(870, 520);
-      ctx.stroke();
-
-      ctx.strokeStyle = '#00f2fe';
-      ctx.lineWidth = 2;
-      ctx.setLineDash([15, 12]);
-      ctx.beginPath();
-      ctx.moveTo(450, 140); ctx.lineTo(310, 520);
-      ctx.moveTo(450, 140); ctx.lineTo(590, 520);
-      ctx.stroke();
-      ctx.setLineDash([]);
-
-      // Draw Coins
-      for (const c of coinPickups) {
-        const cx = 450 + (lanes[c.lane] - 450) * (c.scale / 1.0);
-        ctx.fillStyle = '#ffe259';
-        ctx.beginPath();
-        ctx.arc(cx, c.y, 14 * c.scale, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.strokeStyle = '#fff';
-        ctx.lineWidth = 2;
-        ctx.stroke();
+      // Highway perspective lanes
+      for (let l = -2; l <= 2; l++) {
+        rCtx.strokeStyle = l === 0 ? '#ffe259' : '#00f2fe';
+        rCtx.lineWidth = 2;
+        rCtx.beginPath();
+        rCtx.moveTo(480, 220);
+        rCtx.lineTo(480 + l * 280, 580);
+        rCtx.stroke();
       }
 
-      // Draw Obstacles (Trains/Barriers)
-      for (const obs of obstacles) {
-        const ox = 450 + (lanes[obs.lane] - 450) * (obs.scale / 1.0);
-        const w = 110 * obs.scale;
-        const h = 60 * obs.scale;
+      // Draw traffic
+      for (const car of rTraffic) {
+        const y = 220 + (1 - car.dist) * 320;
+        const x = 480 + car.x * (1 - car.dist) * 380;
+        const w = (1 - car.dist) * 90 + 10;
+        const h = (1 - car.dist) * 50 + 8;
 
-        ctx.fillStyle = '#1c0818';
-        ctx.strokeStyle = '#ff007f';
-        ctx.lineWidth = 2.5;
-        ctx.fillRect(ox - w/2, obs.y - h, w, h);
-        ctx.strokeRect(ox - w/2, obs.y - h, w, h);
-
-        ctx.fillStyle = '#ff758c';
-        ctx.font = `${Math.max(9, Math.floor(11 * obs.scale))}px Courier New`;
-        ctx.textAlign = 'center';
-        ctx.fillText(obs.text, ox, obs.y - h/2);
+        rCtx.fillStyle = car.color;
+        rCtx.fillRect(x - w / 2, y - h, w, h);
       }
 
-      // Draw Player: Scram 440 (Force Grey) Rear View
-      const py = playerY - playerZ;
+      // Draw Player Bike (Scram 440)
+      const px = 480 + rPlayerX * 380;
+      const py = 500;
+      rCtx.fillStyle = '#575b63';
+      rCtx.fillRect(px - 22, py - 18, 44, 40);
+      rCtx.fillStyle = '#ff0055';
+      rCtx.fillRect(px - 16, py - 22, 32, 6);
+    }
 
-      // Tire
-      ctx.fillStyle = '#111';
-      ctx.strokeStyle = '#575b63';
-      ctx.lineWidth = 4;
-      ctx.fillRect(playerX - 20, py - 10, 40, 50);
-      ctx.strokeRect(playerX - 20, py - 10, 40, 50);
+    // ============================================================
+    // GAME 3: COMPILER BOSS RPG LOGIC
+    // ============================================================
+    let bossHp = 1000;
+    let playerHp = 600;
+    let isBossTurn = false;
 
-      // Force Grey Mudguard & Taillight
-      ctx.fillStyle = '#575b63';
-      ctx.fillRect(playerX - 24, py - 30, 48, 22);
+    function bossAction(action) {
+      if (bossHp <= 0 || playerHp <= 0 || isBossTurn) return;
+      getAudio();
+      const log = document.getElementById('boss-log');
 
-      // Red LED Taillight
-      ctx.fillStyle = '#ff0055';
-      ctx.shadowColor = '#ff0055';
-      ctx.shadowBlur = 15;
-      ctx.fillRect(playerX - 20, py - 32, 40, 6);
-      ctx.shadowBlur = 0;
+      if (action === 'overclock') {
+        const dmg = Math.floor(130 + Math.random() * 40);
+        bossHp = Math.max(0, bossHp - dmg);
+        synthSound('jump');
+        log.innerHTML = `<div style="color:#00f2fe;">&gt; Prajwal activated OVERCLOCK CPU! Inflicted ${dmg} critical damage!</div>` + log.innerHTML;
+      } else if (action === 'flute') {
+        synthSound('flute_sa');
+        log.innerHTML = `<div style="color:#ffe259;">&gt; Prajwal played 432 Hz Bansuri Acoustic Raga! Boss is TRANSCENDED and STUNNED!</div>` + log.innerHTML;
+        updateBossUI();
+        return; // Stun skips boss turn!
+      } else if (action === 'daddyion') {
+        const dmg = 220;
+        bossHp = Math.max(0, bossHp - dmg);
+        synthSound('turbo');
+        log.innerHTML = `<div style="color:#ff007f;">&gt; DADDYION ZERO-DAY EXPLOIT INJECTED! Bypassed firewall for ${dmg} direct damage!</div>` + log.innerHTML;
+      } else if (action === 'heal') {
+        playerHp = Math.min(600, playerHp + 180);
+        synthSound('coin');
+        log.innerHTML = `<div style="color:#4ade80;">&gt; Refactored memory leaks! Restored +180 HP!</div>` + log.innerHTML;
+      }
 
-      // Rider & Flute
-      ctx.fillStyle = '#1c202d';
-      ctx.fillRect(playerX - 26, py - 65, 52, 35);
+      updateBossUI();
+      if (bossHp <= 0) {
+        log.innerHTML = `<div style="color:#ffe259; font-weight:800;">🎉 VICTORY! Segmentation Fault Titan defeated! 100% Attendance unlocked!</div>` + log.innerHTML;
+        return;
+      }
 
-      // Bamboo Flute Slung Diagonally
-      ctx.strokeStyle = '#e5c07b';
-      ctx.lineWidth = 5;
-      ctx.beginPath();
-      ctx.moveTo(playerX - 28, py - 15);
-      ctx.lineTo(playerX + 28, py - 80);
-      ctx.stroke();
+      // Boss Counter-Attack
+      isBossTurn = true;
+      setTimeout(() => {
+        const bDmg = Math.floor(80 + Math.random() * 50);
+        playerHp = Math.max(0, playerHp - bDmg);
+        synthSound('crash');
+        log.innerHTML = `<div style="color:#ff758c;">&gt; Boss retaliated with NULL POINTER EXCEPTION! Took ${bDmg} damage!</div>` + log.innerHTML;
+        updateBossUI();
+        isBossTurn = false;
+        if (playerHp <= 0) {
+          log.innerHTML = `<div style="color:#ff0055; font-weight:800;">💀 DEFEATED! The compiler crashed your process. Try again!</div>` + log.innerHTML;
+        }
+      }, 700);
+    }
 
-      // Helmet
-      ctx.fillStyle = '#0f1118';
-      ctx.beginPath();
-      ctx.arc(playerX, py - 75, 16, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.fillStyle = '#00f2fe';
-      ctx.fillRect(playerX - 12, py - 75, 24, 6);
+    function updateBossUI() {
+      document.getElementById('boss-hp-bar').style.width = `${(bossHp / 1000) * 100}%`;
+      document.getElementById('boss-hp-text').innerText = `HP: ${bossHp} / 1000`;
+      document.getElementById('player-hp-bar').style.width = `${(playerHp / 600) * 100}%`;
+      document.getElementById('player-hp-text').innerText = `HP: ${playerHp} / 600`;
+    }
 
-      // Jump / Slide Text
-      if (isJumping) {
-        ctx.fillStyle = '#00f2fe';
-        ctx.font = 'bold 12px Courier New';
-        ctx.fillText('JUMPING!', playerX, py - 100);
+    // ============================================================
+    // GAME 4: DADDYION TERMINAL EXPLOIT LOGIC
+    // ============================================================
+    function handleTerm(e) {
+      if (e.key === 'Enter') runTermBtn();
+    }
+
+    function runTermBtn() {
+      const input = document.getElementById('term-input');
+      const cmd = input.value.trim().toLowerCase();
+      if (!cmd) return;
+      input.value = '';
+      getAudio();
+      synthSound('coin');
+
+      const screen = document.getElementById('term-screen');
+      screen.innerHTML += `<div style="color:#00f2fe;">root@daddyion:~$ ${cmd}</div>`;
+
+      if (cmd === 'help') {
+        screen.innerHTML += `<div>Available modules:
+  - <b>scan</b>: Scan VVCE IonCUDOS attendance port
+  - <b>exploit</b>: Inject automated session tokens
+  - <b>attendance</b>: Pull raw course attendance ledger
+  - <b>scram</b>: Inspect Royal Enfield Scram 440 engine status
+  - <b>flute</b>: Play 432 Hz Bansuri acoustic wave
+  - <b>clear</b>: Clear terminal screen</div>`;
+      } else if (cmd === 'scan') {
+        screen.innerHTML += `<div style="color:#ffe259;">[SCANNING]: Host 172.16.2.4 (IonCUDOS VVCE) ...
+PORT 443/TCP OPEN (TLSv1.3)
+PORT 8080/TCP OPEN (Academic REST Proxy)
+SESSION TOKEN DETECTED: [0xVVCE_AIML_PRAJWAL]</div>`;
+      } else if (cmd === 'exploit') {
+        synthSound('turbo');
+        screen.innerHTML += `<div style="color:#ff007f;">[EXPLOITING]: Injecting reverse proxy into IonCUDOS...
+SUCCESS: Attendance scraper online. Automated notifications enabled via DaddyIon Kotlin client!</div>`;
+      } else if (cmd === 'attendance') {
+        screen.innerHTML += `<div style="color:#4ade80;">=== ATTENDANCE LEDGER (PRAJWAL VARMA) ===
+- Machine Learning (21AI61): 88.5% [SAFE]
+- Neural Networks (21AI62): 86.0% [SAFE]
+- Cloud Architecture (21AI63): 89.2% [SAFE]
+- Minimum Required: 75.0%
+STATUS: ELIGIBLE FOR SEMESTER EXAMS!</div>`;
+      } else if (cmd === 'scram') {
+        screen.innerHTML += `<div style="color:#00f2fe;">[VEHICLE TELEMETRY]:
+- Model: Royal Enfield Scram 440
+- Color: Force Grey (Matte Finish)
+- Displacement: 443cc Single-Cylinder SOHC
+- Cooling: Air-Oil Cooled
+- Status: READY TO RUN</div>`;
+      } else if (cmd === 'flute') {
+        synthSound('flute_sa');
+        screen.innerHTML += `<div style="color:#ffe259;">[ACOUSTIC HARMONICS]: Classical Indian Bansuri resonates at 432.0 Hz.</div>`;
+      } else if (cmd === 'clear') {
+        screen.innerHTML = '';
+      } else {
+        screen.innerHTML += `<div style="color:#ff758c;">Command not recognized: '${cmd}'. Type 'help' for available commands.</div>`;
+      }
+      screen.scrollTop = screen.scrollHeight;
+    }
+
+    // ============================================================
+    // GAME 5: BANSURI 432 Hz RHYTHM HERO LOGIC
+    // ============================================================
+    const rhCanvas = document.getElementById('rhythmCanvas');
+    const rhCtx = rhCanvas.getContext('2d');
+    const noteKeys = ['Sa', 'Re', 'Ga', 'Pa'];
+    const noteFreqs = ['flute_sa', 'flute_re', 'flute_ga', 'flute_pa'];
+    let rhNotes = [];
+    let rhScore = 100;
+    let rhPlaying = false;
+
+    function resizeRhythm() {
+      rhCanvas.width = 960;
+      rhCanvas.height = 580;
+    }
+
+    function startRhythm() {
+      getAudio();
+      rhPlaying = true;
+      rhNotes = [];
+      rhScore = 100;
+      document.getElementById('rhythm-start').style.display = 'none';
+    }
+
+    function triggerNote(index) {
+      if (!rhPlaying) return;
+      synthSound(noteFreqs[index]);
+      // Check hit
+      let hit = false;
+      for (let i = rhNotes.length - 1; i >= 0; i--) {
+        const n = rhNotes[i];
+        if (n.lane === index && n.y > 440 && n.y < 520) {
+          rhNotes.splice(i, 1);
+          hit = true;
+          rhScore = Math.min(100, rhScore + 2);
+          break;
+        }
+      }
+      if (!hit) rhScore = Math.max(60, rhScore - 1);
+      document.getElementById('rhythm-score').innerText = rhScore;
+    }
+
+    function updateRhythm() {
+      if (!rhPlaying) return;
+      if (Math.random() < 0.04 && rhNotes.length < 8) {
+        rhNotes.push({
+          lane: Math.floor(Math.random() * 4),
+          y: 0,
+          speed: 4.5
+        });
+      }
+
+      for (let i = rhNotes.length - 1; i >= 0; i--) {
+        const n = rhNotes[i];
+        n.y += n.speed;
+        if (n.y > 560) {
+          rhNotes.splice(i, 1);
+          rhScore = Math.max(50, rhScore - 2);
+          document.getElementById('rhythm-score').innerText = rhScore;
+        }
       }
     }
 
-    function triggerGameOver() {
-      gameOver = true;
-      document.getElementById('final-stats').innerText = `Final Score: ${score} • Coins Collected: ${coins}`;
-      document.getElementById('game-over').style.display = 'flex';
+    function drawRhythm() {
+      rhCtx.clearRect(0, 0, rhCanvas.width, rhCanvas.height);
+
+      // Background
+      rhCtx.fillStyle = '#080a14';
+      rhCtx.fillRect(0, 0, rhCanvas.width, rhCanvas.height);
+
+      // 4 Note Columns
+      const colWidth = 160;
+      const startX = 160;
+      for (let i = 0; i < 4; i++) {
+        const x = startX + i * colWidth;
+        rhCtx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+        rhCtx.strokeRect(x, 0, colWidth, rhCanvas.height);
+        rhCtx.fillStyle = 'rgba(255, 255, 255, 0.03)';
+        rhCtx.fillRect(x, 0, colWidth, rhCanvas.height);
+      }
+
+      // Hit Target Line (Resonance Boundary)
+      rhCtx.strokeStyle = '#00f2fe';
+      rhCtx.lineWidth = 4;
+      rhCtx.beginPath();
+      rhCtx.moveTo(startX, 480);
+      rhCtx.lineTo(startX + 4 * colWidth, 480);
+      rhCtx.stroke();
+
+      // Falling notes
+      for (const n of rhNotes) {
+        const x = startX + n.lane * colWidth + colWidth / 2;
+        rhCtx.fillStyle = '#ffe259';
+        rhCtx.beginPath();
+        rhCtx.arc(x, n.y, 24, 0, Math.PI * 2);
+        rhCtx.fill();
+        rhCtx.fillStyle = '#000';
+        rhCtx.font = '12px JetBrains Mono';
+        rhCtx.textAlign = 'center';
+        rhCtx.fillText(noteKeys[n.lane], x, n.y + 4);
+      }
     }
 
-    function resetGame() {
-      gameOver = false;
-      score = 0;
-      coins = 0;
-      obstacles = [];
-      coinPickups = [];
-      currentLane = 1;
-      targetX = lanes[1];
-      playerX = lanes[1];
-      playerZ = 0;
-      isJumping = false;
-      document.getElementById('game-over').style.display = 'none';
-    }
+    // ============================================================
+    // GLOBAL KEYBOARD EVENT LISTENERS
+    // ============================================================
+    window.addEventListener('keydown', (e) => {
+      const k = e.key.toLowerCase();
 
-    function gameLoop() {
-      update();
-      draw();
-      requestAnimationFrame(gameLoop);
-    }
+      // Subway Controls
+      if (currentGame === 'subway') {
+        if (!sIsPlaying && (k === 'w' || k === ' ' || k === 'enter')) startSubway();
+        if (k === 'a' || k === 'arrowleft') subwayMoveLeft();
+        if (k === 'd' || k === 'arrowright') subwayMoveRight();
+        if ((k === 'w' || k === 'arrowup' || k === ' ') && !sIsJumping) subwayJump();
+        if (k === 's' || k === 'arrowdown') subwaySlide();
+        if (k === 'shift') subwayActivateHoverboard();
+      }
 
-    requestAnimationFrame(gameLoop);
+      // Racer Controls
+      if (currentGame === 'racer') {
+        if (!rPlaying && (k === 'w' || k === 'enter')) startRacer();
+        if (k === 'a' || k === 'arrowleft') racerSteer(-1);
+        if (k === 'd' || k === 'arrowright') racerSteer(1);
+        if (k === ' ' || k === 'w') racerTriggerNitro();
+      }
+
+      // Rhythm Controls
+      if (currentGame === 'rhythm') {
+        if (k === 'd') triggerNote(0);
+        if (k === 'f') triggerNote(1);
+        if (k === 'j') triggerNote(2);
+        if (k === 'k') triggerNote(3);
+      }
+    });
+
+    // Touch Swipe for Subway
+    let touchX = 0, touchY = 0;
+    subCanvas.addEventListener('touchstart', (e) => {
+      touchX = e.touches[0].clientX;
+      touchY = e.touches[0].clientY;
+    });
+    subCanvas.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchX;
+      const dy = e.changedTouches[0].clientY - touchY;
+      if (Math.abs(dx) > Math.abs(dy)) {
+        if (dx > 30) subwayMoveRight();
+        else if (dx < -30) subwayMoveLeft();
+      } else {
+        if (dy < -30) subwayJump();
+        else if (dy > 30) subwaySlide();
+      }
+    });
+
+    // ============================================================
+    // MASTER 60 FPS ANIMATION LOOP
+    // ============================================================
+    function masterLoop() {
+      if (currentGame === 'subway') {
+        updateSubway();
+        drawSubway();
+      } else if (currentGame === 'racer') {
+        updateRacer();
+        drawRacer();
+      } else if (currentGame === 'rhythm') {
+        updateRhythm();
+        drawRhythm();
+      }
+      requestAnimationFrame(masterLoop);
+    }
+    masterLoop();
+
+    // Auto-select tab if URL hash provided (e.g. #racer)
+    if (window.location.hash) {
+      const tab = window.location.hash.replace('#', '');
+      if (['subway', 'racer', 'boss', 'hack', 'rhythm'].includes(tab)) {
+        switchGame(tab);
+      }
+    }
   </script>
 </body>
 </html>
