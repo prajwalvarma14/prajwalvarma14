@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0d14" />
+      <stop offset="100%" stop-color="#121524" />
+    </linearGradient>
+
+    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f7768e" />
+      <stop offset="35%" stop-color="#e0af68" />
+      <stop offset="70%" stop-color="#7aa2f7" />
+      <stop offset="100%" stop-color="#9ece6a" />
+    </linearGradient>
+
+    <filter id="glowNode">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      .font-mono { font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; }
+      .font-sans { font-family: 'Outfit', 'Segoe UI', system-ui, sans-serif; }
+      @keyframes dashAnim {
+        to { stroke-dashoffset: -40; }
+      }
+      .flow-line {
+        stroke-dasharray: 6 4;
+        animation: dashAnim 1.8s linear infinite;
+      }
+    </style>
+  </defs>
+
+  <rect x="2" y="2" width="896" height="176" rx="14" fill="url(#bgGrad3)" stroke="#22283d" stroke-width="1.5" />
+
+  <!-- Title Badge -->
+  <rect x="20" y="14" width="260" height="22" rx="4" fill="#181c2e" stroke="#7aa2f7" stroke-width="0.8" />
+  <text x="30" y="29" fill="#7dcfff" font-size="11" class="font-mono" font-weight="700">⚙️ ARCHITECTURE // DADDYION REVERSE EXPLOIT</text>
+
+  <!-- Flow pipeline connector line -->
+  <line x1="160" y1="95" x2="740" y2="95" stroke="url(#flowGrad)" stroke-width="2.5" class="flow-line" filter="url(#glowNode)" />
+
+  <!-- Node 1: Clunky College LMS -->
+  <g transform="translate(40, 55)">
+    <rect x="0" y="0" width="160" height="80" rx="10" fill="#161824" stroke="#f7768e" stroke-width="1.2" />
+    <text x="80" y="28" text-anchor="middle" fill="#f7768e" font-size="11" class="font-mono" font-weight="700">CAMPUS LMS</text>
+    <text x="80" y="46" text-anchor="middle" fill="#f8f8f2" font-size="12" class="font-mono" font-weight="600">IonCUDOS Portal</text>
+    <text x="80" y="64" text-anchor="middle" fill="#565f89" font-size="9.5" class="font-mono">Clunky • Unresponsive</text>
+  </g>
+
+  <!-- Node 2: Python Headless Scraper -->
+  <g transform="translate(260, 55)">
+    <rect x="0" y="0" width="180" height="80" rx="10" fill="#161824" stroke="#e0af68" stroke-width="1.2" />
+    <text x="90" y="28" text-anchor="middle" fill="#e0af68" font-size="11" class="font-mono" font-weight="700">REVERSE ENGINE</text>
+    <text x="90" y="46" text-anchor="middle" fill="#f8f8f2" font-size="12" class="font-mono" font-weight="600">Session &amp; DOM Hook</text>
+    <text x="90" y="64" text-anchor="middle" fill="#565f89" font-size="9.5" class="font-mono">BeautifulSoup • Regex</text>
+  </g>
+
+  <!-- Node 3: Local Data Normalizer -->
+  <g transform="translate(500, 55)">
+    <rect x="0" y="0" width="170" height="80" rx="10" fill="#161824" stroke="#7aa2f7" stroke-width="1.2" />
+    <text x="85" y="28" text-anchor="middle" fill="#7aa2f7" font-size="11" class="font-mono" font-weight="700">ANALYTICS ENGINE</text>
+    <text x="85" y="46" text-anchor="middle" fill="#f8f8f2" font-size="12" class="font-mono" font-weight="600">Attendance Radar</text>
+    <text x="85" y="64" text-anchor="middle" fill="#565f89" font-size="9.5" class="font-mono">Bunk Forecaster • Marks</text>
+  </g>
+
+  <!-- Node 4: DaddyIon Android Client -->
+  <g transform="translate(720, 55)">
+    <rect x="0" y="0" width="150" height="80" rx="10" fill="#161824" stroke="#9ece6a" stroke-width="1.5" />
+    <text x="75" y="28" text-anchor="middle" fill="#9ece6a" font-size="11" class="font-mono" font-weight="800">DADDYION v2.3</text>
+    <text x="75" y="46" text-anchor="middle" fill="#f8f8f2" font-size="12" class="font-mono" font-weight="700">Kotlin Android</text>
+    <text x="75" y="64" text-anchor="middle" fill="#7dcfff" font-size="9.5" class="font-mono">Tokyo-Night UI 🚀</text>
+  </g>
+</svg>
