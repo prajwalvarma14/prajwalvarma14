@@ -118,8 +118,8 @@
     <!-- Spec Item 01: 440 ForceGrey -->
     <g transform="translate(0, 0)">
       <text x="0" y="14" fill="#585c6a" font-size="9" class="font-mono" letter-spacing="1.5">01 / MACHINE</text>
-      <text x="0" y="32" fill="#f1f5f9" font-size="13" class="font-sans" font-weight="600" letter-spacing="0.2">Mavrick 440 • Force Grey</text>
-      <text x="0" y="47" fill="#8e929f" font-size="10.5" class="font-mono">440cc TorqX single • 36Nm throttle therapy</text>
+      <text x="0" y="32" fill="#f1f5f9" font-size="13" class="font-sans" font-weight="600" letter-spacing="0.2">RE Scram 440 • Force Grey</text>
+      <text x="0" y="47" fill="#8e929f" font-size="10.5" class="font-mono">Royal Enfield 440cc • Force Grey scrambler</text>
     </g>
 
     <!-- Spec Item 02: Bansuri -->
