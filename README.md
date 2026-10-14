@@ -35,15 +35,6 @@
 - 🪈 **Acoustic Focus:** Practicing the **Classical Indian Bamboo Flute (Bansuri)** in 432 Hz acoustic tuning.
 - 🎬 **Offline & Community:** Making and watching films, volunteering with **U&I**, and playing cricket.
 
-<br/>
-
-<!-- SECOND ANIMATED SVG: NEURAL CORE & 432HZ OSCILLOSCOPE -->
-<div align="center">
-  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/v12_neural_cockpit.svg" width="100%" alt="Neural Core & 432Hz Oscilloscope" />
-</div>
-
-<br/>
-
 ---
 
 ### 💻 Skills & Technologies
