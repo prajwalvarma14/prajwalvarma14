@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 170" width="100%" height="100%">
+  <defs>
+    <linearGradient id="schemBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050609" />
+      <stop offset="100%" stop-color="#0b0d13" />
+    </linearGradient>
+
+    <linearGradient id="hairlineLaser" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3a3e4e" />
+      <stop offset="50%" stop-color="#e5c07b" />
+      <stop offset="100%" stop-color="#8e929f" />
+    </linearGradient>
+
+    <style>
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Helvetica Neue', sans-serif; }
+      .font-mono { font-family: 'SF Mono', 'JetBrains Mono', Menlo, monospace; }
+      @keyframes dashFlow {
+        to { stroke-dashoffset: -32; }
+      }
+      .laser-flow {
+        stroke-dasharray: 4 4;
+        animation: dashFlow 2.5s linear infinite;
+      }
+    </style>
+  </defs>
+
+  <rect x="2" y="2" width="916" height="166" rx="10" fill="url(#schemBg)" stroke="#1a1c26" stroke-width="1.2" />
+
+  <!-- Top Title Bar -->
+  <g transform="translate(24, 24)">
+    <text x="0" y="0" fill="#e5c07b" font-size="9" class="font-mono" letter-spacing="2">SYSTEM SCHEMATIC // DADDYION REVERSE PROTOCOL</text>
+    <text x="590" y="0" fill="#474b58" font-size="8.5" class="font-mono">SPEC: 2,350+ LOC • AUTONOMOUS PIPELINE</text>
+  </g>
+
+  <!-- Laser pipeline line connecting the 4 nodes -->
+  <line x1="120" y1="92" x2="800" y2="92" stroke="url(#hairlineLaser)" stroke-width="1.5" class="laser-flow" opacity="0.8" />
+
+  <!-- Node 01: Legacy LMS -->
+  <g transform="translate(24, 48)">
+    <rect x="0" y="0" width="195" height="90" rx="8" fill="#080a10" stroke="#1f2332" stroke-width="1" />
+    <text x="16" y="24" fill="#696e80" font-size="8.5" class="font-mono" letter-spacing="1">STAGE 01 / INGESTION</text>
+    <text x="16" y="46" fill="#f1f5f9" font-size="13.5" class="font-sans" font-weight="700">IonCUDOS Portal</text>
+    <text x="16" y="66" fill="#8e929f" font-size="10" class="font-mono">Legacy campus ERP</text>
+    <text x="16" y="80" fill="#585c6a" font-size="9" class="font-mono">14-click friction threshold</text>
+  </g>
+
+  <!-- Node 02: Python Scraper -->
+  <g transform="translate(248, 48)">
+    <rect x="0" y="0" width="205" height="90" rx="8" fill="#080a10" stroke="#1f2332" stroke-width="1" />
+    <text x="16" y="24" fill="#e5c07b" font-size="8.5" class="font-mono" letter-spacing="1">STAGE 02 / INTERCEPTION</text>
+    <text x="16" y="46" fill="#f1f5f9" font-size="13.5" class="font-sans" font-weight="700">Session &amp; DOM Hook</text>
+    <text x="16" y="66" fill="#8e929f" font-size="10" class="font-mono">Python Headless Engine</text>
+    <text x="16" y="80" fill="#585c6a" font-size="9" class="font-mono">Parses consolidated_marks.js</text>
+  </g>
+
+  <!-- Node 03: Forecasting Radar -->
+  <g transform="translate(482, 48)">
+    <rect x="0" y="0" width="200" height="90" rx="8" fill="#080a10" stroke="#1f2332" stroke-width="1" />
+    <text x="16" y="24" fill="#7aa2f7" font-size="8.5" class="font-mono" letter-spacing="1">STAGE 03 / ANALYTICS</text>
+    <text x="16" y="46" fill="#f1f5f9" font-size="13.5" class="font-sans" font-weight="700">Attendance Radar</text>
+    <text x="16" y="66" fill="#8e929f" font-size="10" class="font-mono">Algorithmic Forecaster</text>
+    <text x="16" y="80" fill="#585c6a" font-size="9" class="font-mono">Bunk margin calculation</text>
+  </g>
+
+  <!-- Node 04: Native Client -->
+  <g transform="translate(710, 48)">
+    <rect x="0" y="0" width="186" height="90" rx="8" fill="#080a10" stroke="#e5c07b" stroke-width="1" stroke-opacity="0.8" />
+    <text x="16" y="24" fill="#e5c07b" font-size="8.5" class="font-mono" letter-spacing="1">STAGE 04 / CLIENT</text>
+    <text x="16" y="46" fill="#f8fafc" font-size="13.5" class="font-sans" font-weight="700">DaddyIon v2.3</text>
+    <text x="16" y="66" fill="#cbd5e1" font-size="10" class="font-mono">Kotlin Android Client</text>
+    <text x="16" y="80" fill="#e5c07b" font-size="9" class="font-mono">Zero-login instant access</text>
+  </g>
+</svg>
