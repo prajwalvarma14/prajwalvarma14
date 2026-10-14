@@ -1,242 +1,290 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 380" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="100%" height="100%">
   <defs>
-    <!-- Sky & Horizon -->
-    <linearGradient id="skyGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#040408" />
-      <stop offset="60%" stop-color="#140c26" />
-      <stop offset="100%" stop-color="#2a083b" />
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#020308"/>
+      <stop offset="45%" stop-color="#0d0520"/>
+      <stop offset="80%" stop-color="#28093c"/>
+      <stop offset="100%" stop-color="#4c0b49"/>
     </linearGradient>
 
-    <!-- Track & Ground -->
-    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1a0728" />
-      <stop offset="100%" stop-color="#06070c" />
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe259"/>
+      <stop offset="45%" stop-color="#ff0055"/>
+      <stop offset="100%" stop-color="#7928ca"/>
     </linearGradient>
 
-    <!-- Gold Coin -->
-    <linearGradient id="goldCoin" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffe259" />
-      <stop offset="100%" stop-color="#ffa751" />
+    <linearGradient id="roadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#070512"/>
+      <stop offset="100%" stop-color="#020308"/>
     </linearGradient>
 
-    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3.5" result="blur" />
+    <linearGradient id="chassisGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="14" result="blur2"/>
       <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
     <style>
-      .font-arcade { font-family: 'Press Start 2P', 'Impact', monospace; font-weight: 800; }
-      .font-mono { font-family: 'JetBrains Mono', 'Courier New', monospace; font-weight: 700; }
-
-      @keyframes engineVibration {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-3px); }
+      .hud-text { font-family: 'Courier New', monospace; font-weight: 900; letter-spacing: 1.4px; }
+      @keyframes dashScroll {
+        from { stroke-dashoffset: 60; }
+        to { stroke-dashoffset: 0; }
       }
-      @keyframes trainRushing {
-        0% { transform: translate(460px, 105px) scale(0.12); opacity: 0; }
-        25% { opacity: 1; }
-        80% { opacity: 1; }
-        100% { transform: translate(220px, 340px) scale(1.35); opacity: 0; }
+      @keyframes gridPulse {
+        0%, 100% { stroke-opacity: 0.22; }
+        50% { stroke-opacity: 0.55; }
       }
-      @keyframes coinsFloating {
-        0% { transform: translate(460px, 105px) scale(0.15); opacity: 0; }
-        25% { opacity: 1; }
-        85% { opacity: 1; }
-        100% { transform: translate(700px, 330px) scale(1.3); opacity: 0; }
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.2; transform: scale(0.8); }
+        50% { opacity: 1; transform: scale(1.3); }
       }
-      @keyframes blinker {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.2; }
+      @keyframes lightningFlash {
+        0%, 92%, 96%, 100% { opacity: 0; }
+        94%, 98% { opacity: 0.85; }
       }
-
-      .bike-motor { animation: engineVibration 0.22s ease-in-out infinite; }
-      .train-hazard { animation: trainRushing 2.6s cubic-bezier(0.5, 0, 0.9, 1) infinite; }
-      .coins-pack { animation: coinsFloating 2.6s cubic-bezier(0.5, 0, 0.9, 1) infinite 1.3s; }
-      .blink { animation: blinker 1s steps(1) infinite; }
+      .lane-dash {
+        stroke-dasharray: 30 30;
+        animation: dashScroll 0.24s linear infinite;
+      }
+      .grid-line {
+        animation: gridPulse 2s ease-in-out infinite;
+      }
+      .star {
+        animation: twinkle 2.4s ease-in-out infinite;
+      }
+      .lightning {
+        animation: lightningFlash 5.5s infinite;
+      }
     </style>
   </defs>
 
-  <!-- Arcade Outer Bezel Frame -->
-  <rect x="2" y="2" width="916" height="376" rx="14" fill="#030408" stroke="#1f2334" stroke-width="2" />
+  <!-- 1. SYNTHWAVE SKY & TWINKLING CYBER STARS -->
+  <rect width="1200" height="215" fill="url(#skyGrad)"/>
+  <g fill="#ffffff">
+    <circle cx="95" cy="42" r="1.5" class="star"/>
+    <circle cx="210" cy="88" r="2" class="star" style="animation-delay:0.5s"/>
+    <circle cx="340" cy="35" r="1.2" class="star" style="animation-delay:1.1s"/>
+    <circle cx="480" cy="70" r="1.8" class="star" style="animation-delay:0.3s"/>
+    <circle cx="740" cy="40" r="2" class="star" style="animation-delay:0.9s"/>
+    <circle cx="890" cy="82" r="1.4" class="star" style="animation-delay:1.5s"/>
+    <circle cx="1060" cy="48" r="1.8" class="star" style="animation-delay:0.7s"/>
+  </g>
 
-  <!-- Top Horizon Sky (y=10 to y=105) -->
-  <rect x="10" y="10" width="900" height="98" fill="url(#skyGrad2)" rx="8" />
+  <!-- Cyber-Storm Lightning Bolts in Sky -->
+  <polyline points="260,15 240,65 275,70 230,145" fill="none" stroke="#00f2fe" stroke-width="2.5" class="lightning" filter="url(#neonGlow)"/>
+  <polyline points="940,20 965,70 935,78 975,150" fill="none" stroke="#ff0055" stroke-width="2.5" class="lightning" style="animation-delay:2.7s" filter="url(#neonGlow)"/>
 
-  <!-- Distant Cyberpunk Sunset / Neon Sun -->
-  <circle cx="460" cy="95" r="46" fill="#ff007f" opacity="0.75" filter="url(#neonGlow)" />
-  <!-- City Skyline Silhouette -->
-  <rect x="350" y="65" width="24" height="40" fill="#0d0818" />
-  <rect x="382" y="50" width="30" height="55" fill="#110a20" />
-  <rect x="508" y="55" width="32" height="50" fill="#110a20" />
-  <rect x="548" y="70" width="26" height="35" fill="#0d0818" />
-
-  <!-- 3-LANE SUBWAY HIGHWAY TRACK (from y=105 to y=330) -->
-  <g transform="translate(10, 105)">
-    <rect x="0" y="0" width="900" height="225" fill="url(#groundGrad)" />
-
-    <!-- Lane 1 (Left Track) Outer Boundary -->
-    <line x1="450" y1="0" x2="30" y2="225" stroke="#ff007f" stroke-width="3" opacity="0.9" />
-    <!-- Divider 1 (Left to Center) -->
-    <line x1="450" y1="0" x2="310" y2="225" stroke="#00f2fe" stroke-width="2" stroke-dasharray="16 10" opacity="0.7" />
-    <!-- Divider 2 (Center to Right) -->
-    <line x1="450" y1="0" x2="590" y2="225" stroke="#00f2fe" stroke-width="2" stroke-dasharray="16 10" opacity="0.7" />
-    <!-- Lane 3 (Right Track) Outer Boundary -->
-    <line x1="450" y1="0" x2="870" y2="225" stroke="#ff007f" stroke-width="3" opacity="0.9" />
-
-    <!-- Track Grid Sleepers -->
-    <g opacity="0.35" stroke="#00f2fe" stroke-width="1.2">
-      <line x1="390" y1="20" x2="510" y2="20" />
-      <line x1="320" y1="50" x2="580" y2="50" />
-      <line x1="250" y1="90" x2="650" y2="90" />
-      <line x1="160" y1="140" x2="740" y2="140" />
-      <line x1="60" y1="200" x2="840" y2="200" />
-    </g>
-
-    <!-- Clean, Non-overlapping Lane Badges (At y=180 on tracks) -->
-    <g transform="translate(170, 185)">
-      <rect x="-65" y="-12" width="130" height="22" rx="4" fill="#1b0816" stroke="#ff758c" stroke-width="1" />
-      <text x="0" y="3" text-anchor="middle" fill="#ff758c" font-size="10" class="font-mono">◀ [A] LANE 1</text>
-    </g>
-    <g transform="translate(450, 185)">
-      <rect x="-65" y="-12" width="130" height="22" rx="4" fill="#081822" stroke="#00f2fe" stroke-width="1" />
-      <text x="0" y="3" text-anchor="middle" fill="#00f2fe" font-size="10" class="font-mono">▲ [W] CENTER</text>
-    </g>
-    <g transform="translate(730, 185)">
-      <rect x="-65" y="-12" width="130" height="22" rx="4" fill="#1c1808" stroke="#ffe259" stroke-width="1" />
-      <text x="0" y="3" text-anchor="middle" fill="#ffe259" font-size="10" class="font-mono">[D] LANE 3 ▶</text>
+  <!-- 2. PULSING SYNTHWAVE SUN & 432Hz SKY WAVEFORM -->
+  <g transform="translate(600, 152)">
+    <circle cx="0" cy="0" r="88" fill="url(#sunGrad)" filter="url(#neonGlow)">
+      <animate attributeName="r" values="86;92;86" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <g fill="#1c062b">
+      <rect x="-95" y="10" width="190" height="3.5"/>
+      <rect x="-95" y="22" width="190" height="5"/>
+      <rect x="-95" y="36" width="190" height="6.5"/>
+      <rect x="-95" y="52" width="190" height="8"/>
+      <rect x="-95" y="70" width="190" height="10"/>
     </g>
   </g>
 
-  <!-- ============================================================ -->
-  <!-- LANE 1 OBSTACLE: SUBWAY SURFERS ATTENDANCE TRAIN RUSHING IN  -->
-  <!-- ============================================================ -->
-  <g class="train-hazard">
-    <rect x="-70" y="-65" width="140" height="80" rx="8" fill="#1b0816" stroke="#ff007f" stroke-width="3" filter="url(#neonGlow)" />
-    <!-- Glowing Red Dual Train Lights -->
-    <circle cx="-42" cy="-40" r="10" fill="#ff0055" filter="url(#neonGlow)" />
-    <circle cx="42" cy="-40" r="10" fill="#ff0055" filter="url(#neonGlow)" />
-    <!-- Train Warning Signboard -->
-    <rect x="-60" y="-14" width="120" height="22" rx="4" fill="#07070e" stroke="#ff007f" stroke-width="1" />
-    <text x="0" y="1" text-anchor="middle" fill="#ff758c" font-size="11.5" class="font-mono">⚠️ 74.9% ATTENDANCE</text>
+  <path d="M 0,145 Q 150,95 300,145 T 600,145 T 900,145 T 1200,145" fill="none" stroke="#ffe259" stroke-width="2" stroke-opacity="0.45" filter="url(#softGlow)">
+    <animate attributeName="d"
+      values="M 0,145 Q 150,95 300,145 T 600,145 T 900,145 T 1200,145;
+              M 0,145 Q 150,195 300,145 T 600,145 T 900,145 T 1200,145;
+              M 0,145 Q 150,95 300,145 T 600,145 T 900,145 T 1200,145"
+      dur="2.8s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 3. MYSURU NEON METROPOLIS SILHOUETTE -->
+  <path d="M0,215 L0,175 L45,175 L45,155 L90,155 L90,185 L140,185 L140,140 L195,140 L195,180 L250,180 L250,160 L310,160 L310,195 L380,195 L380,168 L430,168 L430,205 L770,205 L770,165 L825,165 L825,190 L880,190 L880,145 L940,145 L940,180 L1005,180 L1005,155 L1065,155 L1065,188 L1130,188 L1130,160 L1200,160 L1200,215 Z" fill="#05060f" stroke="#00f2fe" stroke-width="1" stroke-opacity="0.4"/>
+
+  <!-- 4. 3D PERSPECTIVE HIGHWAY & ZOOMING NEON TUNNEL ARCHES -->
+  <rect y="212" width="1200" height="258" fill="url(#roadGrad)"/>
+  <line x1="0" y1="212" x2="1200" y2="212" stroke="#00f2fe" stroke-width="3" filter="url(#neonGlow)"/>
+
+  <g stroke="#00f2fe" stroke-width="1.5" class="grid-line">
+    <line x1="600" y1="212" x2="-180" y2="470"/>
+    <line x1="600" y1="212" x2="40" y2="470"/>
+    <line x1="600" y1="212" x2="240" y2="470"/>
+    <line x1="600" y1="212" x2="960" y2="470"/>
+    <line x1="600" y1="212" x2="1160" y2="470"/>
+    <line x1="600" y1="212" x2="1380" y2="470"/>
+    <line x1="0" y1="232" x2="1200" y2="232"/>
+    <line x1="0" y1="258" x2="1200" y2="258"/>
+    <line x1="0" y1="292" x2="1200" y2="292"/>
+    <line x1="0" y1="336" x2="1200" y2="336"/>
+    <line x1="0" y1="392" x2="1200" y2="392"/>
+    <line x1="0" y1="452" x2="1200" y2="452"/>
   </g>
 
-  <!-- ============================================================ -->
-  <!-- LANE 3 ITEM: SUBWAY SURFERS GOLD COINS & MULTIPLIER          -->
-  <!-- ============================================================ -->
-  <g class="coins-pack">
-    <circle cx="0" cy="-35" r="16" fill="url(#goldCoin)" stroke="#fff" stroke-width="1.8" filter="url(#neonGlow)" />
-    <text x="0" y="-30" text-anchor="middle" fill="#523600" font-size="14" class="font-arcade">★</text>
+  <line x1="600" y1="212" x2="90" y2="470" stroke="#ff0055" stroke-width="6" filter="url(#neonGlow)"/>
+  <line x1="600" y1="212" x2="1110" y2="470" stroke="#ff0055" stroke-width="6" filter="url(#neonGlow)"/>
+  <line x1="600" y1="212" x2="395" y2="470" stroke="#00f2fe" stroke-width="4" class="lane-dash" filter="url(#softGlow)"/>
+  <line x1="600" y1="212" x2="805" y2="470" stroke="#00f2fe" stroke-width="4" class="lane-dash" filter="url(#softGlow)"/>
 
-    <circle cx="0" cy="5" r="19" fill="url(#goldCoin)" stroke="#fff" stroke-width="2" filter="url(#neonGlow)" />
-    <text x="0" y="11" text-anchor="middle" fill="#523600" font-size="16" class="font-arcade">★</text>
-
-    <rect x="-40" y="32" width="80" height="20" rx="4" fill="#181404" stroke="#ffe259" stroke-width="1.2" />
-    <text x="0" y="46" text-anchor="middle" fill="#ffe259" font-size="9.5" class="font-mono">+440 COINS</text>
+  <!-- Passing Hyperspace Laser Streaks -->
+  <g stroke="#ffe259" stroke-width="2.5" stroke-linecap="round" filter="url(#softGlow)">
+    <line x1="560" y1="225" x2="200" y2="440">
+      <animate attributeName="stroke-dasharray" values="0,600; 95,600; 0,600" dur="0.65s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" values="0; -450" dur="0.65s" repeatCount="indefinite"/>
+    </line>
+    <line x1="640" y1="225" x2="1000" y2="440">
+      <animate attributeName="stroke-dasharray" values="0,600; 95,600; 0,600" dur="0.65s" begin="0.32s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" values="0; -450" dur="0.65s" begin="0.32s" repeatCount="indefinite"/>
+    </line>
   </g>
 
-  <!-- ============================================================ -->
-  <!-- LANE 2: REAR PERSPECTIVE OF ROYAL ENFIELD SCRAM 440          -->
-  <!-- Solidly grounded at x=460, y=225                             -->
-  <!-- ============================================================ -->
-  <g transform="translate(460, 225)">
-    <g class="bike-motor">
-      <!-- Ground Shadow -->
-      <ellipse cx="0" cy="88" rx="55" ry="12" fill="#000" opacity="0.75" />
-
-      <!-- Massive Knobby Rear Tire -->
-      <rect x="-26" y="28" width="52" height="60" rx="12" fill="#0a0c12" stroke="#575b63" stroke-width="4.5" />
-      <!-- Tread Grooves -->
-      <line x1="-22" y1="40" x2="22" y2="40" stroke="#1c202a" stroke-width="3" />
-      <line x1="-22" y1="52" x2="22" y2="52" stroke="#1c202a" stroke-width="3" />
-      <line x1="-22" y1="64" x2="22" y2="64" stroke="#1c202a" stroke-width="3" />
-      <line x1="-22" y1="76" x2="22" y2="76" stroke="#1c202a" stroke-width="3" />
-
-      <!-- Dual Exhaust Pipes with Glowing Embers -->
-      <rect x="-48" y="42" width="16" height="34" rx="4" fill="#222634" stroke="#8e929f" stroke-width="1.8" />
-      <circle cx="-40" cy="74" r="4.5" fill="#ff758c" filter="url(#neonGlow)" />
-
-      <rect x="32" y="42" width="16" height="34" rx="4" fill="#222634" stroke="#8e929f" stroke-width="1.8" />
-      <circle cx="40" cy="74" r="4.5" fill="#ff758c" filter="url(#neonGlow)" />
-
-      <!-- Dual Golden Suspension Springs -->
-      <line x1="-30" y1="24" x2="-30" y2="54" stroke="#e5c07b" stroke-width="3.5" />
-      <line x1="30" y1="24" x2="30" y2="54" stroke="#e5c07b" stroke-width="3.5" />
-
-      <!-- Rear Scrambler Mudguard (MATTE FORCE GREY) -->
-      <path d="M -28 18 L 28 18 L 22 42 L -22 42 Z" fill="#575b63" stroke="#8e929f" stroke-width="1.5" />
-
-      <!-- License Plate Badge -->
-      <rect x="-32" y="46" width="64" height="18" rx="3" fill="#ffffff" stroke="#111" stroke-width="1" />
-      <text x="0" y="59" text-anchor="middle" fill="#000" font-size="9" class="font-mono">KA-09 SCRAM-440</text>
-
-      <!-- Horizontal Red LED Taillight Strip -->
-      <rect x="-24" y="12" width="48" height="7" rx="3.5" fill="#ff0055" filter="url(#neonGlow)" />
-
-      <!-- Scrambler Wide Seat (Rear View) -->
-      <path d="M -34 -2 Q 0 -8 34 -2 L 30 14 Q 0 8 -30 14 Z" fill="#14161f" stroke="#252a3a" stroke-width="1.2" />
-
-      <!-- Wide Scrambler Handlebars -->
-      <line x1="-65" y1="-14" x2="65" y2="-14" stroke="#8e929f" stroke-width="3.5" stroke-linecap="round" />
-      <!-- Round Bar-End Mirrors with Gold Trims -->
-      <circle cx="-70" cy="-20" r="7" fill="#121520" stroke="#e5c07b" stroke-width="1.8" />
-      <circle cx="70" cy="-20" r="7" fill="#121520" stroke="#e5c07b" stroke-width="1.8" />
-
-      <!-- Rider: Prajwal (Tactical Riding Jacket from Behind) -->
-      <path d="M -40 -18 L -24 -56 L 24 -56 L 40 -18 Z" fill="#1c202d" stroke="#575b63" stroke-width="1.8" />
-      <text x="0" y="-30" text-anchor="middle" fill="#e5c07b" font-size="9" class="font-mono">PRAJWAL</text>
-
-      <!-- Classical Bamboo Bansuri Slung Diagonally Across Back -->
-      <line x1="-36" y1="-2" x2="36" y2="-72" stroke="#e5c07b" stroke-width="5" stroke-linecap="round" filter="url(#neonGlow)" />
-      <!-- Flute Finger Holes -->
-      <circle cx="-14" cy="-24" r="1.8" fill="#523600" />
-      <circle cx="-5" cy="-33" r="1.8" fill="#523600" />
-      <circle cx="4" cy="-42" r="1.8" fill="#523600" />
-      <circle cx="13" cy="-51" r="1.8" fill="#523600" />
-
-      <!-- Helmet (Rear View with Neon Cyan Visor Glow) -->
-      <circle cx="0" cy="-68" r="19" fill="#0c0e15" stroke="#ff007f" stroke-width="2" />
-      <rect x="-14" cy="-64" y="-66" width="28" height="6" rx="3" fill="#00f2fe" filter="url(#neonGlow)" />
-    </g>
+  <!-- 5. LEFT HUD WIDGET: LATERAL G-FORCE TELEMETRY GYROSCOPE -->
+  <g transform="translate(115, 345)">
+    <rect x="-85" y="-75" width="170" height="150" rx="12" fill="#050814" fill-opacity="0.86" stroke="#00f2fe" stroke-width="1.5" filter="url(#softGlow)"/>
+    <text x="0" y="-53" fill="#00f2fe" font-size="11" class="hud-text" text-anchor="middle">G-FORCE TELEMETRY</text>
+    <circle cx="0" cy="4" r="42" fill="none" stroke="#1e293b" stroke-width="2"/>
+    <circle cx="0" cy="4" r="24" fill="none" stroke="#00f2fe" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="-46" y1="4" x2="46" y2="4" stroke="#334155" stroke-width="1"/>
+    <line x1="0" y1="-38" x2="0" y2="46" stroke="#334155" stroke-width="1"/>
+    <!-- Animated G-Force Vector Dot Synced with Car Weaving -->
+    <circle cx="0" cy="4" r="7" fill="#ff0055" filter="url(#neonGlow)">
+      <animate attributeName="cx" values="0; 26; 0; -26; 0" dur="4.2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="4; -8; 12; -8; 4" dur="4.2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="0" y="64" fill="#ffe259" font-size="11" class="hud-text" text-anchor="middle">PEAK: 2.4G LATERAL</text>
   </g>
 
-  <!-- TOP SUBWAY SURFERS HUD BAR -->
-  <g transform="translate(24, 18)">
-    <rect x="0" y="0" width="872" height="38" rx="8" fill="#070810" stroke="#1f2334" stroke-width="1.5" />
-
-    <!-- Score -->
-    <text x="24" y="25" fill="#ffe259" font-size="13" class="font-arcade">SCORE: 044,820</text>
-
-    <!-- Coins -->
-    <g transform="translate(270, 19)">
-      <circle cx="0" cy="0" r="10" fill="url(#goldCoin)" />
-      <text x="0" y="4" text-anchor="middle" fill="#442a00" font-size="9" class="font-arcade">★</text>
-      <text x="18" y="5" fill="#ffe259" font-size="12" class="font-arcade">x 440</text>
+  <!-- 6. RIGHT HUD WIDGET: TWIN-TURBO BOOST & RPM DIAL -->
+  <g transform="translate(1085, 345)">
+    <rect x="-85" y="-75" width="170" height="150" rx="12" fill="#050814" fill-opacity="0.86" stroke="#ff0055" stroke-width="1.5" filter="url(#softGlow)"/>
+    <text x="0" y="-53" fill="#ff0055" font-size="11" class="hud-text" text-anchor="middle">TWIN-TURBO BOOST</text>
+    <circle cx="0" cy="4" r="42" fill="none" stroke="#1e293b" stroke-width="6" stroke-dasharray="190 80" transform="rotate(135 0 4)"/>
+    <circle cx="0" cy="4" r="42" fill="none" stroke="#00f2fe" stroke-width="6" stroke-dasharray="145 140" transform="rotate(135 0 4)" filter="url(#softGlow)"/>
+    <!-- Animated Turbo Needle -->
+    <g transform="translate(0, 4)">
+      <line x1="0" y1="0" x2="34" y2="0" stroke="#ffe259" stroke-width="3" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="rotate" values="-140; 35; -10; 45; -140" dur="2.6s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="0" cy="0" r="5" fill="#ffffff"/>
     </g>
-
-    <!-- Multiplier -->
-    <g transform="translate(425, 9)">
-      <rect x="0" y="0" width="80" height="20" rx="5" fill="#ff007f" />
-      <text x="40" y="14" text-anchor="middle" fill="#fff" font-size="10" class="font-arcade">44X</text>
-    </g>
-
-    <!-- Mission Objective -->
-    <text x="540" y="24" fill="#00f2fe" font-size="11" class="font-mono">MISSION: ESCAPE 74.9% ATTENDANCE</text>
-
-    <!-- WASD Online Indicator -->
-    <g transform="translate(810, 19)">
-      <circle cx="0" cy="0" r="8" fill="#9ece6a" class="blink" />
-      <text x="14" y="4" fill="#9ece6a" font-size="9" class="font-arcade">WASD</text>
-    </g>
+    <text x="0" y="64" fill="#00f2fe" font-size="11" class="hud-text" text-anchor="middle">2.8 BAR // 1,160 HP</text>
   </g>
 
-  <!-- WASD BOTTOM CONTROLS BAR (No Overlap, Cleanly Positioned at y=355) -->
-  <g transform="translate(460, 355)">
-    <rect x="-240" y="-15" width="480" height="26" rx="6" fill="#0a0c16" stroke="#00f2fe" stroke-width="1" />
-    <text x="0" y="3" text-anchor="middle" fill="#00f2fe" font-size="11" class="font-mono">
-      CONTROLS: [W] ACCEL/JUMP • [A] LEFT • [S] BRAKE • [D] RIGHT
-    </text>
+  <!-- 7. TOP EXECUTIVE TELEMETRY BAR -->
+  <g transform="translate(26, 16)">
+    <rect width="1148" height="54" rx="10" fill="#050814" fill-opacity="0.9" stroke="#00f2fe" stroke-width="1.5" filter="url(#softGlow)"/>
+    <circle cx="26" cy="27" r="6" fill="#10b981">
+      <animate attributeName="opacity" values="1;0.2;1" dur="0.9s" repeatCount="indefinite"/>
+    </circle>
+    <text x="44" y="24" fill="#00f2fe" font-size="13" class="hud-text">PRAJWAL VARMA // AIML @ VVCE MYSURU</text>
+    <text x="44" y="42" fill="#94a3b8" font-size="11" class="hud-text">CREATOR OF DADDYION (0.12s ERP ENGINE)</text>
+
+    <!-- Center 432Hz Acoustic Equalizer -->
+    <g transform="translate(515, 13)">
+      <text x="58" y="11" fill="#ffe259" font-size="10" class="hud-text" text-anchor="middle">432Hz BANSURI DSP</text>
+      <g fill="#ffe259">
+        <rect x="8" y="16" width="5" height="18" rx="2"><animate attributeName="height" values="6;20;6" dur="0.45s" repeatCount="indefinite"/></rect>
+        <rect x="18" y="16" width="5" height="18" rx="2"><animate attributeName="height" values="18;5;18" dur="0.38s" repeatCount="indefinite"/></rect>
+        <rect x="28" y="16" width="5" height="18" rx="2"><animate attributeName="height" values="8;22;8" dur="0.52s" repeatCount="indefinite"/></rect>
+        <rect x="38" y="16" width="5" height="18" rx="2"><animate attributeName="height" values="20;7;20" dur="0.41s" repeatCount="indefinite"/></rect>
+        <rect x="48" y="16" width="5" height="18" rx="2"><animate attributeName="height" values="10;22;10" dur="0.35s" repeatCount="indefinite"/></rect>
+        <rect x="58" y="16" width="5" height="18" rx="2"><animate attributeName="height" values="22;6;22" dur="0.49s" repeatCount="indefinite"/></rect>
+        <rect x="68" y="16" width="5" height="18" rx="2"><animate attributeName="height" values="7;19;7" dur="0.44s" repeatCount="indefinite"/></rect>
+        <rect x="78" y="16" width="5" height="18" rx="2"><animate attributeName="height" values="19;8;19" dur="0.37s" repeatCount="indefinite"/></rect>
+        <rect x="88" y="16" width="5" height="18" rx="2"><animate attributeName="height" values="9;21;9" dur="0.5s" repeatCount="indefinite"/></rect>
+        <rect x="98" y="16" width="5" height="18" rx="2"><animate attributeName="height" values="21;6;21" dur="0.42s" repeatCount="indefinite"/></rect>
+      </g>
+    </g>
+
+    <text x="1126" y="24" fill="#ff0055" font-size="14" class="hud-text" text-anchor="end">V12 TWIN-TURBO // 440 KM/H [GEAR 8]</text>
+    <text x="1126" y="42" fill="#ffe259" font-size="11" class="hud-text" text-anchor="end">RPM: [███████████████████] 11,200 REDLINE</text>
+  </g>
+
+  <!-- 8. CENTER HERO: ANIMATED CYBER-V12 VALKYRIE HYPERCAR -->
+  <g transform="translate(600, 400)">
+    <animateTransform attributeName="transform" type="translate"
+      values="600,400; 542,394; 600,402; 658,394; 600,400"
+      dur="4.2s" repeatCount="indefinite"/>
+
+    <!-- Neon Underglow -->
+    <ellipse cx="0" cy="14" rx="165" ry="26" fill="#00f2fe" fill-opacity="0.38" filter="url(#neonGlow)">
+      <animate attributeName="rx" values="158;174;158" dur="0.6s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="0" cy="14" rx="110" ry="15" fill="#ff0055" fill-opacity="0.45" filter="url(#softGlow)"/>
+
+    <!-- Pirelli Cyber-Slick Rear Tires -->
+    <rect x="-134" y="-60" width="46" height="64" rx="8" fill="#07090e" stroke="#00f2fe" stroke-width="3"/>
+    <rect x="88" y="-60" width="46" height="64" rx="8" fill="#07090e" stroke="#00f2fe" stroke-width="3"/>
+
+    <!-- Carbon-Fiber Venturi Diffuser -->
+    <polygon points="-92,-44 92,-44 104,-8 -104,-8" fill="#090d18" stroke="#334155" stroke-width="2.5"/>
+    <g fill="#00f2fe">
+      <rect x="-72" y="-38" width="4" height="26"/>
+      <rect x="-48" y="-38" width="4" height="26"/>
+      <rect x="44" y="-38" width="4" height="26"/>
+      <rect x="68" y="-38" width="4" height="26"/>
+    </g>
+
+    <!-- Widebody Aero Deck -->
+    <polygon points="-138,-40 -116,-98 -62,-128 62,-128 116,-98 138,-40" fill="url(#chassisGrad)" stroke="#00f2fe" stroke-width="3" filter="url(#softGlow)"/>
+    <polygon points="-48,-128 -30,-154 30,-154 48,-128" fill="#050811" stroke="#ff0055" stroke-width="2"/>
+    <rect x="-26" y="-120" width="52" height="4" rx="2" fill="#00f2fe"/>
+    <rect x="-22" y="-111" width="44" height="4" rx="2" fill="#00f2fe"/>
+    <rect x="-18" y="-102" width="36" height="4" rx="2" fill="#00f2fe"/>
+
+    <!-- Infinity LED Tail-Light Bar + KERS Scanner -->
+    <rect x="-114" y="-82" width="228" height="12" rx="4" fill="#ff0055" filter="url(#neonGlow)"/>
+    <rect x="-106" y="-78" width="212" height="4" rx="2" fill="#ffffff"/>
+    <rect x="-100" y="-80" width="46" height="8" rx="3" fill="#ffe259" filter="url(#softGlow)">
+      <animate attributeName="x" values="-104; 58; -104" dur="1.1s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- License Plate -->
+    <rect x="-42" y="-62" width="84" height="22" rx="4" fill="#020617" stroke="#00f2fe" stroke-width="2"/>
+    <text x="0" y="-47" fill="#ffe259" font-size="13" class="hud-text" text-anchor="middle">PV14•V12</text>
+
+    <!-- Quad Titanium Exhausts & Flickering Plasma Flames -->
+    <g fill="#0f172a" stroke="#e2e8f0" stroke-width="2.5">
+      <circle cx="-58" cy="-30" r="8"/>
+      <circle cx="-36" cy="-30" r="8"/>
+      <circle cx="36" cy="-30" r="8"/>
+      <circle cx="58" cy="-30" r="8"/>
+    </g>
+    <g filter="url(#neonGlow)">
+      <polygon points="-65,-26 -58,18 -51,-26" fill="#00f2fe">
+        <animate attributeName="points" values="-65,-26 -58,12 -51,-26; -65,-26 -58,42 -51,-26; -65,-26 -58,12 -51,-26" dur="0.13s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="-43,-26 -36,24 -29,-26" fill="#ff0055">
+        <animate attributeName="points" values="-43,-26 -36,38 -29,-26; -43,-26 -36,14 -29,-26; -43,-26 -36,38 -29,-26" dur="0.15s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="29,-26 36,24 43,-26" fill="#ff0055">
+        <animate attributeName="points" values="29,-26 36,38 43,-26; 29,-26 36,14 43,-26; 29,-26 36,38 43,-26" dur="0.15s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="51,-26 58,18 65,-26" fill="#00f2fe">
+        <animate attributeName="points" values="51,-26 58,12 65,-26; 51,-26 58,42 65,-26; 51,-26 58,12 65,-26" dur="0.13s" repeatCount="indefinite"/>
+      </polygon>
+    </g>
+
+    <!-- Swan-Neck Carbon GT Wing -->
+    <rect x="-48" y="-156" width="8" height="48" fill="#0f172a" stroke="#00f2fe" stroke-width="2"/>
+    <rect x="40" y="-156" width="8" height="48" fill="#0f172a" stroke="#00f2fe" stroke-width="2"/>
+    <polygon points="-132,-164 132,-164 118,-146 -118,-146" fill="#050811" stroke="#ff0055" stroke-width="3" filter="url(#neonGlow)"/>
+    <polygon points="-136,-172 -126,-172 -116,-140 -126,-140" fill="#00f2fe"/>
+    <polygon points="136,-172 126,-172 116,-140 126,-140" fill="#00f2fe"/>
   </g>
 </svg>
