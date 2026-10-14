@@ -1,0 +1,248 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 340" width="100%" height="100%">
+  <defs>
+    <!-- Sky & Horizon -->
+    <linearGradient id="subwaySky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#05060b" />
+      <stop offset="60%" stop-color="#140d28" />
+      <stop offset="100%" stop-color="#2a083b" />
+    </linearGradient>
+
+    <!-- Track & Ground -->
+    <linearGradient id="trackGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f092b" />
+      <stop offset="100%" stop-color="#08090f" />
+    </linearGradient>
+
+    <!-- Gold Coin Gradient -->
+    <linearGradient id="coinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe259" />
+      <stop offset="100%" stop-color="#ffa751" />
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="neon" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      .font-arcade { font-family: 'Press Start 2P', 'Impact', 'Courier New', monospace; font-weight: 800; }
+      .font-mono { font-family: 'JetBrains Mono', 'Courier New', monospace; font-weight: 700; }
+
+      @keyframes bikeThump {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+      @keyframes laneWeave {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-40px); }
+        75% { transform: translateX(40px); }
+      }
+      @keyframes trainRush {
+        0% { transform: translate(460px, 95px) scale(0.1); opacity: 0; }
+        25% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translate(220px, 320px) scale(1.4); opacity: 0; }
+      }
+      @keyframes coinRush {
+        0% { transform: translate(460px, 95px) scale(0.15); opacity: 0; }
+        30% { opacity: 1; }
+        85% { opacity: 1; }
+        100% { transform: translate(700px, 310px) scale(1.3); opacity: 0; }
+      }
+      @keyframes sleeperScroll {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -40; }
+      }
+      @keyframes blinkLamp {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.2; }
+      }
+
+      .bike-vibe { animation: bikeThump 0.2s ease-in-out infinite; }
+      .train-incoming { animation: trainRush 2.5s cubic-bezier(0.5, 0, 0.9, 1) infinite; }
+      .coins-incoming { animation: coinRush 2.5s cubic-bezier(0.5, 0, 0.9, 1) infinite 1.25s; }
+      .track-sleepers { animation: sleeperScroll 0.5s linear infinite; }
+      .blink { animation: blinkLamp 1s steps(1) infinite; }
+    </style>
+  </defs>
+
+  <!-- Arcade Bezel Outer Frame -->
+  <rect x="2" y="2" width="916" height="336" rx="14" fill="#040508" stroke="#1f2334" stroke-width="2" />
+
+  <!-- Sky Area -->
+  <rect x="10" y="10" width="900" height="90" fill="url(#subwaySky)" rx="8" />
+
+  <!-- Distant Cyber City Skyline & Sunset -->
+  <circle cx="460" cy="85" r="42" fill="#ff007f" opacity="0.6" filter="url(#neon)" />
+  <rect x="360" y="60" width="22" height="35" fill="#120c1f" />
+  <rect x="390" y="45" width="28" height="50" fill="#150e26" />
+  <rect x="500" y="50" width="30" height="45" fill="#150e26" />
+  <rect x="540" y="65" width="25" height="30" fill="#120c1f" />
+
+  <!-- SUBWAY SURFERS 3-LANE TRACK GROUND (from y=95 to 330) -->
+  <g transform="translate(10, 95)">
+    <rect x="0" y="0" width="900" height="235" fill="url(#trackGrad)" />
+
+    <!-- 3 SUBWAY LANES PERSPECTIVE RAILS -->
+    <!-- Lane 1 (Left) Outer Border -->
+    <line x1="450" y1="0" x2="30" y2="235" stroke="#ff007f" stroke-width="3" opacity="0.9" />
+    <!-- Divider 1 (Between Left & Center Lane) -->
+    <line x1="450" y1="0" x2="310" y2="235" stroke="#00f2fe" stroke-width="2" stroke-dasharray="14 10" opacity="0.8" />
+    <!-- Divider 2 (Between Center & Right Lane) -->
+    <line x1="450" y1="0" x2="590" y2="235" stroke="#00f2fe" stroke-width="2" stroke-dasharray="14 10" opacity="0.8" />
+    <!-- Lane 3 (Right) Outer Border -->
+    <line x1="450" y1="0" x2="870" y2="235" stroke="#ff007f" stroke-width="3" opacity="0.9" />
+
+    <!-- Horizontal Track Sleepers (Animated Moving Forward) -->
+    <g opacity="0.4" stroke="#00f2fe" stroke-width="1.2">
+      <line x1="390" y1="20" x2="510" y2="20" />
+      <line x1="330" y1="50" x2="570" y2="50" />
+      <line x1="260" y1="90" x2="640" y2="90" />
+      <line x1="170" y1="145" x2="730" y2="145" />
+      <line x1="60" y1="210" x2="840" y2="210" />
+    </g>
+
+    <!-- Lane Labels on Track -->
+    <text x="170" y="225" text-anchor="middle" fill="#ff758c" font-size="11" class="font-mono">◀ LANE 1 (LEFT)</text>
+    <text x="450" y="225" text-anchor="middle" fill="#00f2fe" font-size="11" class="font-mono">▲ LANE 2 (CENTER)</text>
+    <text x="730" y="225" text-anchor="middle" fill="#ffe259" font-size="11" class="font-mono">LANE 3 (RIGHT) ▶</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- LANE 1 OBSTACLE: INCOMING 74.9% ATTENDANCE SUBWAY TRAIN      -->
+  <!-- ============================================================ -->
+  <g class="train-incoming">
+    <!-- Train Front Box -->
+    <rect x="-65" y="-60" width="130" height="75" rx="8" fill="#1b0816" stroke="#ff007f" stroke-width="3" filter="url(#neon)" />
+    <!-- Dual Red Headlights -->
+    <circle cx="-38" cy="-35" r="9" fill="#ff0055" filter="url(#neon)" />
+    <circle cx="38" cy="-35" r="9" fill="#ff0055" filter="url(#neon)" />
+    <!-- Warning Text -->
+    <rect x="-55" y="-12" width="110" height="20" rx="4" fill="#08080f" />
+    <text x="0" y="2" text-anchor="middle" fill="#ff758c" font-size="11" class="font-mono">⚠️ 74.9% ATTENDANCE</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- LANE 3 ITEM: SPINNING GOLD COINS & MULTIPLIERS               -->
+  <!-- ============================================================ -->
+  <g class="coins-incoming">
+    <!-- 3 Stacked Subway Surfers Gold Coins -->
+    <g transform="translate(0, -35)">
+      <circle cx="0" cy="0" r="16" fill="url(#coinGrad)" stroke="#fff" stroke-width="1.5" filter="url(#neon)" />
+      <text x="0" y="6" text-anchor="middle" fill="#6d4c00" font-size="14" class="font-arcade">★</text>
+    </g>
+    <g transform="translate(0, 0)">
+      <circle cx="0" cy="0" r="18" fill="url(#coinGrad)" stroke="#fff" stroke-width="2" filter="url(#neon)" />
+      <text x="0" y="7" text-anchor="middle" fill="#6d4c00" font-size="15" class="font-arcade">★</text>
+    </g>
+    <!-- Multiplier Pill -->
+    <rect x="-35" y="26" width="70" height="18" rx="4" fill="#181404" stroke="#ffe259" stroke-width="1" />
+    <text x="0" y="39" text-anchor="middle" fill="#ffe259" font-size="9" class="font-mono">+5000 PTS</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- LANE 2 (CENTER): REAR VIEW OF ROYAL ENFIELD SCRAM 440        -->
+  <!-- RIDER: PRAJWAL (SUBWAY SURFERS 3RD PERSON PERSPECTIVE)       -->
+  <!-- ============================================================ -->
+  <g transform="translate(460, 205)">
+    <g class="bike-vibe">
+      <!-- Ground Shadow -->
+      <ellipse cx="0" cy="85" rx="50" ry="12" fill="#000" opacity="0.6" />
+
+      <!-- Massive Knobby Rear Tire (Centered) -->
+      <rect x="-24" y="32" width="48" height="52" rx="10" fill="#0c0e14" stroke="#575b63" stroke-width="4" />
+      <!-- Tire Tread Grooves -->
+      <line x1="-20" y1="42" x2="20" y2="42" stroke="#1f232d" stroke-width="2.5" />
+      <line x1="-20" y1="52" x2="20" y2="52" stroke="#1f232d" stroke-width="2.5" />
+      <line x1="-20" y1="62" x2="20" y2="62" stroke="#1f232d" stroke-width="2.5" />
+      <line x1="-20" y1="72" x2="20" y2="72" stroke="#1f232d" stroke-width="2.5" />
+
+      <!-- Dual Upswept Exhaust Canisters (Left & Right) -->
+      <rect x="-44" y="44" width="14" height="32" rx="4" fill="#242834" stroke="#8e929f" stroke-width="1.5" />
+      <circle cx="-37" cy="74" r="4" fill="#ff758c" filter="url(#neon)" />
+
+      <rect x="30" y="44" width="14" height="32" rx="4" fill="#242834" stroke="#8e929f" stroke-width="1.5" />
+      <circle cx="37" cy="74" r="4" fill="#ff758c" filter="url(#neon)" />
+
+      <!-- Dual Gold Shock Springs -->
+      <line x1="-28" y1="28" x2="-28" y2="54" stroke="#e5c07b" stroke-width="3" />
+      <line x1="28" y1="28" x2="28" y2="54" stroke="#e5c07b" stroke-width="3" />
+
+      <!-- Scram 440 Rear Fender (MATTE FORCE GREY) -->
+      <path d="M -26 22 L 26 22 L 20 42 L -20 42 Z" fill="#575b63" stroke="#8e929f" stroke-width="1.5" />
+
+      <!-- Number Plate / Name Badge -->
+      <rect x="-28" y="46" width="56" height="16" rx="3" fill="#fff" stroke="#000" stroke-width="1" />
+      <text x="0" y="58" text-anchor="middle" fill="#000" font-size="8" class="font-mono">KA-09 PV-440</text>
+
+      <!-- Glowing Red LED Taillight Strip -->
+      <rect x="-22" y="16" width="44" height="7" rx="3.5" fill="#ff0055" filter="url(#neon)" />
+
+      <!-- Scrambler Wide Seat (Rear View) -->
+      <path d="M -30 4 Q 0 -2 30 4 L 26 18 Q 0 14 -26 18 Z" fill="#121318" stroke="#222" stroke-width="1" />
+
+      <!-- Handlebars Spanning Wide (Rear View) -->
+      <line x1="-58" y1="-8" x2="58" y2="-8" stroke="#8e929f" stroke-width="3" stroke-linecap="round" />
+      <!-- Round Bar-End Mirrors -->
+      <circle cx="-62" cy="-14" r="6" fill="#12151f" stroke="#e5c07b" stroke-width="1.5" />
+      <circle cx="62" cy="-14" r="6" fill="#12151f" stroke="#e5c07b" stroke-width="1.5" />
+
+      <!-- Rider: Prajwal from Behind -->
+      <!-- Tactical Jacket (Broad Shoulders) -->
+      <path d="M -36 -12 L -22 -44 L 22 -44 L 36 -12 Z" fill="#1c202d" stroke="#575b63" stroke-width="1.5" />
+      <!-- Royal Enfield Scram 440 Logo on Jacket Back -->
+      <text x="0" y="-24" text-anchor="middle" fill="#e5c07b" font-size="8.5" class="font-mono">SCRAM 440</text>
+
+      <!-- Bamboo Bansuri Slung Diagonally Across Back -->
+      <line x1="-32" y1="2" x2="32" y2="-56" stroke="#e5c07b" stroke-width="4.5" stroke-linecap="round" filter="url(#neon)" />
+      <!-- Flute Finger Holes Visualized -->
+      <circle cx="-12" cy="-18" r="1.5" fill="#5c3800" />
+      <circle cx="-4" cy="-25" r="1.5" fill="#5c3800" />
+      <circle cx="4" cy="-32" r="1.5" fill="#5c3800" />
+      <circle cx="12" cy="-39" r="1.5" fill="#5c3800" />
+
+      <!-- Helmet (Rear View with Reflectors) -->
+      <circle cx="0" cy="-56" r="18" fill="#0f1118" stroke="#ff007f" stroke-width="2" />
+      <rect x="-12" y="-52" width="24" height="6" rx="3" fill="#00f2fe" filter="url(#neon)" />
+    </g>
+  </g>
+
+  <!-- SUBWAY SURFERS TOP HUD BAR -->
+  <g transform="translate(24, 20)">
+    <rect x="0" y="0" width="872" height="38" rx="8" fill="#090a12" stroke="#1f2334" stroke-width="1.5" />
+
+    <!-- Score -->
+    <text x="24" y="25" fill="#ffe259" font-size="13" class="font-arcade">SCORE: 044,820</text>
+
+    <!-- Coin Counter -->
+    <g transform="translate(270, 19)">
+      <circle cx="0" cy="0" r="10" fill="url(#coinGrad)" />
+      <text x="0" y="4" text-anchor="middle" fill="#442a00" font-size="9" class="font-arcade">★</text>
+      <text x="18" y="5" fill="#ffe259" font-size="12" class="font-arcade">x 440</text>
+    </g>
+
+    <!-- Multiplier -->
+    <g transform="translate(430, 9)">
+      <rect x="0" y="0" width="80" height="20" rx="5" fill="#ff007f" />
+      <text x="40" y="14" text-anchor="middle" fill="#fff" font-size="10" class="font-arcade">44X</text>
+    </g>
+
+    <!-- Mission Objective -->
+    <text x="540" y="24" fill="#00f2fe" font-size="11" class="font-mono">MISSION: ESCAPE 74.9% ATTENDANCE</text>
+
+    <!-- Hoverboard Ready -->
+    <g transform="translate(810, 19)">
+      <circle cx="0" cy="0" r="10" fill="#9ece6a" class="blink" />
+      <text x="16" y="4" fill="#9ece6a" font-size="9" class="font-arcade">READY</text>
+    </g>
+  </g>
+
+  <!-- BOTTOM ARCADE INSTRUCTION -->
+  <text x="460" y="322" text-anchor="middle" fill="#00f2fe" font-size="11" class="font-mono blink" letter-spacing="1.5">
+    ▼ CHOOSE YOUR LANE BELOW // PLAY SUBWAY SCRAM RUNNER ▼
+  </text>
+</svg>
