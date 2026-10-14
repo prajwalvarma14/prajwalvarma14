@@ -1,170 +1,196 @@
 <div align="center">
 
-<!-- BESPOKE MONOGRAPH HERO (OBSIDIAN & CHAMPAGNE EDITION) -->
-<a href="https://github.com/prajwalvarma14">
-  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/luxury_hero.svg" width="100%" alt="Prajwal Varma Executive Dossier" />
+<!-- RETRO ARCADE SCREEN // SCRAM 440 FORCE GREY (ANIMATED SVG) -->
+<a href="#start-heist">
+  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/scram_arcade_game.svg" width="100%" alt="Scram 440 Arcade Game" />
 </a>
 
 <br/><br/>
 
-<!-- REFINED MONOCHROMATIC DOCK -->
+<!-- QUICK STATS LEDGER -->
+<h1>PRAJWAL VARMA</h1>
+<p>
+  <b>AIML @ VVCE Mysuru</b> &nbsp;•&nbsp; 
+  <b>RE Scram 440 Force Grey</b> &nbsp;•&nbsp; 
+  <b>Bansuri (Flute)</b> &nbsp;•&nbsp; 
+  <b>Creator of DaddyIon</b>
+</p>
+
+<!-- ACTION BUTTONS -->
 <p align="center">
-  <a href="https://www.linkedin.com/in/prajwalvarma14/"><img src="https://img.shields.io/badge/LINKEDIN-000000?style=for-the-badge&logo=linkedin&logoColor=d4af37" alt="LinkedIn" /></a>
+  <a href="https://www.linkedin.com/in/prajwalvarma14/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   &nbsp;
-  <a href="mailto:prajwalvarma14@gmail.com"><img src="https://img.shields.io/badge/DIRECT_DISPATCH-prajwalvarma14@gmail.com-000000?style=for-the-badge&logo=mail.ru&logoColor=d4af37" alt="Email" /></a>
+  <a href="mailto:prajwalvarma14@gmail.com"><img src="https://img.shields.io/badge/Email-prajwalvarma14@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
   &nbsp;
-  <a href="https://www.instagram.com/prajwalvarma14/"><img src="https://img.shields.io/badge/INSTAGRAM-000000?style=for-the-badge&logo=instagram&logoColor=d4af37" alt="Instagram" /></a>
+  <a href="https://www.instagram.com/prajwalvarma14/"><img src="https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
+  &nbsp;
+  <a href="#start-heist"><img src="https://img.shields.io/badge/PLAY_GAME-START_HERE-00F2FE?style=for-the-badge&logo=gamepad&logoColor=black" alt="Play Game" /></a>
 </p>
 
 </div>
 
 ---
 
-### The Premise
+<div id="start-heist"></div>
 
-Software shouldn't feel like paperwork. 
+### 🎮 MINI-GAME: "THE 74.9% ATTENDANCE HEIST"
+> *Click your choice below to play directly in this README!*
 
-I’m an AI & Machine Learning engineer based in Mysuru, studying at **Vidyavardhaka College of Engineering**. I dismantle sluggish, bloated systems and replace them with high-velocity software — whether that means reverse-engineering a college ERP or writing sub-second autonomous pipelines.
-
-When the monitors sleep: I'm either on a **Royal Enfield Scram 440 in Force Grey**, playing microtonal ragas on a bamboo **Bansuri at 432 Hz**, or directing visual stories at **24 frames per second**.
-
----
-
-### Mechanical & Acoustic Telemetry
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/luxury_telemetry.svg" width="100%" alt="Royal Enfield Scram 440 Force Grey & Bansuri Telemetry" />
-</div>
-
----
-
-### Live System Cockpit & Diagnostics
-
-```bash
-╭─ prajwal@scram440-forcegrey: ~ ─────────────────────────────────────────────────────────────╮
-│ 🔴 🟡 🟢  HOST: PRAJWAL_VARMA // AIML_VVCE_MYSURU // SPEC_ID: 014                          │
-├─────────────────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                             │
-│  🏍️  MACHINE     :: Royal Enfield Scram 440 (Force Grey) • 440cc Air/Oil-Cooled Single      │
-│  🪈  ACOUSTICS   :: Indian Bamboo Bansuri • 432 Hz Raga Calibration (Yaman, Bhimpalasi)     │
-│  🔓  CROWN HACK  :: DaddyIon v2.3 • Reverse-engineered IonCUDOS • Zero-login attendance radar│
-│  🎬  CINEMA      :: 24.000 fps • Super 35 Anamorphic • Narrative Director                  │
-│  ⚡  METHOD      :: First Principles • Overriding bottlenecks with zero permission          │
-│  💛  IMPACT      :: Active mentor & teacher for underprivileged children at U&I NGO         │
-│                                                                                             │
-╰─ STATUS: "The compiler is my enemy. Torturing my laptop with chaotic Python & AI." 🚀───────╯
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║ MISSION BRIEFING:                                                             ║
+║ Location: VVCE Campus, Mysuru                                                 ║
+║ Time: Friday, 3:45 PM                                                         ║
+║ Crisis: Your attendance is locked at 74.9% (Detention threshold: 75.0%)      ║
+║ Professor: Watching the classroom door like a hawk                            ║
+║ Your Ride: Royal Enfield Scram 440 (Force Grey) parked at the campus gate     ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
 ```
 
----
+#### What do you do? Choose your path:
 
-### Signature Exploit // DaddyIon Architectural Deconstruction
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/daddyion_luxury_schematic.svg" width="100%" alt="DaddyIon Architecture Schematic" />
-</div>
-
-<br/>
-
-* **The Problem:** 14 manual clicks across fractured tables, fragile session timeouts, zero bunk forecasting, and an unusable mobile layout on our college ERP (*IonCUDOS*).
-* **The Solution:** Bypassed the browser entirely. Deconstructed the portal's session lifecycle, parsed raw JavaScript response payloads (`consolidated_marks.js`, `student_credit_registration.js`), and wrote a resilient headless Python scraper.
-* **The Client:** Wrapped into **DaddyIon v2.3** — a native Android companion (Kotlin + WebView bridge) with offline caching and predictive attendance forecasting.
+* 💻 **[OPTION 1: Open laptop, bypass the portal with DaddyIon ➔](#route-hack)**
+* 🏍️ **[OPTION 2: Sprint to the Scram 440 & twist the throttle ➔](#route-ride)**
+* 🪈 **[OPTION 3: Whip out your Bamboo Flute & play a live Raga ➔](#route-flute)**
 
 ---
 
-### Selected Artifacts (Overview)
+<div id="route-hack"></div>
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/luxury_exhibition.svg" width="100%" alt="Curated Engineering Gallery" />
-</div>
+### 💻 PATH 1: THE DADDYION INFILTRATION
 
-<br/>
+```
+[ EXECUTING DADDYION SCRAPER v2.3 ]
+>>> Intercepting IonCUDOS session tokens... [CONNECTED]
+>>> Extracting dynamic JavaScript attendance tables...
+>>> Injecting proxy calculation payload...
 
-* **DaddyIon v2.3:** Autonomous campus companion reverse-engineering the college LMS (Kotlin + Python).
-* **NewsAI Engine:** Sub-second global intelligence crawler utilizing Groq LPU inference (Playwright + Supabase).
-* **AuraOS:** Spatial in-browser desktop operating system built from pure JavaScript and Web Audio.
-* **Bullion POS:** Real-time precious metals valuation engine and artisan wastage ledger.
+          _      _      _
+       __(.)< __(.)> __(.)=
+       \___)  \___)  \___)  <- (Bypassing 14 manual clicks)
+
+[✓] ATTENDANCE OVERRIDE COMPLETE:
+    Previous: 74.9%
+    Updated:  86.2%
+    Detention: AVOIDED (+5000 XP)
+```
+
+**What is your next move?**
+* 🏍️ **[Celebrate by escaping to the Western Ghats on Scram 440 ➔](#route-ride)**
+* 🪈 **[Drop a celebratory Bansuri victory solo in the lab ➔](#route-flute)**
+* 🔄 **[Restart the Heist ➔](#start-heist)**
 
 ---
 
-### 🕹️ The Declassified Terminal // Easter Eggs
+<div id="route-ride"></div>
+
+### 🏍️ PATH 2: THE 440cc FORCE GREY GETAWAY
+
+```
+[ STARTING ROYAL ENFIELD SCRAM 440 (FORCE GREY) ]
+
+>>> CHUG . . . CHUG . . . THUMP-THUMP-THUMP-THUMP!
+>>> 440cc single-cylinder engine fires up.
+>>> 36 Nm torque kicks in. Clutch dropped.
+
+       __o        __o        __o
+     _`\<,      _`\<,      _`\<,    <- (Leaving bugs in the dust)
+    (*)/ (*)   (*)/ (*)   (*)/ (*)
+
+[✓] ESCAPE SUCCESSFUL:
+    Route: Mysuru ➔ Madikeri Ghats
+    Speed: 80 km/h
+    Compiler Memory: 0% (Mental cache cleared)
+    Soundtrack: Pure exhaust thrum (+8000 XP)
+```
+
+**What is your next move?**
+* 🪈 **[Pull over at a hill sunset and play the Bansuri ➔](#route-flute)**
+* 💻 **[Head back to hack more stuff ➔](#route-hack)**
+* 🔄 **[Restart the Heist ➔](#start-heist)**
+
+---
+
+<div id="route-flute"></div>
+
+### 🪈 PATH 3: THE 432 Hz BANSURI HYPNOSIS
+
+```
+[ DEPLOYING ACOUSTIC DIPLOMACY ]
+>>> Pulling out 7-Hole Indian Bamboo Flute (Bansuri)
+>>> Calibrating to 432 Hz concert frequency...
+>>> Playing RAGA YAMAN (Kalyan Thaat)...
+
+   ♪  ♫   ♩  ♬   ♭   ♮   ♯   ♪   ♫
+  (~~~) (~~~) (~~~) (~~~) (~~~)
+
+[✓] PROFESSOR HYPNOTIZED:
+    The professor is moved to tears by the microtonal acoustic beauty.
+    The entire classroom starts floating.
+    Result: Everyone is awarded 100% attendance! (+10,000 XP)
+```
+
+**What is your next move?**
+* 🏍️ **[Ride into the sunset on the Scram 440 Force Grey ➔](#route-ride)**
+* 💻 **[Go write some Python code ➔](#route-hack)**
+* 🔄 **[Restart the Heist ➔](#start-heist)**
+
+---
+
+### 🕹️ INTERACTIVE SOUNDBOARD (Click to read audio transcripts)
 
 <details>
-<summary><b>▶ [CLICK TO EXPAND CONSOLE] // Declassified System Telemetry & Field Logs</b></summary>
+<summary><b>🔊 Sound 01: Royal Enfield Scram 440 Force Grey Ignition</b></summary>
 <br/>
 
-```bash
-prajwal@scram440:~$ ./run_diagnostics.sh --verbose
-
-[+] 01 / SCRAM 440 IGNITION TELEMETRY:
-    ├── Choke: OFF • Fuel Injection: PRIMED (Force Grey Tank)
-    ├── Engine: 440cc Single-Cylinder Long-Stroke Thumper
-    └── Sound: Deep exhaust resonance idling at 1,150 RPM
-    └── Western Ghats Route: Mysuru ➔ Madikeri ➔ Mangaluru ➔ Ghat Pass
-
-[+] 02 / BANSURI ACOUSTIC FREQUENCY (432 Hz):
-    ├── Raga Yaman: Kalyan Thaat • Clears mental fragmentation during 2:00 AM refactoring
-    ├── Raga Bhimpalasi: Kafi Thaat • Flow state for writing autonomous pipelines
-    └── Raga Darbari: Asavari Thaat • For debugging multi-threaded race conditions
-
-[+] 03 / 24 FPS DIRECTOR'S VIEWFINDER:
-    ├── Format: Super 35 Anamorphic (2.39:1 Cinemascope)
-    ├── Cadence: 24.000 fps • 180° Shutter (1/48s)
-    └── Director's Note: "Every line of code is a frame of cinema. No filler."
-
-[+] 04 / FIRST PRINCIPLES PROTOCOL:
-    ├── 1. Isolate the bottleneck making everyone groan.
-    ├── 2. Open headless devtools. Intercept TLS payloads and session tokens.
-    ├── 3. Don't wait for permission. Build the scraper.
-    └── 4. Ship a resilient client that eliminates 100% of the friction.
-
-[+] 05 / SECRET KONAMI CODE:
-    ★ ★ ★ CHEAT CODE UNLOCKED: PRAJWAL_VARMA_GODMODE ★ ★ ★
-    + Unlimited compiler patience
-    + 10 dB boost to the Royal Enfield Scram 440 Force Grey exhaust note
-    + Automated scraper immunity from rate-limits
-    + Direct VIP line: prajwalvarma14@gmail.com
 ```
+[●] Turn ignition key -> Fuel pump whines -> Starter click ->
+>>> DUG . . . DUG . . . DUG-DUG-DUG-DUG-DUG-DUG!
+(Deep, rhythmic, bass-heavy 440cc single-cylinder long-stroke thrum at 1,150 RPM idle)
+```
+</details>
 
+<details>
+<summary><b>🔊 Sound 02: 432 Hz Indian Bamboo Bansuri Solo</b></summary>
+<br/>
+
+```
+[●] Warm breath through bamboo ->
+>>> ~ ~ ~ Ni(.) - Re - Ga - Ma# - Dha - Ni - Sa' ~ ~ ~
+(Acoustic glissando Meend sliding with microtonal grace at 432 Hz)
+```
+</details>
+
+<details>
+<summary><b>🔊 Sound 03: DaddyIon Bypassing College ERP</b></summary>
+<br/>
+
+```
+[●] requests.post("https://ioncudos.in/...") -> HTTP 200 OK ->
+>>> [ALERT]: 14 manual clicks destroyed in 120ms.
+```
+</details>
+
+<details>
+<summary><b>★ Cheat Code: Konami Code [ ↑ ↑ ↓ ↓ ← → ← → B A ]</b></summary>
+<br/>
+
+```
+★ ★ ★ UNLOCKED: PRAJWAL_VARMA_GODMODE ★ ★ ★
++ Unlimited compiler patience
++ Scram 440 Force Grey speed unlocked
++ 100% attendance guaranteed
++ Direct ping: prajwalvarma14@gmail.com
+```
 </details>
 
 ---
 
-### Engineering Disciplines
-
-```
-CORE RUNTIMES    │ Python  •  TypeScript  •  Kotlin  •  JavaScript  •  SQL  •  POSIX Shell
-INTELLIGENCE     │ Groq LPU  •  Playwright  •  Autonomous Scrapers  •  BeautifulSoup  •  PyTorch
-CLIENT ARCH      │ Android SDK  •  React Native (Expo)  •  Bespoke CSS Glassmorphism  •  Vite
-BACKEND & DATA   │ Supabase (Postgres)  •  Flask  •  FastAPI  •  Firebase  •  SQLite  •  REST
-INFRASTRUCTURE   │ Git  •  GitHub Actions  •  Postman  •  Linux  •  Android Studio
-```
-
----
-
-### Dispatch & Verification
-
 <div align="center">
 
-```
-┌──────────────────────────────────────────────────────────────────────────────┐
-│  PRAJWAL VARMA  •  AIML ENGINEER  •  MYSURU, KARNATAKA, INDIA               │
-├──────────────────────────────────────────────────────────────────────────────┤
-│  MACHINE            Royal Enfield Scram 440 (Force Grey)                     │
-│  DIRECT CHANNEL     prajwalvarma14@gmail.com                                 │
-│  AVAILABILITY       High-impact engineering roles & autonomous ventures     │
-└──────────────────────────────────────────────────────────────────────────────┘
-```
-
-<br/>
-
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=prajwalvarma14&show_icons=true&theme=dark&hide_border=true&bg_color=040406&title_color=e5c07b&icon_color=8e929f&text_color=cbd5e1" height="155" alt="GitHub Stats" />
-  &nbsp;&nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=prajwalvarma14&layout=compact&theme=dark&hide_border=true&bg_color=040406&title_color=e5c07b&text_color=cbd5e1&langs_count=6" height="155" alt="Top Languages" />
-</p>
-
-<p align="center">
-  <sub>© 2026 Prajwal Varma. Royal Enfield Scram 440 Force Grey • 432 Hz Bansuri • Mysuru</sub>
+  <b>Designed to play, not to read.</b><br/>
+  <sub>© 2026 Prajwal Varma • RE Scram 440 Force Grey • Mysuru</sub>
 </p>
 
 </div>
