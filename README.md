@@ -73,8 +73,8 @@ INFRASTRUCTURE   │ Git  •  GitHub Actions  •  Postman  •  Linux  •  An
 
 When the displays go dark, I look for discipline in analog mechanics and acoustics:
 
-* **The Machine — Royal Enfield Scram 411:**  
-  Long-stroke 411cc single-cylinder engine. Simple mechanical honesty. Highway riding through the Western Ghats is the most effective mental defragmentation tool I know.
+* **The Machine — Mavrick 440 (Force Grey):**  
+  440cc TorqX single-cylinder delivering 36 Nm of low-end pull. Finished in matte Force Grey with blacked-out industrial mechanics. Long highway throttles through the Western Ghats with that deep exhaust bass is the most effective mental defragmentation tool I know.
 * **The Instrument — Classical Bamboo Bansuri:**  
   7-hole Indian transverse flute. Practicing microtonal classical ragas (*Bhimpalasi*, *Yaman*) at 432 Hz. It demands breath control, pitch precision, and deep acoustic focus.
 * **The Medium — 24fps Visual Storytelling:**  
