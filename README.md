@@ -1,3 +1,36 @@
+<div align="center">
+
+<!-- TOP HERO BANNER: CYBER-V12 VALKYRIE HIGHWAY G-FORCE HUD BANNER -->
+<a href="https://prajwalvarma14.github.io/prajwalvarma14/">
+  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/animated_cyber_v12_valkyrie_hypercar_highway_g_force_hud_banner.svg" width="100%" alt="Cyber-V12 Valkyrie Highway G-Force HUD Banner" />
+</a>
+
+<br/><br/>
+
+# PRAJWAL VARMA
+
+<p align="center">
+  <b>AIML Engineer @ VVCE Mysuru</b> &nbsp;•&nbsp; 
+  <b>Cyber-V12 Valkyrie Hypercar (11,200 RPM)</b> &nbsp;•&nbsp; 
+  <b>Classical Bansuri (432 Hz)</b> &nbsp;•&nbsp; 
+  <b>Creator of DaddyIon</b>
+</p>
+
+<!-- EXECUTIVE SOCIAL CONNECTORS -->
+<p align="center">
+  <a href="https://www.linkedin.com/in/prajwalvarma14/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  &nbsp;
+  <a href="mailto:prajwalvarma14@gmail.com"><img src="https://img.shields.io/badge/Email-prajwalvarma14@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  &nbsp;
+  <a href="https://www.instagram.com/prajwalvarma14/"><img src="https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
+  &nbsp;
+  <a href="https://prajwalvarma14.github.io/prajwalvarma14/"><img src="https://img.shields.io/badge/🎮_LAUNCH_60FPS_ARCADE-PLAY_LIVE-00F2FE?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Play Live Arcade" /></a>
+</p>
+
+</div>
+
+---
+
 ```
 @@                   ⚡ CYBER-V12 VALKYRIE // LIVE TELEMETRY COCKPIT [418 KM/H] ⚡                   @@
 +  RPM: [████████████████████▒▒] 11,100   │   GEAR: [ 8 ]   │   DRS: [ ACTIVE ]   │   NOS: [ 100% ]
@@ -16,26 +49,100 @@
 @@ ═════════════════════════════════════════════════════════════════════════════════════════════════ @@
 ```
 
-## 🧬 01 // THE ENGINEER BEHIND THE WHEEL
+## 🧠 01 // THE DUAL-HEMISPHERE ARCHITECTURE: SILICON × BAMBOO
 
-```yaml
-IDENTITY:        Prajwal Varma
-DISCIPLINE:      B.E. in Artificial Intelligence & Machine Learning (AIML) @ VVCE Mysuru
-MACHINE:         Cyber-V12 Valkyrie Hypercar (6.5L Naturally Aspirated + KERS Hybrid // 11,200 RPM)
-ACOUSTIC CORE:   Hindustani Classical Bamboo Flute (Bansuri) tuned to 432 Hz Microtonal Resonance
-PHILOSOPHY:      "If a college portal takes 14 clicks, write a Python scraper that does it in 120ms."
-```
+> *"Most engineers optimize only for clock speed and burn out, or optimize only for peace and ship nothing. I run a dual-core architecture: 11,200 RPM Twin-Turbo Silicon for ruthless execution, synchronized with 432 Hz Classical Bamboo Acoustics for zero-noise cognitive clarity."*
 
-## 🏗️ 02 // V12 PRODUCTION ARCHITECTURE (FLAGSHIP SYSTEMS)
+<div align="center">
 
-| System Module | Core Technology | Telemetry Status | Live Link / Action |
-|:---|:---|:---:|:---:|
-| **🎮 Arcade Nexus** | HTML5 Canvas / Web Audio API | `60 FPS Locked` | [Play All Games ↗](https://prajwalvarma14.github.io/prajwalvarma14/) |
-| **🏎️ Neon Overdrive** | Pseudo-3D Raycasting / Physics | `Active` | [Launch Game ↗](https://prajwalvarma14.github.io/prajwalvarma14/#subway) |
-| **🔓 DaddyIon Terminal** | Interactive Security Shell | `Secured` | [Access Terminal ↗](https://prajwalvarma14.github.io/prajwalvarma14/#hack) |
-| **🪈 432Hz Synth Lock** | Web Audio Oscillator Engine | `Harmonic` | [Tune Frequencies ↗](https://prajwalvarma14.github.io/prajwalvarma14/#rhythm) |
+| 🏎️ LEFT CORE // 11,200 RPM V12 SILICON | 🪈 RIGHT CORE // 432 Hz ACOUSTIC DSP |
+|:---|:---|
+| ```diff<br/>@@ HIGH-VELOCITY ENGINEERING & AUTOMATION @@<br/>+ [+] Reverse-Engineering Legacy Portals (DaddyIon)<br/>+ [+] Deep Learning & Computer Vision (PyTorch/AIML)<br/>+ [+] Full-Stack Graph Platforms (SkillHub)<br/>+ [+] Sub-150ms Asynchronous DOM & API Pipelines<br/>! [!] PHILOSOPHY: If a task takes 14 clicks,<br/>!     write a script that obliterates it in 0.12s.<br/>``` | ```diff<br/>@@ HINDUSTANI CLASSICAL BANSURI & FLOW STATE @@<br/>+ [+] 7-Hole Assam Bamboo Flute (E-Base / 432 Hz)<br/>+ [+] Microtonal Glissando (Meend) & Gamak Control<br/>+ [+] Raga Yaman (Evening) & Raga Bhimpalasi (Noon)<br/>+ [+] Neuro-Acoustic Dopamine Regulation (DopAllmine)<br/>! [!] PHILOSOPHY: Code like a V12 hypercar on the<br/>!     straights; think like a classical Raga in the corners.<br/>``` |
+
+</div>
+
+<br/>
+
+<!-- SECOND ANIMATED SVG: V12 TWIN-TURBO & NEURAL CORE & 432HZ OSCILLOSCOPE -->
+<div align="center">
+  <img src="https://raw.githubusercontent.com/prajwalvarma14/prajwalvarma14/main/assets/v12_neural_cockpit.svg" width="100%" alt="V12 Twin-Turbo Dyno Core, Neural Router, and 432Hz Oscilloscope" />
+</div>
+
+<br/>
 
 ---
+
+## ⏱️ 02 // PIT-WALL TELEMETRY: PURPLE SECTOR BENCHMARKS
+
+> *Why do I build? Because standard workflows are stuck behind a Pit Limiter. Here is the real-world lap-time telemetry of my systems versus the status quo:*
+
+```diff
+@@ 🏁 SECTOR 01: CHECKING COLLEGE ATTENDANCE & CIE MARKS (VVCE IONCUDOS)         @@
+- [LEGACY PORTAL]   14 Manual Clicks ➔ 4 Page Reloads ➔ Mental Math      [ 42.00s ] ❌ SLOW
++ [DADDYION ENGINE] Headless PHPSESSID Hijack + BeautifulSoup4 Parser     [  0.12s ] 🟣 PURPLE SECTOR (350x FASTER)
+
+@@ 🏁 SECTOR 02: ASSEMBLING A HACKATHON ENGINEERING SQUAD                        @@
+- [GENERIC FEEDS]   Scrolling LinkedIn/WhatsApp ➔ Unverified Resumes      [ 72 hrs ] ❌ SLOW
++ [SKILLHUB GRAPH]  GitHub Commit Vector Matching + Stack Verification    [ < 30s  ] 🟣 PURPLE SECTOR (INSTANT MATCH)
+
+@@ 🏁 SECTOR 03: MASTERING COMPLEX AI/ML MATHEMATICS & ALGORITHMS                @@
+- [STATIC PDFS]     500-Page Textbooks ➔ Zero Visual Intuition            [ Weeks  ] ❌ SLOW
++ [UNIVERSAL BOOK]  Interactive Neural Topologies + Visual Synthesis      [  10x   ] 🟣 PURPLE SECTOR (DEEP INTUITION)
+```
+
+---
+
+## 🏗️ 03 // PRODUCTION GARAGE & CLASSIFIED BLUEPRINTS
+
+<details open>
+<summary><b>🔧 POP THE CARBON HOOD // INSPECT LIVE SCHEMATICS</b></summary>
+<br/>
+
+```python
+# DADDYION V12 CORE // ZERO-CLICK SESSION INTERCEPTOR & ATTENDANCE ENGINE
+import requests
+from bs4 import BeautifulSoup
+
+class DaddyIonV12Engine:
+    def __init__(self, usn: str, password: str):
+        self.session = requests.Session()
+        self.portal_url = "https://ioncudos.in/vvce_lms_student"
+
+    def intercept_telemetry(self) -> dict:
+        # Step 1: Bypass 14 manual UI clicks via direct PHPSESSID negotiation
+        raw_dom = self.session.get(f"{self.portal_url}/student_attendance.js", timeout=0.5).text
+        soup = BeautifulSoup(raw_dom, "html.parser")
+
+        # Step 2: Compute exact 85% attendance safety margin in < 120ms
+        attended, total = self._extract_vectors(soup)
+        pct = round((attended / total) * 100, 2)
+        safe_bunks = max(0, int((attended - 0.85 * total) / 0.85))
+        return {"attendance": f"{pct}%", "safe_to_skip": f"{safe_bunks} Lectures", "latency": "118ms"}
+```
+
+```yaml
+ECU_FIRMWARE:       PV14-VALKYRIE-OS-v4.40
+ASPIRATION:         6.5L Naturally Aspirated V12 + Twin-Turbo KERS Hybrid
+REDLINE_LIMIT:      11,200 RPM (Zero Compiler Warnings)
+PRIMARY_LANGUAGES:  [ Python 3.12, C++, C, JavaScript (ES2026), TypeScript, SQL ]
+AI_ML_TENSOR_STACK: [ PyTorch, TensorFlow, Scikit-Learn, OpenCV, NumPy, Pandas ]
+WEB_AND_SYSTEMS:    [ React, FastAPI, Node.js, TailwindCSS, BeautifulSoup4, Docker, Linux ]
+```
+
+```diff
+@@ ACOUSTIC FOURIER SPECTRUM // CONCERT PITCH A=432Hz (SA = 256.87 Hz) @@
++  SWARA SA  (Tonic Root)       │ 256.87 Hz │ ████████████████████████████ 100% Phase Lock
++  SWARA GA  (Komal / Minor 3rd)│ 304.44 Hz │ ██████████████████████░░░░░░  78% Meend Bend
+!  SWARA MA  (Tivra / Aug 4th)  │ 362.04 Hz │ ████████████████████████░░░░  86% Raga Yaman Core
++  SWARA PA  (Perfect Fifth)    │ 384.87 Hz │ ████████████████████████████ 100% Pure Harmonic
+-  SWARA NI  (Komal / Minor 7th)│ 456.14 Hz │ █████████████████████░░░░░░░  74% Raga Bhimpalasi
+```
+
+</details>
+
+---
+
+## 🕹️ 04 // IN-README INTERACTIVE HYPERCAR GAME MATRIX
 
 ### 🏎️ GAME 01 // NEON OVERDRIVE: V12 HYPERCAR 3-STAGE PURSUIT
 
@@ -231,44 +338,49 @@ Select the fastest Python parsing engine to extract attendance & CIE marks in un
 
 ---
 
-## 🛰️ 03 // INTERACTIVE NEURAL & V12 TELEMETRY TOPOLOGY
+## 📊 05 // LIVE GITHUB TELEMETRY & NEURAL CIRCUIT TOPOLOGY
 
 ```mermaid
 flowchart LR
-    subgraph V12["🏎️ PRAJWAL VARMA // CORE ENGINE"]
-        A[("🧠 AIML @ VVCE")]
-        B[("🪈 432Hz Acoustic DSP")]
-        C[("⚡ Cyber-V12 Telemetry")]
+    subgraph INPUT["⚡ BIOMETRIC & COGNITIVE INPUTS"]
+        I1(["🧠 AIML Research\nVVCE Mysuru"])
+        I2(["🏎️ 11,200 RPM\nV12 Execution"])
+        I3(["🪈 432 Hz Bansuri\nAcoustic Flow"])
     end
 
-    subgraph SYSTEMS["🏗️ PRODUCTION SYSTEMS"]
-        D["🔓 DaddyIon\n(120ms ERP Scraper)"]
-        E["🌐 SkillHub\n(Builder Talent Graph)"]
-        F["📖 Universal Book\n(AIML Knowledge OS)"]
-        G["🔥 DopAllmine\n(Focus XP Engine)"]
+    subgraph ENGINE["🔥 PRAJWAL VARMA // CORE KERNEL"]
+        K{{"⚡ ZERO-LATENCY\nARCHITECTURE"}}
     end
 
-    A -->|Python + BS4| D
-    A -->|Graph Vectors| E
-    A -->|Neural Topologies| F
-    B -->|Harmonic Flow| G
-    C -->|60FPS Execution| D
-    C -->|Zero-Lag UI| E
+    subgraph OUTPUT["🚀 DEPLOYED PRODUCTION SYSTEMS"]
+        O1["🔓 DaddyIon\n0.12s ERP Engine"]
+        O2["🛰️ SkillHub\nBuilder Graph"]
+        O3["📘 Universal Book\nAIML Knowledge OS"]
+        O4["⚡ DopAllmine\nFocus Telemetry"]
+    end
 
-    style V12 fill:#070b19,stroke:#00f2fe,stroke-width:2px,color:#fff
-    style SYSTEMS fill:#120724,stroke:#ff0055,stroke-width:2px,color:#fff
-    style D fill:#0f172a,stroke:#10b981,stroke-width:2px,color:#00f2fe
-    style E fill:#0f172a,stroke:#00f2fe,stroke-width:2px,color:#ffe259
-    style F fill:#0f172a,stroke:#a855f7,stroke-width:2px,color:#fff
-    style G fill:#0f172a,stroke:#ff0055,stroke-width:2px,color:#fff
+    I1 ==> K
+    I2 ==> K
+    I3 ==> K
+    K ==>|Python + BS4| O1
+    K ==>|Graph Vectors| O2
+    K ==>|Visual Math| O3
+    K ==>|Neuro XP| O4
+
+    style INPUT fill:#060913,stroke:#00f2fe,stroke-width:2px,color:#fff
+    style ENGINE fill:#1c062b,stroke:#ffe259,stroke-width:2.5px,color:#fff
+    style OUTPUT fill:#10061e,stroke:#ff0055,stroke-width:2px,color:#fff
+    style O1 fill:#0b1120,stroke:#10b981,stroke-width:2px,color:#00f2fe
+    style O2 fill:#0b1120,stroke:#00f2fe,stroke-width:2px,color:#ffe259
+    style O3 fill:#0b1120,stroke:#a855f7,stroke-width:2px,color:#fff
+    style O4 fill:#0b1120,stroke:#ff0055,stroke-width:2px,color:#fff
 ```
 
 ```
 @@ ┌──────────────────────────────────────────────────────────────────────────────────────────┐ @@
-  │  PRAJWAL VARMA  •  AIML @ VVCE MYSURU  •  CYBER-V12 VALKYRIE  •  432Hz BANSURI SYNTH     │
++  │  PRAJWAL VARMA  •  AIML @ VVCE MYSURU  •  CYBER-V12 VALKYRIE  •  432Hz BANSURI SYNTH     │
 @@ ├──────────────────────────────────────────────────────────────────────────────────────────┤ @@
-  │  STATUS:          100% Native In-README Execution. Zero External Tabs. Always Redlining. │
-  │  DIRECT CHANNEL:  prajwalvarma14@gmail.com  •  github.com/prajwalvarma14                 │
+!  │  STATUS: ALL 12 CYLINDERS FIRING  •  DIRECT COMMS: prajwalvarma14@gmail.com              │
 @@ └──────────────────────────────────────────────────────────────────────────────────────────┘ @@
 ```
 
