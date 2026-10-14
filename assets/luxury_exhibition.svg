@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07080c" />
+      <stop offset="100%" stop-color="#0d0f16" />
+    </linearGradient>
+
+    <style>
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Helvetica Neue', sans-serif; }
+      .font-mono { font-family: 'SF Mono', 'JetBrains Mono', Menlo, monospace; }
+      .pill { fill: #131620; stroke: #232736; stroke-width: 0.8; }
+    </style>
+  </defs>
+
+  <!-- Project 01: DaddyIon -->
+  <g transform="translate(0, 0)">
+    <rect x="2" y="2" width="294" height="194" rx="10" fill="url(#cardDark)" stroke="#1a1d28" stroke-width="1.2" />
+    <text x="20" y="28" fill="#e5c07b" font-size="9" class="font-mono" letter-spacing="2">01 / REVERSE EXPLOIT</text>
+    <text x="20" y="56" fill="#f8fafc" font-size="19" class="font-sans" font-weight="700">DaddyIon v2.3</text>
+    <text x="20" y="78" fill="#8e929f" font-size="11.5" class="font-sans">
+      Re-engineered proprietary college ERP into an autonomous Android companion with live attendance forecasting.
+    </text>
+    <g transform="translate(20, 150)">
+      <rect x="0" y="0" width="72" height="20" rx="4" class="pill" />
+      <text x="36" y="14" text-anchor="middle" fill="#cbd5e1" font-size="9.5" class="font-mono">KOTLIN</text>
+
+      <rect x="78" y="0" width="76" height="20" rx="4" class="pill" />
+      <text x="116" y="14" text-anchor="middle" fill="#cbd5e1" font-size="9.5" class="font-mono">PYTHON</text>
+
+      <rect x="160" y="0" width="80" height="20" rx="4" class="pill" />
+      <text x="200" y="14" text-anchor="middle" fill="#e5c07b" font-size="9.5" class="font-mono">REVERSE</text>
+    </g>
+  </g>
+
+  <!-- Project 02: NewsAI -->
+  <g transform="translate(312, 0)">
+    <rect x="2" y="2" width="294" height="194" rx="10" fill="url(#cardDark)" stroke="#1a1d28" stroke-width="1.2" />
+    <text x="20" y="28" fill="#7aa2f7" font-size="9" class="font-mono" letter-spacing="2">02 / AI INTELLIGENCE</text>
+    <text x="20" y="56" fill="#f8fafc" font-size="19" class="font-sans" font-weight="700">NewsAI Engine</text>
+    <text x="20" y="78" fill="#8e929f" font-size="11.5" class="font-sans">
+      High-velocity intelligence pipeline scraping global feeds with Playwright and Groq LPU sub-second inference.
+    </text>
+    <g transform="translate(20, 150)">
+      <rect x="0" y="0" width="72" height="20" rx="4" class="pill" />
+      <text x="36" y="14" text-anchor="middle" fill="#cbd5e1" font-size="9.5" class="font-mono">GROQ AI</text>
+
+      <rect x="78" y="0" width="84" height="20" rx="4" class="pill" />
+      <text x="120" y="14" text-anchor="middle" fill="#cbd5e1" font-size="9.5" class="font-mono">PLAYWRIGHT</text>
+
+      <rect x="168" y="0" width="78" height="20" rx="4" class="pill" />
+      <text x="207" y="14" text-anchor="middle" fill="#7aa2f7" font-size="9.5" class="font-mono">SUPABASE</text>
+    </g>
+  </g>
+
+  <!-- Project 03: AuraOS -->
+  <g transform="translate(624, 0)">
+    <rect x="2" y="2" width="294" height="194" rx="10" fill="url(#cardDark)" stroke="#1a1d28" stroke-width="1.2" />
+    <text x="20" y="28" fill="#bb9af7" font-size="9" class="font-mono" letter-spacing="2">03 / SPATIAL WEB</text>
+    <text x="20" y="56" fill="#f8fafc" font-size="19" class="font-sans" font-weight="700">AuraOS</text>
+    <text x="20" y="78" fill="#8e929f" font-size="11.5" class="font-sans">
+      Gamified desktop operating system engineered inside the browser with custom window managers and audio synth.
+    </text>
+    <g transform="translate(20, 150)">
+      <rect x="0" y="0" width="82" height="20" rx="4" class="pill" />
+      <text x="41" y="14" text-anchor="middle" fill="#cbd5e1" font-size="9.5" class="font-mono">JAVASCRIPT</text>
+
+      <rect x="88" y="0" width="86" height="20" rx="4" class="pill" />
+      <text x="131" y="14" text-anchor="middle" fill="#cbd5e1" font-size="9.5" class="font-mono">WEB AUDIO</text>
+
+      <rect x="180" y="0" width="76" height="20" rx="4" class="pill" />
+      <text x="218" y="14" text-anchor="middle" fill="#bb9af7" font-size="9.5" class="font-mono">SYSTEM</text>
+    </g>
+  </g>
+</svg>
