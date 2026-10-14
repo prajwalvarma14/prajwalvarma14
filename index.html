@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Subway Scram 440 // Prajwal Varma Edition</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #05060b;
+      color: #fff;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    #game-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 520px;
+      border: 3px solid #1f2334;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0, 242, 254, 0.2);
+      background: #000;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .hud {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: bold;
+      color: #00f2fe;
+      text-shadow: 0 0 10px #00f2fe;
+      pointer-events: none;
+    }
+    .hud span { color: #ffe259; }
+    #game-over {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(4, 5, 10, 0.9);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    #game-over h1 { color: #ff007f; font-size: 32px; margin-bottom: 10px; text-shadow: 0 0 20px #ff007f; }
+    #game-over p { color: #cbd5e1; font-size: 16px; margin-bottom: 20px; }
+    .btn {
+      background: #00f2fe;
+      color: #000;
+      border: none;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #00f2fe;
+      transition: all 0.2s;
+    }
+    .btn:hover { transform: scale(1.05); background: #fff; }
+    .controls-bar {
+      margin-top: 15px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      font-size: 13px;
+      color: #8e929f;
+    }
+    .key-badge {
+      background: #1a1e2d;
+      border: 1px solid #00f2fe;
+      color: #00f2fe;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="game-container">
+    <div class="hud">
+      <div>SCORE: <span id="score-val">0</span> | COINS: <span id="coins-val">0</span></div>
+      <div>BIKE: <span>SCRAM 440 (FORCE GREY)</span></div>
+      <div>ATTENDANCE: <span id="att-val">86.4%</span></div>
+    </div>
+
+    <canvas id="gameCanvas" width="900" height="520"></canvas>
+
+    <div id="game-over">
+      <h1>⚠️ CAUGHT BY 74.9% ATTENDANCE TRAIN!</h1>
+      <p id="final-stats">Your Score: 0 • Coins: 0</p>
+      <button class="btn" onclick="resetGame()">PLAY AGAIN (PRESS SPACE / CLICK)</button>
+    </div>
+  </div>
+
+  <div class="controls-bar">
+    <span>CONTROLS:</span>
+    <span class="key-badge">W</span> NITRO SPEED
+    <span class="key-badge">A</span> LANE 1 (LEFT)
+    <span class="key-badge">S</span> BRAKE / SLIDE
+    <span class="key-badge">D</span> LANE 3 (RIGHT)
+    <span class="key-badge">SPACE</span> JUMP
+  </div>
+
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const lanes = [220, 450, 680];
+    let currentLane = 1; // 0=Left, 1=Center, 2=Right
+    let targetX = lanes[1];
+    let playerX = lanes[1];
+    let playerY = 400;
+    let playerZ = 0; // jump height
+    let isJumping = false;
+    let jumpVelocity = 0;
+    let isSliding = false;
+    let speed = 7;
+    let score = 0;
+    let coins = 0;
+    let gameOver = false;
+
+    // Obstacles & Coins
+    let obstacles = [];
+    let coinPickups = [];
+
+    function spawnEntity() {
+      if (gameOver) return;
+      const laneIndex = Math.floor(Math.random() * 3);
+      if (Math.random() > 0.4) {
+        obstacles.push({
+          lane: laneIndex,
+          y: 120,
+          scale: 0.15,
+          type: Math.random() > 0.5 ? 'train' : 'barrier',
+          text: Math.random() > 0.5 ? '74.9% ATTENDANCE' : 'SEGFAULT_404'
+        });
+      } else {
+        coinPickups.push({
+          lane: laneIndex,
+          y: 120,
+          scale: 0.15
+        });
+      }
+    }
+
+    setInterval(spawnEntity, 1200);
+
+    // Keyboard Controller (W, A, S, D + Arrows + Space)
+    window.addEventListener('keydown', (e) => {
+      const key = e.key.toLowerCase();
+      if (gameOver && (key === ' ' || key === 'enter' || key === 'w')) {
+        resetGame();
+        return;
+      }
+      if (key === 'a' || key === 'arrowleft') {
+        if (currentLane > 0) currentLane--;
+      } else if (key === 'd' || key === 'arrowright') {
+        if (currentLane < 2) currentLane++;
+      } else if ((key === 'w' || key === 'arrowup' || key === ' ') && !isJumping) {
+        isJumping = true;
+        jumpVelocity = 14;
+      } else if (key === 's' || key === 'arrowdown') {
+        isSliding = true;
+        setTimeout(() => isSliding = false, 600);
+      }
+      targetX = lanes[currentLane];
+    });
+
+    function update() {
+      if (gameOver) return;
+
+      // Smooth lane transition
+      playerX += (targetX - playerX) * 0.22;
+
+      // Jumping
+      if (isJumping) {
+        playerZ += jumpVelocity;
+        jumpVelocity -= 0.8;
+        if (playerZ <= 0) {
+          playerZ = 0;
+          isJumping = false;
+        }
+      }
+
+      score += Math.floor(speed * 0.5);
+      document.getElementById('score-val').innerText = score;
+      document.getElementById('coins-val').innerText = coins;
+
+      // Update Obstacles
+      for (let i = obstacles.length - 1; i >= 0; i--) {
+        const obs = obstacles[i];
+        obs.y += speed;
+        obs.scale = 0.15 + (obs.y - 120) / 280;
+
+        // Collision Check
+        const obsX = 450 + (lanes[obs.lane] - 450) * (obs.scale / 1.0);
+        if (obs.y > 360 && obs.y < 440 && Math.abs(playerX - obsX) < 45) {
+          if (!isJumping) {
+            triggerGameOver();
+          }
+        }
+
+        if (obs.y > 520) obstacles.splice(i, 1);
+      }
+
+      // Update Coins
+      for (let i = coinPickups.length - 1; i >= 0; i--) {
+        const c = coinPickups[i];
+        c.y += speed;
+        c.scale = 0.15 + (c.y - 120) / 280;
+        const coinX = 450 + (lanes[c.lane] - 450) * (c.scale / 1.0);
+
+        if (c.y > 360 && c.y < 440 && Math.abs(playerX - coinX) < 40) {
+          coins += 10;
+          score += 500;
+          coinPickups.splice(i, 1);
+        } else if (c.y > 520) {
+          coinPickups.splice(i, 1);
+        }
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Sky & Neon Horizon
+      const skyGrad = ctx.createLinearGradient(0, 0, 0, 140);
+      skyGrad.addColorStop(0, '#05060c');
+      skyGrad.addColorStop(1, '#280c35');
+      ctx.fillStyle = skyGrad;
+      ctx.fillRect(0, 0, canvas.width, 140);
+
+      // Retro Sunset Sun
+      ctx.fillStyle = '#ff007f';
+      ctx.beginPath();
+      ctx.arc(450, 125, 45, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Highway Ground
+      ctx.fillStyle = '#0a0c16';
+      ctx.fillRect(0, 140, canvas.width, 380);
+
+      // 3-Lane Tracks (Perspective lines vanishing at 450, 140)
+      ctx.strokeStyle = '#ff007f';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(450, 140); ctx.lineTo(30, 520);
+      ctx.moveTo(450, 140); ctx.lineTo(870, 520);
+      ctx.stroke();
+
+      ctx.strokeStyle = '#00f2fe';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([15, 12]);
+      ctx.beginPath();
+      ctx.moveTo(450, 140); ctx.lineTo(310, 520);
+      ctx.moveTo(450, 140); ctx.lineTo(590, 520);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Draw Coins
+      for (const c of coinPickups) {
+        const cx = 450 + (lanes[c.lane] - 450) * (c.scale / 1.0);
+        ctx.fillStyle = '#ffe259';
+        ctx.beginPath();
+        ctx.arc(cx, c.y, 14 * c.scale, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
+      // Draw Obstacles (Trains/Barriers)
+      for (const obs of obstacles) {
+        const ox = 450 + (lanes[obs.lane] - 450) * (obs.scale / 1.0);
+        const w = 110 * obs.scale;
+        const h = 60 * obs.scale;
+
+        ctx.fillStyle = '#1c0818';
+        ctx.strokeStyle = '#ff007f';
+        ctx.lineWidth = 2.5;
+        ctx.fillRect(ox - w/2, obs.y - h, w, h);
+        ctx.strokeRect(ox - w/2, obs.y - h, w, h);
+
+        ctx.fillStyle = '#ff758c';
+        ctx.font = `${Math.max(9, Math.floor(11 * obs.scale))}px Courier New`;
+        ctx.textAlign = 'center';
+        ctx.fillText(obs.text, ox, obs.y - h/2);
+      }
+
+      // Draw Player: Scram 440 (Force Grey) Rear View
+      const py = playerY - playerZ;
+
+      // Tire
+      ctx.fillStyle = '#111';
+      ctx.strokeStyle = '#575b63';
+      ctx.lineWidth = 4;
+      ctx.fillRect(playerX - 20, py - 10, 40, 50);
+      ctx.strokeRect(playerX - 20, py - 10, 40, 50);
+
+      // Force Grey Mudguard & Taillight
+      ctx.fillStyle = '#575b63';
+      ctx.fillRect(playerX - 24, py - 30, 48, 22);
+
+      // Red LED Taillight
+      ctx.fillStyle = '#ff0055';
+      ctx.shadowColor = '#ff0055';
+      ctx.shadowBlur = 15;
+      ctx.fillRect(playerX - 20, py - 32, 40, 6);
+      ctx.shadowBlur = 0;
+
+      // Rider & Flute
+      ctx.fillStyle = '#1c202d';
+      ctx.fillRect(playerX - 26, py - 65, 52, 35);
+
+      // Bamboo Flute Slung Diagonally
+      ctx.strokeStyle = '#e5c07b';
+      ctx.lineWidth = 5;
+      ctx.beginPath();
+      ctx.moveTo(playerX - 28, py - 15);
+      ctx.lineTo(playerX + 28, py - 80);
+      ctx.stroke();
+
+      // Helmet
+      ctx.fillStyle = '#0f1118';
+      ctx.beginPath();
+      ctx.arc(playerX, py - 75, 16, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#00f2fe';
+      ctx.fillRect(playerX - 12, py - 75, 24, 6);
+
+      // Jump / Slide Text
+      if (isJumping) {
+        ctx.fillStyle = '#00f2fe';
+        ctx.font = 'bold 12px Courier New';
+        ctx.fillText('JUMPING!', playerX, py - 100);
+      }
+    }
+
+    function triggerGameOver() {
+      gameOver = true;
+      document.getElementById('final-stats').innerText = `Final Score: ${score} • Coins Collected: ${coins}`;
+      document.getElementById('game-over').style.display = 'flex';
+    }
+
+    function resetGame() {
+      gameOver = false;
+      score = 0;
+      coins = 0;
+      obstacles = [];
+      coinPickups = [];
+      currentLane = 1;
+      targetX = lanes[1];
+      playerX = lanes[1];
+      playerZ = 0;
+      isJumping = false;
+      document.getElementById('game-over').style.display = 'none';
+    }
+
+    function gameLoop() {
+      update();
+      draw();
+      requestAnimationFrame(gameLoop);
+    }
+
+    requestAnimationFrame(gameLoop);
+  </script>
+</body>
+</html>
