@@ -104,27 +104,27 @@ prajwal@scram440:~$ ./bypass_ioncudos_gateway.sh --target attendance --force
 </details>
 
 <details>
-<summary><b>💋 [INTERACTIVE 04] // THE EXECUTIVE "KISS METER" & SENSITIVITY TEST</b></summary>
+<summary><b>⚡ [INTERACTIVE 04] // FIRST PRINCIPLES: THE PROBLEM-SOLVING PROTOCOL</b></summary>
 <br/>
 
 ```
-┌──────────────────────────────────────────────────────────────────────────────┐
-│  THE SENSITIVITY PROTOCOL // DIAGNOSTIC DECISION ENGINE                      │
-├──────────────────────────────────────────────────────────────────────────────┤
-│  DIAGNOSTIC QUERY: "What happens if you close this tab without pinging me?"  │
-│                                                                              │
-│  [A] "I will hire a developer who writes dry leetcode solutions."             │
-│      ➔ RESULT: Regret level 100%. Boring software guaranteed.                │
-│                                                                              │
-│  [B] "I am intimidated by the 440cc single-cylinder torque & reverse hacks." │
-│      ➔ RESULT: Understandable. We build fast and break friction.             │
-│                                                                              │
-│  [C] "I am genuinely impressed and want to connect right now."              │
-│      ➔ RESULT: Correct choice. Proceed to direct dispatch below.             │
-│                                                                              │
-│  IMPULSE LEVEL: "Impression so high you'll want to kiss the screen."         │
-│  RECOMMENDED ACTION: Email prajwalvarma14@gmail.com within 24h.              │
-└──────────────────────────────────────────────────────────────────────────────┘
+[ PROTOCOL: OVERRIDING BOTTLENECKS // ZERO-PERMISSION ARCHITECTURE ]
+
+1. ISOLATE THE FRICTION:
+   - Identify where humans are being forced to do machine work.
+   - If an internal portal takes 14 clicks or lacks an API, don't wait for permission.
+
+2. INSPECT THE WIRE:
+   - Open headless network tools. Intercept TLS payloads, auth tokens, and response schemas.
+   - Legacy systems are rarely as complex as their broken frontends make them appear.
+
+3. RAPID PROTOTYPE IN PYTHON:
+   - Write clean, targeted scrapers or automation pipelines in hours, not weeks.
+   - Normalize messy unstructured chaos into robust, predictable data schemas.
+
+4. DELIVER HIGH-VELOCITY CLIENTS:
+   - Wrap the pipeline in resilient Kotlin or TypeScript interfaces with offline caching.
+   - Eliminate 100% of the friction for the end user.
 ```
 </details>
 
