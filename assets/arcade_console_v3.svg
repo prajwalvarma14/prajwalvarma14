@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" width="100%" height="100%">
+  <defs>
+    <!-- Screen background gradient -->
+    <linearGradient id="crtBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#080a12" />
+      <stop offset="60%" stop-color="#120c1f" />
+      <stop offset="100%" stop-color="#240c2e" />
+    </linearGradient>
+
+    <!-- Neon Sunset -->
+    <linearGradient id="neonSun" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff007f" />
+      <stop offset="50%" stop-color="#ff7eb3" />
+      <stop offset="100%" stop-color="#fda085" />
+    </linearGradient>
+
+    <linearGradient id="roadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#180b26" />
+      <stop offset="100%" stop-color="#05060a" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="laserGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      .font-mono { font-family: 'JetBrains Mono', 'Courier New', monospace; font-weight: 700; }
+      @keyframes blinkLamp { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+      @keyframes gridPulse { 0%, 100% { stroke-opacity: 0.8; } 50% { stroke-opacity: 0.4; } }
+      @keyframes bikeVibe { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+      @keyframes obstacleMove {
+        0% { transform: translate(460px, 140px) scale(0.2); opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translate(160px, 240px) scale(1.1); opacity: 0; }
+      }
+      .blinking { animation: blinkLamp 1s steps(1) infinite; }
+      .grid-pulse { animation: gridPulse 2.5s ease-in-out infinite; }
+      .vibe { animation: bikeVibe 0.25s ease-in-out infinite; }
+      .obs-anim { animation: obstacleMove 3s linear infinite; }
+    </style>
+  </defs>
+
+  <!-- Arcade Bezel Outer Frame -->
+  <rect x="2" y="2" width="916" height="296" rx="14" fill="#040508" stroke="#1f2334" stroke-width="2" />
+
+  <!-- Top Arcade Marquee Banner -->
+  <path d="M 2 16 Q 2 2 16 2 L 904 2 Q 918 2 918 16 L 918 38 L 2 38 Z" fill="#0b0e18" />
+  <circle cx="20" cy="20" r="4.5" fill="#ff007f" class="blinking" />
+  <circle cx="36" cy="20" r="4.5" fill="#e5c07b" />
+  <circle cx="52" cy="20" r="4.5" fill="#00f2fe" />
+  <text x="75" y="24" fill="#00f2fe" font-size="11" class="font-mono" letter-spacing="2">
+    PRAJWAL'S ARCADE // SCRAM 440 RUNNER v2.4
+  </text>
+  <text x="690" y="24" fill="#e5c07b" font-size="10.5" class="font-mono">
+    COIN: 99 • HI-SCORE: 44000
+  </text>
+
+  <!-- CRT Screen Area -->
+  <rect x="12" y="44" width="896" height="244" rx="8" fill="url(#crtBg)" stroke="#161a29" stroke-width="1.2" />
+
+  <!-- Retro Sun in Center Horizon -->
+  <g transform="translate(460, 130)">
+    <circle cx="0" cy="0" r="48" fill="url(#neonSun)" filter="url(#laserGlow)" />
+    <!-- Horizontal scanlines cutting sun -->
+    <rect x="-50" y="2" width="100" height="3" fill="#120c1f" />
+    <rect x="-50" y="12" width="100" height="5" fill="#120c1f" />
+    <rect x="-50" y="24" width="100" height="7" fill="#120c1f" />
+    <rect x="-50" y="38" width="100" height="9" fill="#120c1f" />
+  </g>
+
+  <!-- Mountains Silhouette -->
+  <polygon points="12,145 120,95 240,145 360,110 460,145 560,105 680,145 800,90 908,145" fill="none" stroke="#ff758c" stroke-width="1.2" opacity="0.5" />
+
+  <!-- Perspective Highway Ground -->
+  <g transform="translate(12, 145)">
+    <rect x="0" y="0" width="896" height="143" fill="url(#roadGrad)" />
+
+    <!-- Center Dashed Yellow Divider Line -->
+    <line x1="448" y1="0" x2="448" y2="143" stroke="#e5c07b" stroke-width="2.5" stroke-dasharray="16 12" />
+
+    <!-- Perspective Neon Blue Grid Lines -->
+    <line x1="448" y1="0" x2="40" y2="143" stroke="#00f2fe" stroke-width="1.8" class="grid-pulse" />
+    <line x1="448" y1="0" x2="180" y2="143" stroke="#00f2fe" stroke-width="1.2" opacity="0.6" />
+    <line x1="448" y1="0" x2="310" y2="143" stroke="#00f2fe" stroke-width="1" opacity="0.4" />
+    <line x1="448" y1="0" x2="586" y2="143" stroke="#00f2fe" stroke-width="1" opacity="0.4" />
+    <line x1="448" y1="0" x2="716" y2="143" stroke="#00f2fe" stroke-width="1.2" opacity="0.6" />
+    <line x1="448" y1="0" x2="856" y2="143" stroke="#00f2fe" stroke-width="1.8" class="grid-pulse" />
+
+    <!-- Horizontal Distance Lines -->
+    <line x1="0" y1="20" x2="896" y2="20" stroke="#00f2fe" stroke-width="0.8" opacity="0.3" />
+    <line x1="0" y1="45" x2="896" y2="45" stroke="#00f2fe" stroke-width="1" opacity="0.4" />
+    <line x1="0" y1="80" x2="896" y2="80" stroke="#00f2fe" stroke-width="1.2" opacity="0.6" />
+    <line x1="0" y1="120" x2="896" y2="120" stroke="#00f2fe" stroke-width="1.6" opacity="0.8" />
+  </g>
+
+  <!-- Incoming Obstacle (74.9% ATTENDANCE) -->
+  <g class="obs-anim">
+    <rect x="-70" y="-12" width="140" height="24" rx="5" fill="#1b0816" stroke="#ff007f" stroke-width="1.8" filter="url(#laserGlow)" />
+    <text x="0" y="4" text-anchor="middle" fill="#ff758c" font-size="9.5" class="font-mono">⚠️ 74.9% ATTENDANCE</text>
+  </g>
+
+  <!-- THE MOTORCYCLE: ROYAL ENFIELD SCRAM 440 (FORCE GREY) -->
+  <!-- Solidly anchored on the right lane at x=520, y=170 -->
+  <g transform="translate(520, 170)">
+    <g class="vibe">
+      <!-- Wheels (Front & Rear) -->
+      <circle cx="26" cy="60" r="20" fill="#08080c" stroke="#575b63" stroke-width="5" />
+      <circle cx="26" cy="60" r="10" fill="#181b22" stroke="#e5c07b" stroke-width="1.5" />
+
+      <circle cx="114" cy="60" r="20" fill="#08080c" stroke="#575b63" stroke-width="5" />
+      <circle cx="114" cy="60" r="10" fill="#181b22" stroke="#e5c07b" stroke-width="1.5" />
+
+      <!-- Exhaust Pipe with Chrome & Heat -->
+      <path d="M 52 56 L 94 60 L 130 56" fill="none" stroke="#8e929f" stroke-width="4.5" stroke-linecap="round" />
+      <circle cx="134" cy="56" r="4" fill="#ff007f" filter="url(#laserGlow)" />
+
+      <!-- Engine: 440cc Air/Oil Cooled Long-Stroke Thumper -->
+      <rect x="46" y="36" width="34" height="28" rx="4" fill="#191c26" stroke="#575b63" stroke-width="2" />
+      <line x1="48" y1="42" x2="78" y2="42" stroke="#8e929f" stroke-width="1.2" />
+      <line x1="48" y1="48" x2="78" y2="48" stroke="#8e929f" stroke-width="1.2" />
+      <line x1="48" y1="54" x2="78" y2="54" stroke="#8e929f" stroke-width="1.2" />
+
+      <!-- Force Grey Fuel Tank with Yellow Accent -->
+      <path d="M 40 32 Q 65 14 92 28 L 78 40 L 40 38 Z" fill="#575b63" stroke="#8e929f" stroke-width="1.5" />
+      <path d="M 54 26 Q 70 20 84 30" fill="none" stroke="#e5c07b" stroke-width="2" />
+
+      <!-- Single Seat -->
+      <path d="M 24 34 Q 34 32 46 34 L 44 40 L 24 40 Z" fill="#121318" />
+
+      <!-- Handlebars & Round Headlamp with Beam -->
+      <line x1="86" y1="30" x2="98" y2="16" stroke="#8e929f" stroke-width="2.5" />
+      <circle cx="110" cy="20" r="7" fill="#f8fafc" filter="url(#laserGlow)" />
+      <!-- Forward Light Cone -->
+      <polygon points="116,20 280,-5 280,55" fill="#00f2fe" opacity="0.2" />
+
+      <!-- Rider: Prajwal Silhouette -->
+      <circle cx="64" cy="4" r="11" fill="#181b22" stroke="#ff758c" stroke-width="1.5" />
+      <path d="M 69 2 Q 76 4 74 8" stroke="#00f2fe" stroke-width="2" fill="none" />
+      <path d="M 60 15 L 48 34 L 72 34 L 80 20 Z" fill="#242838" />
+      <line x1="66" y1="20" x2="96" y2="18" stroke="#242838" stroke-width="4" stroke-linecap="round" />
+
+      <!-- Bamboo Flute Case on back -->
+      <line x1="44" y1="42" x2="80" y2="-4" stroke="#e5c07b" stroke-width="3" stroke-linecap="round" />
+
+      <!-- Pill Label under bike -->
+      <rect x="14" y="86" width="120" height="18" rx="4" fill="#090a10" stroke="#575b63" stroke-width="1" />
+      <text x="74" y="99" text-anchor="middle" fill="#e5c07b" font-size="8.5" class="font-mono">RE SCRAM 440 • FORCE GREY</text>
+    </g>
+  </g>
+
+  <!-- Left Side In-Game Dashboard HUD -->
+  <g transform="translate(30, 60)">
+    <rect x="0" y="0" width="230" height="90" rx="6" fill="#080a12" stroke="#1f2336" stroke-width="1.2" opacity="0.9" />
+    <text x="14" y="22" fill="#00f2fe" font-size="11" class="font-mono">PLAYER: PRAJWAL</text>
+    <text x="14" y="42" fill="#ff758c" font-size="11" class="font-mono">BIKE: SCRAM 440 (FORCE GREY)</text>
+    <text x="14" y="62" fill="#e5c07b" font-size="11" class="font-mono">GEAR: 5TH (80 KM/H)</text>
+    <text x="14" y="80" fill="#9ece6a" font-size="10.5" class="font-mono">CAMPUS PROXY: ACTIVE 🔓</text>
+  </g>
+
+  <!-- Bottom CTA Ticker -->
+  <text x="460" y="278" text-anchor="middle" fill="#00f2fe" font-size="11" class="font-mono blinking" letter-spacing="2">
+    ▼ SCROLL DOWN TO PLAY 4 DIFFERENT GAMES BELOW ▼
+  </text>
+</svg>
